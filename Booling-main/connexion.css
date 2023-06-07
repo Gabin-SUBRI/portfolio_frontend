@@ -1,0 +1,22 @@
+.body, header{
+    background-color: #848484;
+    }
+html{
+    background-color: #ffffff;
+}
+form{
+    background-color: #848484;
+    border-radius: 50px;
+    text-align: center;
+    color: #ffffff;
+    width: 350px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+.btn {
+    text-align: center;
+}

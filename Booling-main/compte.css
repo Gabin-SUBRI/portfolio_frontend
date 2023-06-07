@@ -1,0 +1,63 @@
+.body, header{
+    background-color: #848484;
+    }
+html{
+    background-color: #ffffff;
+}
+h1, h4{
+    text-align: center;
+    color: #848484;
+}
+
+table{
+    width: 700px; /* largeur */
+    height: 100px; /* hauteur */
+    margin: 0 auto;
+}
+th{
+    background: #848484; /* couleur de fond */
+    text-align: center;    
+}
+td, th{
+    padding: 7px; /* espacement intérieur */
+    border: 1px solid; /* bordure */
+    text-align: center; /* alignement du texte au centre */
+}
+
+tr, th{
+    padding: 7px; /* espacement intérieur */
+    border: 1px solid; /* bordure */
+    text-align: center; /* alignement du texte au centre */
+}
+
+.js{
+    width: 50%;
+    height: 50%;
+}
+.chartContainer{
+    text-align: center;
+}
+
+canvas{
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.annee{
+    margin-left: 100px;
+}
+
+.titre{
+    margin-left: 100px;
+    text-decoration: underline;
+}
+
+.commentaire{
+    margin-left: 100px;
+    font-style: italic;
+}
+
+.dropdown{
+    margin-left: 100px;
+}

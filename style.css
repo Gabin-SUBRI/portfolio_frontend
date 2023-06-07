@@ -1,0 +1,298 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  margin: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+/* Projets */
+#projets {
+  display: flex;
+  justify-content: space-between;
+}
+
+#projets .ligne-blanche {
+  width: 1px;
+  background-color: #fff;
+  margin: 0 20px;
+}
+
+.projet {
+  flex-basis: calc(50% - 20px);
+  background-color: #111;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+/* Formulaire de contact */
+form label,
+form input,
+form textarea {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+form input[type="submit"] {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Styles futuristes */
+body {
+  background-image: linear-gradient(to bottom right, #000000, #2c2c2c);
+}
+
+header {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+nav ul li a {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.projet {
+  background-color: #222222;
+  padding: 20px;
+  border-radius: 5px;
+}
+form input,
+form textarea {
+  border-radius: 5px;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Media Queries */
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  #accueil {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .titre {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    text-align: center;
+  }
+
+  /* .projet-left,
+  .projet-right {
+    max-width: 100%;
+    height: auto;
+  } */
+
+  #projets .ligne-blanche {
+    display: none;
+  }
+
+  .projet {
+    flex-basis: 100%;
+    margin: 0;
+  }
+}
+
+#accueil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+@keyframes change-couleur {
+  0% {
+    color: rgb(137, 40, 178);
+  }
+  50% {
+    color: rgb(0, 157, 255);
+  }
+  100% {
+    color: rgb(137, 40, 178);
+  }
+}
+
+.texte-anime {
+  animation: change-couleur 1s infinite;
+}
+#apropos {
+  display: flex;
+  flex-direction: column;
+}
+#title-projets {
+  display: flex;
+  flex-direction: column;
+}
+#projets {
+  display: flex;
+  flex-direction: column;
+}
+.lien-projet {
+  color: white; /* Couleur par défaut du lien */
+  text-decoration: none; /* Supprime la décoration par défaut du lien */
+}
+
+.lien-projet:hover {
+  color: rgb(137, 40, 178); /* Couleur du lien lors du survol */
+}
+
+.lien-projet:active {
+  color: white; /* Couleur du lien lorsqu'il est cliqué */
+}
+.img-projet {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CSS */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.projets {
+  position: relative;
+}
+.barre-verticale {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px; /* Ajustez la largeur selon vos besoins */
+  height: 100%;
+  background-color: white;
+}
+#contact {
+  background-color: #222222;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+#contact h2 {
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info a,
+.contact-info p {
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.contact-info a i,
+.contact-info p i {
+  margin-right: 5px;
+}
+
+.contact-info a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.contact-info a:hover {
+  color: rgb(137, 40, 178);
+}
+
+.contact-info p {
+  color: #fff;
+}

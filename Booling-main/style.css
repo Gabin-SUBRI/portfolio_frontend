@@ -1,0 +1,82 @@
+.body, header{
+background-color: #848484;
+}
+
+
+.maps{
+    margin-left: 10px;
+    height: 500px;
+    width: 500px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 80px;
+    margin: 0;
+    color: white;
+}
+
+.main .card {
+    width: 45%;
+    box-shadow: 10px 0px 50px rgba(255,255,255);
+    color:rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+
+}
+
+.main .card-header {
+    height: 200px;
+}
+
+.main .card-header-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main .card-main {
+    position: relative;
+    padding: 10px 10px 10px 10px;
+    transition: all 0.2s;
+}
+
+.main .card:hover .card-main {
+    padding-left: 15px;
+}
+
+.main .card-main:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color:#166CA0;
+    width: 0;
+    height: 100%;
+    transition: all 0.2s
+}
+
+.main .card:hover .card-main:before {
+    width: 8px;
+}
+
+/*
+FOOTER
+*/
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    text-decoration-color: none;
+  }
+  
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+  

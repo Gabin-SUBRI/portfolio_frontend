@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+    <title>Boo'ling</title>
+    <!--chart.js-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="compte.css">
+     <!-- Bootstrap 5 -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+     <!-- Bootstrap icons -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />    
+     <!--Déclaration de vraiable javascript-->
+    <script type="text/javascript">
+      var partie1 = 150;
+    </script>
+    <script type="text/javascript">
+      var partie2 = 158;
+    </script>
+    <script type="text/javascript">
+      var partie3 = 311;
+    </script>
+    <script src='date1.js' async></script>
+    <script src='date2.js' async></script>
+    <script src='date3.js' async></script>
+
+</head>
+<body>
+    <header class="p-3 bg-secondary text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><li><img src="boo.png" width="107px" height="118px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="titre.PNG"></li></li>
+            </ul>
+    
+            <div class="text-end">
+                <a href="index.html" class="btn btn-outline-light me-2" >Déconnexion</a>
+            </div>
+
+            </a>
+
+          </div>
+        </div>
+      </header>
+    </br>
+        <h1>Bienvenue sur votre compte !</h1>
+        <h4><i>Vous pouvez voir toute vos statistiques de vos parties.</i></h4>
+        <!--TABLEAU-->
+        </br>
+        <table border="4">   
+          <tr>  <!-- Ligne -->
+              <th colspan="4">Vos parties</th> <!-- colspan fusionne les cellules horizontal -->
+              <th class="total">Total</th>
+          </tr>
+           
+          <tr>  <!-- nouvelle ligne -->
+              <th>Date</th>       <!-- nouvelle cellule d'entete (en gras) -->
+              <td><p id='p1'></p></td>     
+              <td><p id='p2'></p></td>
+              <td><p id='p3'></p></td>
+              <th>3 parties joué</th>
+          </tr>
+
+          <tr>
+              <th>Scores</th> <!-- nouvelle cellule d'entete (en gras) -->
+              <td><script type="text/javascript">
+                    document.write(partie1)
+                  </script> pts</td>
+              <td><script type="text/javascript">
+                document.write(partie2)
+              </script> pts</td>
+              <td><script type="text/javascript">
+                document.write(partie3)
+              </script> pts</td>
+              <th><script type="text/javascript">
+                document.write(partie1+partie2+partie3)
+              </script> pts</th>
+          </tr>
+          <tr>
+              <th>Strikes</th> <!-- nouvelle cellule d'entete (en gras) -->
+              <td>0</td>
+              <td>1</td>
+              <td>3</td>
+              <th>4</th>
+          </tr>
+          <tr>
+            <th>Spares</th> <!-- nouvelle cellule d'entete (en gras) -->
+            <td>1</td>
+            <td>5</td>
+            <td>4</td>
+            <th>10</th>
+          </tr>
+          <tr>
+            <th>Rigoles</th> <!-- nouvelle cellule d'entete (en gras) -->
+            <td>3</td>
+            <td>1</td>
+            <td>0</td>
+            <th>0</th>
+          </tr>
+
+      </table>   <!-- Fin de table -->
+        <!--Statistique semaine-->
+        
+        <div>
+        </br>
+          <h4>
+            Classement
+          </h4></br>
+          
+
+          <p class="titre">Général :</p>
+          <p class="annee">Vous êtes classé <b>54ème</b> avec un score de <script type="text/javascript">document.write(partie3)</script> pts le 18/3/2022</p>
+
+          <p class="titre">Sur l'année :</p>
+          <p class="annee">Vous êtes classé <b>20ème</b> avec un score de <script type="text/javascript">document.write(partie3)</script> pts le 18/3/2022</p>
+
+          <p class="titre">Sur le mois : </p><p class="commentaire">(le dernier mois où vous avez jouer)</p>
+          <p class="annee">Vous êtes classé <b>12ème</b> avec un score de <script type="text/javascript">document.write(partie3)</script> pts le 18/3/2022</p>
+
+          <p class="titre">Sur le semaine : </p><p class="commentaire">(la dernière semaine où vous avez jouer)</p>
+          <p class="annee">Vous êtes classé <b>5ème</b> avec un score de <script type="text/javascript">document.write(partie3)</script> pts le 18/3/2022</p>
+          
+        </div>
+        
+
+        </br><h4>Graphique sur votre score </h4>
+      <div class="chartContainer"><!--GRAPHIQUE CHART.JS-->
+        <canvas id="myChart">
+      
+
+      <script>
+        const labels = [
+          '27/1/2022',
+          '15/2/2022',
+          '18/3/2022',
+        ];
+      
+        const data = {
+          labels: labels,
+          datasets: [{
+            label: 'Scores',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data:  [partie1,partie2,partie3],
+          }]
+        };
+      
+        const config = {
+          type: 'line',
+          data: data,
+          options: {responsive: false}
+        };
+      </script>
+      </canvas>
+    </div>
+
+      <script>
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+
+  
+        
+    <!-- Jquery Version 3.6  -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap Bundle with Popper  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>
