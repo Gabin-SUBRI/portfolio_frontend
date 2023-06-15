@@ -7,23 +7,23 @@
 
 /* Styles généraux */
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   margin: 20px;
   background-color: #000000;
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 h1,
 h2,
 h3 {
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 a {
   text-decoration: none;
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 /* Navigation */
@@ -52,22 +52,22 @@ header nav ul li {
 
 @keyframes change-couleur {
   0% {
-    color: #5400a8;
+    color: #580ef6;
   }
   20% {
-    color: #ffffff;
+    color: #f7f7f7;
   }
   40% {
-    color: #5400a8;
+    color: #580ef6;
   }
   60% {
-    color: #ffffff;
+    color: #f7f7f7;
   }
   80% {
-    color: #5400a8;
+    color: #580ef6;
   }
   100% {
-    color: #ffffff;
+    color: #f7f7f7;
   }
 }
 
@@ -85,45 +85,59 @@ header nav ul li {
     flex-direction: column;
   }
 }
-/* 
+/* Partie sur a propos */
+.deuxcards {
+  display: flex;
+}
 
-@media (min-width: 769px) {
-  #accueil {
-    padding: 40px; 
+/* Ajouter les styles pour les écrans de téléphone */
+@media (max-width: 767px) {
+  .deuxcards {
+    flex-direction: column;
   }
 
-  #accueil p:first-child {
-    font-size: 36px; 
-    font-weight: bold; 
-    color: #5400a8; 
+  .deuxcards .card {
+    margin-bottom: 20px; /* Ajouter un espace vertical de 20 pixels entre les cards */
   }
 }
-*/
 
-/* Styles pour la section "À Propos" */
-#apropos {
+/* Partie sur ma présentation*/
+.card {
+  background-color: #1a1c22;
   display: flex;
   flex-direction: column;
-}
-
-/* Cards de présentation */
-.card {
-  background-color: #141414;
-  display: flex;
-  flex-direction: column; /* Afficher les éléments en colonne par défaut */
   align-items: center;
   padding: 20px;
   border-radius: 5px;
   max-width: 700px;
   width: 100%;
   margin: 0 auto;
+  border: 2px solid;
+
+  /* Ajouter une animation pour le changement de couleur de la bordure */
+  animation: border-color-rotation 5s infinite linear;
+}
+
+@keyframes border-color-rotation {
+  0% {
+    border-color: #f7f7f7;
+  }
+  33% {
+    border-color: #580ef6;
+  }
+  66% {
+    border-color: #f7f7f7;
+  }
+  100% {
+    border-color: #580ef6;
+  }
 }
 
 .avatar img {
-  width: 100%; /* Image prendra 100% de la largeur */
-  max-width: 300px; /* Limiter la largeur maximale de l'image */
+  width: 100%;
+  max-width: 300px;
   height: auto;
-  margin-bottom: 20px; /* Ajouter un espace entre l'image et le texte */
+  margin-bottom: 20px;
 }
 
 .info {
@@ -161,7 +175,7 @@ h1 {
 
 /* Styles pour la section "Compétences" */
 .Bloc {
-  background-color: #141414;
+  background-color: #1a1c22;
   display: flex;
   align-items: center;
   padding: 20px;
@@ -179,16 +193,16 @@ h1 {
 
 .competences-category {
   padding: 20px;
-  background-color: #282828;
+  background-color: #580ef6;
   border-radius: 5px;
 }
 
 .competences-category h3 {
   font-size: 18px;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #f7f7f7;
   text-decoration: underline;
-  text-decoration-color: #ffffff;
+  text-decoration-color: #f7f7f7;
 }
 
 .competences-category ul {
@@ -199,7 +213,7 @@ h1 {
 
 .competences-category ul li {
   margin-bottom: 5px;
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 /* ecran de téléphone les cards compétances ce met bien */
@@ -221,35 +235,56 @@ h1 {
 }
 
 .lien-projet {
-  color: #ffffff;
+  color: #f7f7f7;
   text-decoration: none;
 }
 
 .lien-projet:hover {
-  color: #5400a8;
+  color: #580ef6;
 }
 
 .lien-projet:active {
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
-.img-projet {
-  max-width: 100%;
-  height: auto;
-}
 .projet {
   display: flex;
-  background-color: #222222;
+  background-color: #1a1c22;
   padding: 20px;
   border-radius: 5px;
   margin-bottom: 2%;
 }
+
+.img-projet {
+  width: 500px; /* Largeur fixe de 500px */
+  height: auto;
+  /* max-width: 100%; Permet aux images de s'adapter à la largeur du conteneur */
+}
+
 .text-projet {
   margin-left: 2%;
 }
+
+/* Media query pour les écrans de téléphone */
+@media (max-width: 768px) {
+  .projet {
+    flex-direction: column; /* Passage en mode colonne */
+  }
+
+  .img-projet {
+    width: 100%; /* Image à 100% de la largeur du conteneur */
+    margin-right: 0; /* Suppression de la marge à droite */
+    margin-bottom: 2%; /* Ajout d'une marge en bas pour l'espacement */
+  }
+
+  .text-projet {
+    margin-left: 0; /* Suppression de la marge à gauche */
+  }
+}
+
 /* Styles pour la section "Contact" */
 #contact {
-  background-color: #141414;
+  background-color: #1a1c22;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -259,7 +294,7 @@ h1 {
   font-size: 24px;
   letter-spacing: 1px;
   margin-bottom: 10px;
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 .contact-info {
@@ -270,7 +305,7 @@ h1 {
 .contact-info a,
 .contact-info p {
   margin-bottom: 5px;
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 .contact-info a i,
@@ -281,15 +316,15 @@ h1 {
 .contact-info a {
   display: inline-block;
   text-decoration: none;
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 .contact-info a:hover {
-  color: #5400a8;
+  color: #580ef6;
 }
 
 .contact-info p {
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 /* Media Queries */
