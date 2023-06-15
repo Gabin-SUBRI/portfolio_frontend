@@ -10,126 +10,281 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   line-height: 1.5;
   margin: 20px;
-  background-color: #000;
-  color: #fff;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 h1,
 h2,
 h3 {
   margin-bottom: 10px;
-  color: #fff;
+  color: #ffffff;
 }
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
 }
 
 /* Navigation */
-nav ul {
+header nav ul {
   list-style: none;
   display: flex;
 }
 
-nav ul li {
+header nav ul li {
   margin-right: 20px;
 }
 
-/* Projets */
-#projets {
+/* Styles pour la section "Accueil" */
+#accueil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.header {
   display: flex;
   justify-content: space-between;
 }
 
-#projets .ligne-blanche {
-  width: 1px;
-  background-color: #fff;
-  margin: 0 20px;
+@keyframes change-couleur {
+  0% {
+    color: #5400a8;
+  }
+  20% {
+    color: #ffffff;
+  }
+  40% {
+    color: #5400a8;
+  }
+  60% {
+    color: #ffffff;
+  }
+  80% {
+    color: #5400a8;
+  }
+  100% {
+    color: #ffffff;
+  }
 }
 
+.texte-anime {
+  animation: change-couleur 1s infinite;
+}
+
+/* Styles pour la section "À Propos" */
+#apropos {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cards de présentation */
+.card {
+  background-color: #141414;
+  display: flex;
+  flex-direction: column; /* Afficher les éléments en colonne par défaut */
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.avatar img {
+  width: 100%; /* Image prendra 100% de la largeur */
+  max-width: 300px; /* Limiter la largeur maximale de l'image */
+  height: auto;
+  margin-bottom: 20px; /* Ajouter un espace entre l'image et le texte */
+}
+
+.info {
+  text-align: left;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.card p {
+  margin: 5px 0;
+  margin-left: 10px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  .card {
+    flex-direction: row; /* Afficher les éléments côte à côte sur les écrans larges */
+    align-items: flex-start;
+  }
+
+  .avatar img {
+    width: auto; /* Laisser l'image utiliser sa largeur d'origine */
+    max-width: 100%; /* Réinitialiser la limite de largeur maximale */
+    height: 100%; /* Image prendra 100% de la hauteur disponible */
+    margin-bottom: 0; /* Supprimer l'espace entre l'image et le texte */
+    margin-right: 20px; /* Ajouter un espace à droite de l'image */
+  }
+
+  .info {
+    margin-right: 20px; /* Ajouter un espace à droite du texte */
+  }
+}
+
+.info p {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.info p i {
+  width: 20px;
+  text-align: center;
+}
+
+.info p span {
+  display: block;
+}
+
+/* Styles pour la section "Compétences" */
+.Bloc {
+  background-color: #141414;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 1000px; /* Utilisation de max-width au lieu de width */
+  width: 100%; /* Ajustement à la largeur disponible */
+  margin: 0 auto; /* Centrage horizontal */
+}
+
+.competences-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.competences-category {
+  padding: 20px;
+  background-color: #282828;
+  border-radius: 5px;
+}
+
+.competences-category h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
+}
+
+.competences-category ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.competences-category ul li {
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .competences-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Styles pour la section "Projets" */
+#title-projets {
+  display: flex;
+  flex-direction: column;
+}
+
+#projets {
+  display: flex;
+  flex-direction: column;
+}
+
+.lien-projet {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.lien-projet:hover {
+  color: #5400a8;
+}
+
+.lien-projet:active {
+  color: #ffffff;
+}
+
+.img-projet {
+  max-width: 100%;
+  height: auto;
+}
 .projet {
-  flex-basis: calc(50% - 20px);
-  background-color: #111;
+  display: flex;
+  background-color: #222222;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 2%;
+}
+.text-projet {
+  margin-left: 2%;
+}
+/* Styles pour la section "Contact" */
+#contact {
+  background-color: #141414;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
 }
 
-/* Formulaire de contact */
-form label,
-form input,
-form textarea {
-  display: block;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #fff;
-  background-color: transparent;
-  color: #fff;
-}
-
-form input[type="submit"] {
-  background-color: #fff;
-  color: #000;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-form input[type="submit"]:hover {
-  background-color: #000;
-  color: #fff;
-}
-
-/* Styles futuristes */
-body {
-  background-image: linear-gradient(to bottom right, #000000, #2c2c2c);
-}
-
-header {
-  padding: 20px;
-}
-
-h1 {
-  font-size: 32px;
-  letter-spacing: 2px;
-}
-
-h2 {
+#contact h2 {
   font-size: 24px;
   letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #ffffff;
 }
 
-nav ul li a {
-  font-size: 16px;
-  letter-spacing: 1px;
+.contact-info {
+  display: flex;
+  flex-direction: column;
 }
 
-.projet {
-  background-color: #222222;
-  padding: 20px;
-  border-radius: 5px;
-}
-form input,
-form textarea {
-  border-radius: 5px;
-  padding: 10px;
+.contact-info a,
+.contact-info p {
+  margin-bottom: 5px;
+  color: #ffffff;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
+.contact-info a i,
+.contact-info p i {
+  margin-right: 5px;
 }
 
-/* Media Queries */
+.contact-info a {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.contact-info a:hover {
+  color: #5400a8;
+}
+
+.contact-info p {
+  color: #ffffff;
+}
+
 /* Media Queries */
 @media screen and (max-width: 768px) {
   body {
@@ -144,7 +299,7 @@ footer {
     font-size: 20px;
   }
 
-  nav ul li a {
+  header nav ul li a {
     font-size: 14px;
   }
 
@@ -162,11 +317,10 @@ footer {
     text-align: center;
   }
 
-  /* .projet-left,
-  .projet-right {
-    max-width: 100%;
-    height: auto;
-  } */
+  .right {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments internes de passer à la ligne */
+  }
 
   #projets .ligne-blanche {
     display: none;
@@ -176,123 +330,9 @@ footer {
     flex-basis: 100%;
     margin: 0;
   }
-}
 
-#accueil {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-}
-@keyframes change-couleur {
-  0% {
-    color: rgb(137, 40, 178);
+  .card {
+    flex-basis: 100%;
+    margin: 0;
   }
-  50% {
-    color: rgb(0, 157, 255);
-  }
-  100% {
-    color: rgb(137, 40, 178);
-  }
-}
-
-.texte-anime {
-  animation: change-couleur 1s infinite;
-}
-#apropos {
-  display: flex;
-  flex-direction: column;
-}
-#title-projets {
-  display: flex;
-  flex-direction: column;
-}
-#projets {
-  display: flex;
-  flex-direction: column;
-}
-.lien-projet {
-  color: white; /* Couleur par défaut du lien */
-  text-decoration: none; /* Supprime la décoration par défaut du lien */
-}
-
-.lien-projet:hover {
-  color: rgb(137, 40, 178); /* Couleur du lien lors du survol */
-}
-
-.lien-projet:active {
-  color: white; /* Couleur du lien lorsqu'il est cliqué */
-}
-.img-projet {
-  max-width: 100%;
-  height: auto;
-}
-
-/* CSS */
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-container img {
-  max-width: 100%;
-  height: auto;
-}
-
-.projets {
-  position: relative;
-}
-.barre-verticale {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px; /* Ajustez la largeur selon vos besoins */
-  height: 100%;
-  background-color: white;
-}
-#contact {
-  background-color: #222222;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
-#contact h2 {
-  font-size: 24px;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-info a,
-.contact-info p {
-  margin-bottom: 5px;
-  color: #fff;
-}
-
-.contact-info a i,
-.contact-info p i {
-  margin-right: 5px;
-}
-
-.contact-info a {
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-}
-
-.contact-info a:hover {
-  color: rgb(137, 40, 178);
-}
-
-.contact-info p {
-  color: #fff;
 }

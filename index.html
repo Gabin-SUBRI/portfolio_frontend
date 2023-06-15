@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Jeune Développeur Web</title>
+    <title>Portfolio - Gabin SUBRI</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -13,16 +13,17 @@
 
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="#accueil">Accueil</a></li>
-          <li><a href="#apropos">À Propos</a></li>
-          <li><a href="#projets">Projets</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+     <div class="header">
+          <nav>
+            <ul>
+              <li><a href="#accueil">Accueil</a></li>
+              <li><a href="#apropos">À Propos</a></li>
+              <li><a href="#competence">Compétences</a></li>
+              <li><a href="#title-projets">Projets</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
     </header>
-
     <section id="accueil">
       <div class="titre">
         <h1>Bienvenue sur mon Portfolio</h1>
@@ -37,24 +38,104 @@
 
     <section id="apropos">
       <h2>À Propos de Moi</h2>
-      <p>
-        Je m'appelle Gabin Subri, j'ai 19 ans et je vis à Lyon. Actuellement, je
-        travaille en tant qu'opérateur chez CGI, mais ma véritable passion
-        réside dans le développement web. J'aimerais devenir développeur web
-        afin de pouvoir constamment découvrir de nouvelles choses et m'améliorer
-        dans ce domaine. J'ai une affinité particulière avec le frontend, en
-        travaillant notamment avec CSS. J'ai également eu une brève expérience
-        en tant que développeur web lors de mon stage à Sauvegarde69, une
-        association de protection de l'enfance, où j'ai mis à jour leur site
-        WordPress. Mon objectif est de mettre en pratique mes connaissances en
-        JavaScript, notamment avec le framework React, afin de créer des sites
-        internet.
-      </p>
+      <div class="card">
+        <div class="avatar">
+          <img src=".//img/pdp.png" alt="Photo de profil">
+        </div>
+        <div class="info">
+          <h1>Gabin Subri</h1>
+          <p><i class="fas fa-birthday-cake"></i><span>19 ans</span></p>
+  <p><i class="fas fa-briefcase"></i><span>Opérateur chez CGI</span></p>
+  <p><i class="fas fa-code"></i><span>Développeur web passionné</span></p>
+  <p><i class="fas fa-laptop-code"></i><span>Affinité avec le frontend et CSS</span></p>
+  <p><i class="fas fa-briefcase"></i><span>Expérience en développement web à Sauvegarde69</span></p>
+  <p><i class="fas fa-bullseye"></i><span>Objectif : Mettre en pratique JavaScript et React</span></p>
+        </div>
+      </div>
     </section>
 
+    <section id="competences">
+      <h2>Compétences</h2>
+      <div class="Bloc">
+        <div class="info">
+          <div class="competences-container">
+            <div class="competences-category">
+              <h3>Langages de Programmation</h3>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+              <h3>En cours d'apprentissage</h3>
+              <ul>
+                <li>Python</li>
+                <li>PHP</li>
+              </ul>
+            </div>
+            <div class="competences-category">
+              <h3>Frameworks</h3>
+              <ul>
+                <li>React</li>
+                <li>React Native</li>
+                <li>Express.js</li>
+                <li>Bootstrap</li>
+              </ul>
+            </div>
+            <div class="competences-category">
+              <h3>Outils</h3>
+              <ul>
+                <li>GitHub</li>
+                <li>Git</li>
+                <li>Visual Studio Code</li>
+                <li>Figma</li>
+                <li>Canvas</li>
+              </ul>
+            </div>
+            <div class="competences-category">
+              <h3>Bases de données</h3>
+              <ul>
+                <li>MongoDB</li>
+              </ul>
+            </div>
+            <div class="competences-category">
+              <h3>CMS</h3>
+              <ul>
+                <li>WordPress</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <section id="title-projets">
       <h2>Mes Projets</h2>
       <section class="projets">
+        <div class="projet">
+          <div class="image-container">
+            <img
+              class="img-projet"
+              src=".//img/sauvegarde69.PNG"
+              alt="image du site internet iDUN"
+            />
+          </div>
+          <div class="text-projet">
+          <h3>Sauvegarde69</h3>
+          <p>
+            Pendant mon stage enrichissant à Sauvegarde69, une association dédiée 
+            à la protection de l'enfance, j'ai eu l'opportunité de mettre à jour leur 
+            site web existant, développé sous WordPress. En travaillant étroitement 
+            avec l'équipe de l'association, j'ai effectué des modifications fonctionnelles 
+            et visuelles pour améliorer l'expérience des utilisateurs. J'ai mis en œuvre 
+            des mises à jour de contenu, optimisé les performances du site et veillé à 
+            ce que le design reflète les valeurs et l'identité de Sauvegarde69. Ce projet 
+            m'a permis de consolider mes compétences en développement web tout en contribuant
+            à une cause qui me tient à cœur, celle de la protection de l'enfance.
+          </p>
+          <a class="lien-projet" href="https://www.sauvegarde69.fr/"
+            >Voir le projet</a
+          ></div>
+        </div>
         <div class="projet">
           <div class="image-container">
             <img
@@ -63,6 +144,7 @@
               alt="image du site internet iDUN"
             />
           </div>
+          <div class="text-projet">
           <h3>iDUN</h3>
           <p>
             Le projet consiste à créer un site internet dédié à iDUN, un groupe
@@ -77,6 +159,7 @@
           <a class="lien-projet" href="https://idun.vercel.app"
             >Voir le projet</a
           >
+          </div>
         </div>
 
         <div class="projet">
@@ -87,6 +170,7 @@
               alt="image du site internet renarde"
             />
           </div>
+          <div class="text-projet">
           <h3>Renarde</h3>
           <p>
             Renarde est une boutique en ligne spécialisée dans la vente de
@@ -105,7 +189,7 @@
           </p>
           <a class="lien-projet" href="https://renarde.vercel.app"
             >Voir le projet</a
-          >
+          ></div>
         </div>
       </section>
     </section>
@@ -139,6 +223,6 @@
       <p>&copy; 2023 - Portfolio de [Gabin SUBRI]</p>
     </footer>
 
-    <script src="/portfolio/script.js" type="module"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
