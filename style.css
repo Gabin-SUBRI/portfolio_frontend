@@ -36,7 +36,7 @@ header nav ul li {
   margin-right: 20px;
 }
 
-/* Styles pour la section "Accueil" */
+/* Styles de base pour la section "Accueil" */
 #accueil {
   display: flex;
   justify-content: center;
@@ -74,6 +74,31 @@ header nav ul li {
 .texte-anime {
   animation: change-couleur 1s infinite;
 }
+
+/* Styles pour les écrans de petite taille (par exemple, smartphones) */
+@media (max-width: 768px) {
+  #accueil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+  }
+}
+/* 
+
+@media (min-width: 769px) {
+  #accueil {
+    padding: 40px; 
+  }
+
+  #accueil p:first-child {
+    font-size: 36px; 
+    font-weight: bold; 
+    color: #5400a8; 
+  }
+}
+*/
 
 /* Styles pour la section "À Propos" */
 #apropos {
@@ -117,24 +142,6 @@ h1 {
 }
 
 /* Media Queries */
-@media screen and (min-width: 768px) {
-  .card {
-    flex-direction: row; /* Afficher les éléments côte à côte sur les écrans larges */
-    align-items: flex-start;
-  }
-
-  .avatar img {
-    width: auto; /* Laisser l'image utiliser sa largeur d'origine */
-    max-width: 100%; /* Réinitialiser la limite de largeur maximale */
-    height: 100%; /* Image prendra 100% de la hauteur disponible */
-    margin-bottom: 0; /* Supprimer l'espace entre l'image et le texte */
-    margin-right: 20px; /* Ajouter un espace à droite de l'image */
-  }
-
-  .info {
-    margin-right: 20px; /* Ajouter un espace à droite du texte */
-  }
-}
 
 .info p {
   display: grid;
@@ -195,7 +202,7 @@ h1 {
   color: #ffffff;
 }
 
-/* Media Queries */
+/* ecran de téléphone les cards compétances ce met bien */
 @media screen and (max-width: 768px) {
   .competences-container {
     grid-template-columns: 1fr;
@@ -301,11 +308,6 @@ h1 {
 
   header nav ul li a {
     font-size: 14px;
-  }
-
-  #accueil {
-    height: auto;
-    padding: 50px 0;
   }
 
   .titre {
