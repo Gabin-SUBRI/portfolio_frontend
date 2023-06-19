@@ -25,6 +25,10 @@ a {
   text-decoration: none;
   color: #f7f7f7;
 }
+a:hover {
+  text-decoration: underline;
+  color: #580ef6;
+}
 
 /* Navigation */
 header nav ul {
@@ -37,6 +41,7 @@ header nav ul li {
 }
 
 /* Styles de base pour la section "Accueil" */
+
 #accueil {
   display: flex;
   justify-content: center;
@@ -44,31 +49,16 @@ header nav ul li {
   height: 100vh;
   flex-direction: column;
 }
-
+#car {
+  background-color: #1a1c22;
+  backdrop-filter: blur(10px);
+  padding: 5%;
+  border-radius: 25px;
+  box-shadow: 10px 5px 5px #580ef6;
+}
 .header {
   display: flex;
   justify-content: space-between;
-}
-
-@keyframes change-couleur {
-  0% {
-    color: #580ef6;
-  }
-  20% {
-    color: #f7f7f7;
-  }
-  40% {
-    color: #580ef6;
-  }
-  60% {
-    color: #f7f7f7;
-  }
-  80% {
-    color: #580ef6;
-  }
-  100% {
-    color: #f7f7f7;
-  }
 }
 
 .texte-anime {
@@ -82,6 +72,7 @@ header nav ul li {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100vw;
     flex-direction: column;
   }
 }
@@ -108,29 +99,11 @@ header nav ul li {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 25px;
   max-width: 700px;
   width: 100%;
+  box-shadow: 10px 5px 5px #580ef6;
   margin: 0 auto;
-  border: 2px solid;
-
-  /* Ajouter une animation pour le changement de couleur de la bordure */
-  animation: border-color-rotation 5s infinite linear;
-}
-
-@keyframes border-color-rotation {
-  0% {
-    border-color: #f7f7f7;
-  }
-  33% {
-    border-color: #580ef6;
-  }
-  66% {
-    border-color: #f7f7f7;
-  }
-  100% {
-    border-color: #580ef6;
-  }
 }
 
 .avatar img {
