@@ -20,6 +20,9 @@ h3 {
   margin-bottom: 10px;
   color: #f7f7f7;
 }
+h4 {
+  color: #f7f7f7;
+}
 
 a {
   text-decoration: none;
@@ -30,10 +33,16 @@ a:hover {
   color: #580ef6;
 }
 
+.etoile {
+  text-decoration: none;
+}
+
 /* Navigation */
 header nav ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 header nav ul li {
@@ -149,32 +158,33 @@ h1 {
 /* Styles pour la section "Compétences" */
 .Bloc {
   background-color: #1a1c22;
+  box-shadow: 10px 5px 5px #580ef6;
   display: flex;
   align-items: center;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 25px;
   max-width: 1000px; /* Utilisation de max-width au lieu de width */
   width: 100%; /* Ajustement à la largeur disponible */
   margin: 0 auto; /* Centrage horizontal */
+  flex-direction: column;
 }
 
 .competences-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
 }
 
 .competences-category {
   padding: 20px;
-  background-color: #580ef6;
-  border-radius: 5px;
+  background-color: #333333;
+  border-radius: 25px;
 }
 
 .competences-category h3 {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
   color: #f7f7f7;
-  text-decoration: underline;
   text-decoration-color: #f7f7f7;
 }
 
