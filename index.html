@@ -28,15 +28,15 @@
     </header>
     <section id="accueil">
       <div id="car">
-      <div class="titre">
-        <h1>Bienvenue sur mon Portfolio</h1>
+        <div class="titre">
+          <h1>Bienvenue sur mon Portfolio</h1>
+        </div>
+        <div class="text">
+          <p class="texte-centre">
+            Vous êtes sur le point de découvrir mon monde
+          </p>
+        </div>
       </div>
-      <div class="text">
-        <p class="texte-centre">
-          Vous êtes sur le point de découvrir mon monde
-        </p>
-      </div>
-    </div>
     </section>
 
     <section id="apropos">
@@ -61,9 +61,45 @@
       <div class="card">
         <h2>Expériences</h2>
         <h3>Rolex ⌚</h3>
-        <p>En août 2022, j'ai travaillé chez Rolex en tant qu'Aide Vacances dans le service informatique. J'ai participé activement à la migration d'écrans et de PC fixes pour le contrôle des machines d'outillage. Ces projets visaient à améliorer l'efficacité et la qualité des affichages et des outils de contrôle utilisés par les employés. Cette expérience m'a permis de développer mes compétences en migration informatique et de travailler en équipe sur des projets importants. J'ai ainsi acquis une compréhension approfondie du fonctionnement des systèmes informatiques au sein d'une grande entreprise comme Rolex.</p>
+        <div class="content" id="fullText5">
+          <p>
+            En août 2022, j'ai travaillé chez Rolex en tant qu'Aide Vacances dans le service informatique.
+          J'ai participé activement à la migration d'écrans et de PC fixes pour le contrôle des machines d'outillage.
+          Ces projets visaient à améliorer l'efficacité et la qualité des affichages et des outils de contrôle utilisés
+          par les employés. Cette expérience m'a permis de développer mes compétences en migration informatique et de
+          travailler en équipe sur des projets importants. J'ai ainsi acquis une compréhension approfondie du fonctionnement
+          des systèmes informatiques au sein d'une grande entreprise comme Rolex.
+          </p>
+        </div>
+        <div class="content" id="shortText5">
+          <p>
+            En août 2022, j'ai travaillé chez Rolex en tant qu'Aide Vacances dans le service informatique.
+            J'ai participé activement à la migration d'écrans et de PC fixes...
+          </p>
+          <button class="outline-button" onclick="showFullText5()">Voir plus</button>
+        </div>
         <h3>Sauvegarde69 🤝</h3>
-        <p>Lors de mon stage chez Sauvegarde 69 à Lyon (69) en juin et juillet 2022, j'ai été responsable de la mise à jour complète de leur site web WordPress. J'ai apporté les modifications demandées par le chef de l'association pour améliorer la convivialité et la fonctionnalité du site. De plus, j'ai participé activement à la migration des téléphones mobiles, en aidant à la transition vers de nouveaux appareils. Cette expérience m'a permis de développer mes compétences en gestion de projets web et en migration de téléphones, tout en contribuant à l'amélioration des outils de communication de l'association Sauvegarde 69.</p>
+        <div class="content" id="fullText6">
+          <p>
+            Lors de mon stage chez Sauvegarde 69 à Lyon (69) en juin et juillet 2022, j'ai été responsable de
+          la mise à jour complète de leur site web WordPress. J'ai apporté les modifications demandées par
+          le chef de l'association pour améliorer la convivialité et la fonctionnalité du site. De plus, j'ai
+          participé activement à la migration des téléphones mobiles, en aidant à la transition vers de nouveaux 
+          appareils. Cette expérience m'a permis de développer mes compétences en gestion de projets web et en
+          migration de téléphones, tout en contribuant à l'amélioration des outils de communication de l'association
+          Sauvegarde 69.
+          </p>
+        </div>
+        <div class="content" id="shortText6">
+          <p>
+            Lors de mon stage chez Sauvegarde 69 à Lyon (69) en juin et juillet 2022, j'ai été responsable de
+            la mise à jour complète de leur site web WordPress. J'ai apporté les modifications demandées...
+          </p>
+          <button class="outline-button" onclick="showFullText6()">Voir plus</button>
+        </div>
+        <p>
+          
+        </p>
       </div></div>
     </section>
   </br>
@@ -123,6 +159,42 @@
           <div class="image-container">
             <img
               class="img-projet"
+              src=".//img/mymoviz_logo.PNG"
+              alt="image du site internet iDUN"
+            />
+          </div>
+          <div class="text-projet">
+          <h3>My Moviz</h3>
+        </br>
+        <div class="content" id="fullText">
+          <p>
+            Au cours de ma formation web, j'ai développé "MyMoviz", un site cinéma
+            interactif en utilisant React pour renforcer mes compétences en
+            développement. Le site permet aux utilisateurs de découvrir les sorties,
+            de rechercher des films, et de constituer une liste de favoris avec
+            suivi du nombre de visionnages. Ce projet consolide ma compréhension des
+            technologies web, contribuant ainsi à une plateforme personnalisée pour
+            les passionnés de cinéma.
+          </p>
+        </div>
+        <div class="content" id="shortText">
+          <p>
+            Au cours de ma formation web, j'ai développé "MyMoviz", un site cinéma
+            interactif en utilisant React pour renforcer mes compétences en
+            développement. Le site permet aux utilisateurs de découvrir les sorties,
+            de rechercher des films, et de constituer...
+          </p>
+          <button class="outline-button" onclick="showFullText()">Voir plus</button>
+        </div>
+        </br>
+          <a class="lien-projet" href="https://frontend-mymoviz.vercel.app/"
+            >Voir le projet</a
+          ></div>
+        </div>
+        <div class="projet">
+          <div class="image-container">
+            <img
+              class="img-projet"
               src=".//img/sauvegarde69.PNG"
               alt="image du site internet iDUN"
             />
@@ -130,8 +202,9 @@
           <div class="text-projet">
           <h3>Sauvegarde69</h3>
         </br>
-          <p>
-            Pendant mon stage enrichissant à Sauvegarde69, une association dédiée 
+          <div class="content" id="fullText2">
+            <p>
+              Pendant mon stage enrichissant à Sauvegarde69, une association dédiée 
             à la protection de l'enfance, j'ai eu l'opportunité de mettre à jour leur 
             site web existant, développé sous WordPress. En travaillant étroitement 
             avec l'équipe de l'association, j'ai effectué des modifications fonctionnelles 
@@ -140,7 +213,17 @@
             ce que le design reflète les valeurs et l'identité de Sauvegarde69. Ce projet 
             m'a permis de consolider mes compétences en développement web tout en contribuant
             à une cause qui me tient à cœur, celle de la protection de l'enfance.
-          </p>
+            </p>
+          </div>
+          <div class="content" id="shortText2">
+            <p>
+              Pendant mon stage enrichissant à Sauvegarde69, une association dédiée 
+              à la protection de l'enfance, j'ai eu l'opportunité de mettre à jour leur 
+              site web existant, développé sous WordPress. En travaillant étroitement 
+              avec l'équipe de l'association...
+            </p>
+            <button class="outline-button" onclick="showFullText2()">Voir plus</button>
+          </div>
         </br>
           <a class="lien-projet" href="https://www.sauvegarde69.fr/"
             >Voir le projet</a
@@ -158,16 +241,27 @@
           <div class="text-projet">
           <h3>iDUN</h3>
         </br>
-          <p>
-            Le projet consiste à créer un site internet dédié à iDUN, un groupe
-            de jeunes filles spécialisées dans la danse sur de la musique K-pop.
-            Ce site regroupera les informations importantes telles que les
-            réseaux sociaux du groupe, ainsi qu'une description détaillée de
-            chaque membre. L'objectif est de fournir aux fans et aux curieux une
-            plateforme complète pour découvrir et suivre les activités du
-            groupe, ainsi que pour en apprendre davantage sur les membres
-            individuels et leur talent dans la danse sur de la musique K-pop.
-          </p>
+          <div class="content" id="fullText3">
+            <p>
+              Le projet consiste à créer un site internet dédié à iDUN, un groupe de jeunes
+            filles spécialisées dans la danse sur de la musique K-pop. Ce site regroupera les
+            informations importantes telles que les réseaux sociaux du groupe, ainsi qu'une description 
+            détaillée de chaque membre. L'objectif est de fournir aux fans et aux curieux une plateforme 
+            complète pour découvrir et suivre les activités du groupe, ainsi que pour en apprendre davantage 
+            sur les membres individuels et leur talent dans la danse sur de la musique K-pop. 
+            J'ai principalement utilisé la librairie Bootstrap pour m'entraîner, assurant ainsi une mise 
+            en page responsive et un design attrayant pour une expérience utilisateur optimale.
+            </p>
+          </div>
+          <div class="content" id="shortText3">
+            <p>
+              Le projet consiste à créer un site internet dédié à iDUN, un groupe de jeunes
+            filles spécialisées dans la danse sur de la musique K-pop. Ce site regroupera les
+            informations importantes telles que les réseaux sociaux du groupe, ainsi qu'une description 
+            détaillée de chaque membre....
+            </p>
+            <button class="outline-button" onclick="showFullText3()">Voir plus</button>
+          </div>
         </br>
           <a class="lien-projet" href="https://idun.vercel.app"
             >Voir le projet</a
@@ -186,6 +280,7 @@
           <div class="text-projet">
           <h3>Renarde</h3>
         </br>
+        <div class="content" id="fullText4">
           <p>
             Renarde est une boutique en ligne spécialisée dans la vente de
             vêtements et d'accessoires inspirés du renard. Notre site propose
@@ -201,6 +296,15 @@
             Parcourez notre collection en ligne dès maintenant et laissez-vous
             séduire par notre univers renardesque.
           </p>
+        </div>
+        <div class="content" id="shortText4">
+          <p>
+            Renarde est une boutique en ligne spécialisée dans la vente de
+            vêtements et d'accessoires inspirés du renard. Notre site propose
+            une large gamme de produits soigneusement...
+          </p>
+          <button class="outline-button" onclick="showFullText4()">Voir plus</button>
+        </div>
         </br>
           <a class="lien-projet" href="https://renarde.vercel.app"
             >Voir le projet</a
@@ -224,7 +328,7 @@
         <a href="https://www.instagram.com/gabin_sbr/" target="_blank"
           ><i class="fab fa-instagram"></i> Instagram</a
         >
-        <a href="gabin.subri@gmail.com"
+        <a href="mailto:gabin.subri@gmail.com"
           ><i class="fas fa-envelope"></i> E-mail</a
         >
           <a href="tel:+33665645576">
