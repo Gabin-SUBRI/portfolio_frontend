@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let age = 20;
+  let age;
 
   // Fonction pour augmenter votre âge chaque 15 juillet.
   function augmenterAgeChaque15Juillet() {

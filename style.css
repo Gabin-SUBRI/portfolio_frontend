@@ -64,6 +64,7 @@ header nav ul li {
   padding: 5%;
   border-radius: 25px;
   box-shadow: 10px 5px 5px #580ef6;
+  display: flex;
 }
 .header {
   display: flex;
@@ -106,6 +107,7 @@ header nav ul li {
 
   .deuxcards .card {
     margin-bottom: 20px; /* Ajouter un espace vertical de 20 pixels entre les cards */
+    padding: 0px;
   }
 }
 
@@ -115,12 +117,11 @@ header nav ul li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   border-radius: 25px;
-  max-width: 700px;
   width: 100%;
   box-shadow: 10px 5px 5px #580ef6;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .avatar img {
@@ -335,6 +336,8 @@ h1 {
   .titre {
     text-align: center;
     margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
   }
 
   .text {
@@ -474,4 +477,9 @@ h1 {
   border: 2px solid #580ef6;
   border-radius: 5px;
   cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }
