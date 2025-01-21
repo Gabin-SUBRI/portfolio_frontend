@@ -1,400 +1,125 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio - Gabin SUBRI</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Gabin SUBRI</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
-    <!--
     <header>
+      <nav>
+        <ul>
+          <li><a href="/index.html">Accueil</a></li>
+          <li>
+            <a href="/page/presentation.html">Parcours</a>
+          </li>
+          <li><a href="/page/projet.html">Projets</a></li>
+          <li><a href="/page/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="info">
+      <div class="avatar">
+        <img id="avatar" src="/img/1737108601526.jpg" alt="Photo de profil" />
+      </div>
+      <div class="Texte">
+        <h1>Gabin Subri</h1>
+        <p>
+          21 ans <br />
+          Etudiant à l'école IPI <br />
+          Développeur web passionné <br />
+          Affinité avec le frontend et CSS <br />
+          Objectif : Mettre en pratique JavaScript et React <br />
+          Expérience en développement web à Sauvegarde69 <br />
+        </p>
+      </div>
     </div>
-      <div class="header">
-          <nav>
-            <ul>
-              <li><a href="#accueil">Accueil</a></li>
-              <li><a href="#apropos">À propos et Expériences professionnelles</a></li>
-              <li><a href="#competences">Compétences</a></li>
-              <li><a href="#title-projets">Projets</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-    </header>-->
-    <section id="accueil">
-      <div id="car">
-        <div class="titre">
-          <h1>Site actuellement en travaux ⚠️</h1>
-          <iframe
-            src="https://lottie.host/embed/ea626f5e-708f-4b08-8da8-7b097f901dd6/hA8IyIBBGM.lottie"
-          ></iframe>
-        </div>
-        <!--
-        <div class="text">
-          <p class="texte-centre">
-            Vous êtes sur le point de découvrir mon monde 🌍
-          </p>
-        </div>
-      --></div>
-    </section>
-    <!--
-    <section id="apropos">
-      
-      <h2>À propos et Expériences professionnelles</h2><div class="deuxcards">
-      <div class="card">
-        <h3>À propos de moi</h3>
-        <div class="avatar">
-          <img src=".//img/pdp.png" alt="Photo de profil">
-        </div>
-        <div class="info">
-          <h1>Gabin Subri</h1>
-          <p>🎂</i><span>21 ans</span></p>
-          <p>👨‍💼</i><span>Etudiant à l'école IPI</span></p>
-          <p>❤️</i><span>Développeur web passionné</span></p>
-          <p>🎨</i><span>Affinité avec le frontend et CSS</span></p>
-          <p>💼</i><span>Expérience en développement web à Sauvegarde69</span></p>
-          <p>🚀</i><span>Objectif : Mettre en pratique JavaScript et React</span></p>
-        </div>
-      </div>
-    </br>
-      <div class="card">
-        <h2>Expériences</h2>
-        <h3>CGI 🛠️</h3>
-        <div class="content" id="fullText6">
-          <p>
-            De janvier 2023 à juillet 2024, j'ai travaillé chez CGI en tant qu'Analyste Réseau, où j'étais 
-            principalement chargé de la résolution d'incidents et de la gestion des infrastructures réseau. 
-            Mon rôle consistait à identifier et à résoudre des problèmes de connectivité, à optimiser les performances
-            réseau et à assurer la continuité du service. J'ai également contribué à l'amélioration des processus de 
-            surveillance et de maintenance du réseau, en veillant à la mise en place de solutions efficaces pour éviter
-            de futurs incidents. Cette expérience m'a permis de renforcer mes compétences techniques en analyse réseau, 
-            tout en développant ma capacité à travailler sous pression et à collaborer avec des équipes multidisciplinaires.
-            J'ai ainsi acquis une expertise approfondie dans la gestion des infrastructures réseau au sein d'une grande entreprise comme CGI.
-          </p>
-        </div>
-        <div class="content" id="shortText6">
-          <p>
-            Lors de mon stage chez Sauvegarde 69 à Lyon (69) en juin et juillet 2022, j'ai été responsable de
-            la mise à jour complète de leur site web WordPress. J'ai apporté les modifications demandées...
-          </p>
-          <button class="outline-button" onclick="showFullText6()">Voir plus</button>
-        </div>
-        <h3>Rolex ⌚</h3>
-        <div class="content" id="fullText5">
-          <p>
-            En août 2022, j'ai travaillé chez Rolex en tant qu'Aide Vacances dans le service informatique.
-          J'ai participé activement à la migration d'écrans et de PC fixes pour le contrôle des machines d'outillage.
-          Ces projets visaient à améliorer l'efficacité et la qualité des affichages et des outils de contrôle utilisés
-          par les employés. Cette expérience m'a permis de développer mes compétences en migration informatique et de
-          travailler en équipe sur des projets importants. J'ai ainsi acquis une compréhension approfondie du fonctionnement
-          des systèmes informatiques au sein d'une grande entreprise comme Rolex.
-          </p>
-        </div>
-        <div class="content" id="shortText5">
-          <p>
-            En août 2022, j'ai travaillé chez Rolex en tant qu'Aide Vacances dans le service informatique.
-            J'ai participé activement à la migration d'écrans et de PC fixes...
-          </p>
-          <button class="outline-button" onclick="showFullText5()">Voir plus</button>
-        </div>
-        <h3>Sauvegarde69 🤝</h3>
-        <div class="content" id="fullText6">
-          <p>
-            Lors de mon stage chez Sauvegarde 69 à Lyon (69) en juin et juillet 2022, j'ai été responsable de
-          la mise à jour complète de leur site web WordPress. J'ai apporté les modifications demandées par
-          le chef de l'association pour améliorer la convivialité et la fonctionnalité du site. De plus, j'ai
-          participé activement à la migration des téléphones mobiles, en aidant à la transition vers de nouveaux 
-          appareils. Cette expérience m'a permis de développer mes compétences en gestion de projets web et en
-          migration de téléphones, tout en contribuant à l'amélioration des outils de communication de l'association
-          Sauvegarde 69.
-          </p>
-        </div>
-        <div class="content" id="shortText6">
-          <p>
-            Lors de mon stage chez Sauvegarde 69 à Lyon (69) en juin et juillet 2022, j'ai été responsable de
-            la mise à jour complète de leur site web WordPress. J'ai apporté les modifications demandées...
-          </p>
-          <button class="outline-button" onclick="showFullText6()">Voir plus</button>
-        </div>
-      </div>
-    </section>
-  </br>
-    <section id="competences">
-      <h2>Compétences</h2>
-      <div class="Bloc">
-        <div class="info">
-          <div class="competences-container">
-            <div class="competences-category">
-              <h3>Confirmé ⭐⭐⭐⭐</h3>
-                <ul>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>Visual Studio Code</li>
-                  <li>Canvas</li>
-                </ul>
-                </div>
-                <div class="competences-category">
-                <h3>Avancé ⭐⭐⭐</h3>
-                <ul>
-                  <li>Bootstrap</li>
-                  <li>React</li>
-                  <li>GitHub</li>
-                  <li>JavaScript</li>
-                  <li>WordPress</li>
-                  <li>Figma</li>
-                </ul>
-                </div>
-                <div class="competences-category">
-                <h3>Intermédiaire ⭐⭐</h3>
-                <ul>
-                  <li>MongoDB</li>
-                  <li>Git</li>
-                  <li>React Native</li>
-                  <li>Express.js</li>
-                </ul>
-                </div>
-                <div class="competences-category">
-                  <h3>Débutant <span class="etoile">⭐</span></h3>
-                <ul>
-                  <li>Python</li>
-                  <li>PHP</li>
-                </ul>
+    <div class="prestation">
+      <h2>Prestations</h2>
 
-              </ul>
-            </div>
-          </div>
+      <div class="prestations-row">
+        <!-- Prestation 1: Figma -->
+        <div class="presta">
+          <h3>Création de maquettes professionnelles via Figma</h3>
+          <p>
+            Vous avez une idée pour votre site ou application, mais vous
+            souhaitez visualiser à quoi cela pourrait ressembler avant de
+            commencer le développement ?
+          </p>
+          <ul class="list">
+            <li>Maquettes modernes et épurées adaptées à vos besoins.</li>
+            <li>Wireframes pour organiser efficacement le contenu.</li>
+            <li>
+              Design responsive pour tous les appareils (desktop, tablette,
+              mobile).
+            </li>
+          </ul>
+          <a href="/page/contact.html"><button>Me Contacter</button></a>
         </div>
-      </div>
-    </br>
-    </section>
-    
-    <section id="title-projets">
-      <h2>Mes Projets</h2>
-      <section class="projets">
 
-        <div class="projet">
-          <div class="image-container">
-            <img
-              class="img-projet"
-              src=".//img/lesdulcesdaurore.png"
-              alt="image du site internet lesdulcesdaurore"
-            />
-          </div>
-          <div class="text-projet">
-          <h3>Les Dulces d'Aurore</h3>
-        </br>
-        <div class="content" id="fullText4">
+        <!-- Prestation 2: HTML/CSS -->
+        <div class="presta">
+          <h3>Conception de pages simples avec HTML et CSS</h3>
           <p>
-            Site internet de vente de bonbon en ligne pour une amie
+            Besoin d’une page élégante pour mettre en valeur votre activité ou
+            vos produits ?
           </p>
+          <ul class="list">
+            <li>Pages statiques sur mesure avec un design soigné.</li>
+            <li>Compatible avec tous les écrans grâce au responsive design.</li>
+            <li>Intégration de vos contenus (textes, images, vidéos).</li>
+          </ul>
+          <a href="/page/contact.html"><button>Me Contacter</button></a>
         </div>
-        <div class="content" id="shortText4">
-          <p>
-            Renarde est une boutique en ligne spécialisée dans la vente de
-            vêtements et d'accessoires inspirés du renard. Notre site propose
-            une large gamme de produits soigneusement...
-          </p>
-          <button class="outline-button" onclick="showFullText4()">Voir plus</button>
-        </div>
-        </br>
-          <a class="lien-projet" href="https://lesdulcesdaurore.com"
-            >Voir le projet</a
-          ></div>
-        </div>
-        
-        <div class="projet">
-            <div class="image-container">
-              <img
-                class="img-projet"
-                src=".//img/logoletter.png"
-                alt="image du site internet MyMoviz"
-              />
-            </div>
-            <div class="text-projet">
-            <h3>My Moviz</h3>
-          </br>
-          <div class="content" id="fullText">
-            <p>
-              Au cours de ma formation web, j'ai développé "MyMoviz", un site cinéma
-              interactif en utilisant React pour renforcer mes compétences en
-              développement. Le site permet aux utilisateurs de découvrir les sorties,
-              de rechercher des films, et de constituer une liste de favoris avec
-              suivi du nombre de visionnages. Ce projet consolide ma compréhension des
-              technologies web, contribuant ainsi à une plateforme personnalisée pour
-              les passionnés de cinéma.
-            </p>
-        </div>
-        <div class="content" id="shortText">
-          <p>
-            Au cours de ma formation web, j'ai développé "MyMoviz", un site cinéma
-            interactif en utilisant React pour renforcer mes compétences en
-            développement. Le site permet aux utilisateurs de découvrir les sorties,
-            de rechercher des films, et de constituer...
-          </p>
-          <button class="outline-button" onclick="showFullText()">Voir plus</button>
-        </div>
-        </br>
-          <a class="lien-projet" href="https://frontend-mymoviz.vercel.app/"
-            >Voir le projet</a
-          ></div>
-        </div>
-        <div class="projet">
-          <div class="image-container">
-            <img
-              class="img-projet"
-              src=".//img/sauvegarde69.PNG"
-              alt="image du site internet iDUN"
-            />
-          </div>
-          <div class="text-projet">
-          <h3>Sauvegarde69</h3>
-        </br>
-          <div class="content" id="fullText2">
-            <p>
-              Pendant mon stage enrichissant à Sauvegarde69, une association dédiée 
-            à la protection de l'enfance, j'ai eu l'opportunité de mettre à jour leur 
-            site web existant, développé sous WordPress. En travaillant étroitement 
-            avec l'équipe de l'association, j'ai effectué des modifications fonctionnelles 
-            et visuelles pour améliorer l'expérience des utilisateurs. J'ai mis en œuvre 
-            des mises à jour de contenu, optimisé les performances du site et veillé à 
-            ce que le design reflète les valeurs et l'identité de Sauvegarde69. Ce projet 
-            m'a permis de consolider mes compétences en développement web tout en contribuant
-            à une cause qui me tient à cœur, celle de la protection de l'enfance.
-            </p>
-          </div>
-          <div class="content" id="shortText2">
-            <p>
-              Pendant mon stage enrichissant à Sauvegarde69, une association dédiée 
-              à la protection de l'enfance, j'ai eu l'opportunité de mettre à jour leur 
-              site web existant, développé sous WordPress. En travaillant étroitement 
-              avec l'équipe de l'association...
-            </p>
-            <button class="outline-button" onclick="showFullText2()">Voir plus</button>
-          </div>
-        </br>
-          <a class="lien-projet" href="https://www.sauvegarde69.fr/"
-            >Voir le projet</a
-          ></div>
-        </div>
-      </br>
-        <div class="projet">
-          <div class="image-container">
-            <img
-              class="img-projet"
-              src=".//img/idun_logo.png"
-              alt="image du site internet iDUN"
-            />
-          </div>
-          <div class="text-projet">
-          <h3>iDUN</h3>
-        </br>
-          <div class="content" id="fullText3">
-            <p>
-              Le projet consiste à créer un site internet dédié à iDUN, un groupe de jeunes
-            filles spécialisées dans la danse sur de la musique K-pop. Ce site regroupera les
-            informations importantes telles que les réseaux sociaux du groupe, ainsi qu'une description 
-            détaillée de chaque membre. L'objectif est de fournir aux fans et aux curieux une plateforme 
-            complète pour découvrir et suivre les activités du groupe, ainsi que pour en apprendre davantage 
-            sur les membres individuels et leur talent dans la danse sur de la musique K-pop. 
-            J'ai principalement utilisé la librairie Bootstrap pour m'entraîner, assurant ainsi une mise 
-            en page responsive et un design attrayant pour une expérience utilisateur optimale.
-            </p>
-          </div>
-          <div class="content" id="shortText3">
-            <p>
-              Le projet consiste à créer un site internet dédié à iDUN, un groupe de jeunes
-            filles spécialisées dans la danse sur de la musique K-pop. Ce site regroupera les
-            informations importantes telles que les réseaux sociaux du groupe, ainsi qu'une description 
-            détaillée de chaque membre....
-            </p>
-            <button class="outline-button" onclick="showFullText3()">Voir plus</button>
-          </div>
-        </br>
-          <a class="lien-projet" href="https://idun.vercel.app"
-            >Voir le projet</a
-          >
-          </div>
-        </div>
-      </br>
-        <div class="projet">
-          <div class="image-container">
-            <img
-              class="img-projet"
-              src=".//img/site du renard.PNG"
-              alt="image du site internet renarde"
-            />
-          </div>
-          <div class="text-projet">
-          <h3>Renarde</h3>
-        </br>
-        <div class="content" id="fullText4">
-          <p>
-            Renarde est une boutique en ligne spécialisée dans la vente de
-            vêtements et d'accessoires inspirés du renard. Notre site propose
-            une large gamme de produits soigneusement sélectionnés pour les
-            amateurs de renards et les passionnés de la nature. Que vous
-            recherchiez des t-shirts, des pulls, des casquettes ou des bijoux,
-            vous trouverez chez Renarde des articles uniques et élégants qui
-            reflètent l'esprit rusé et charmant de ces magnifiques créatures.
-            Nous mettons un point d'honneur à offrir des produits de qualité,
-            fabriqués avec des matériaux durables et respectueux de
-            l'environnement. Avec Renarde, vous pouvez exprimer votre amour pour
-            les renards tout en soutenant des pratiques commerciales éthiques.
-            Parcourez notre collection en ligne dès maintenant et laissez-vous
-            séduire par notre univers renardesque.
-          </p>
-        </div>
-        <div class="content" id="shortText4">
-          <p>
-            Renarde est une boutique en ligne spécialisée dans la vente de
-            vêtements et d'accessoires inspirés du renard. Notre site propose
-            une large gamme de produits soigneusement...
-          </p>
-          <button class="outline-button" onclick="showFullText4()">Voir plus</button>
-        </div>
-        </br>
-          <a class="lien-projet" href="https://renarde.vercel.app"
-            >Voir le projet</a
-          ></div>
-        </div>
-        
-      </section>
-    </section>
-    <br />
-    <section id="contact">
-      <h2>Contactez-moi</h2>
-      <div class="contact-info">
-        <a href="https://www.linkedin.com/in/gabin-subri/" target="_blank"
-          ><i class="fab fa-linkedin"></i> LinkedIn</a
-        >
-        <a href="https://twitter.com/gabin_sbr" target="_blank"
-          ><i class="fab fa-twitter"></i> X (Twitter)</a
-        >
-        <a href="https://github.com/Gabin-SUBRI" target="_blank"
-          ><i class="fab fa-github"></i> GitHub</a
-        >
-        <a href="mailto:gabin.subri@gmail.com"
-          ><i class="fas fa-envelope"></i> E-mail</a
-        >
-          <a href="tel:+33665645576">
-            <i class="fas fa-phone"></i>Numéro de téléphone</a>
       </div>
-    </section>
--->
+
+      <div class="prestations-row">
+        <!-- Prestation 3: Palettes de couleurs -->
+        <div class="presta">
+          <h3>Création de palettes de couleurs personnalisées</h3>
+          <p>
+            Une identité visuelle forte commence par une sélection de couleurs
+            cohérentes.
+          </p>
+          <ul class="list">
+            <li>Création de palettes harmonieuses adaptées à votre marque.</li>
+            <li>
+              Conseils sur les meilleures associations pour un rendu
+              professionnel.
+            </li>
+            <li>
+              Fichiers prêts à être utilisés sur vos supports marketing et
+              réseaux sociaux.
+            </li>
+          </ul>
+          <a href="/page/contact.html"><button>Me Contacter</button></a>
+        </div>
+
+        <!-- Prestation 4: Correction/amélioration de sites -->
+        <div class="presta">
+          <h3>Correction ou amélioration de sites existants</h3>
+          <p>
+            Un site bien conçu est essentiel pour une expérience utilisateur
+            optimale.
+          </p>
+          <ul class="list">
+            <li>Correction de bugs et problèmes d’affichage.</li>
+            <li>
+              Ajustements du design (couleurs, typographies, mise en page).
+            </li>
+            <li>Optimisation pour améliorer l’expérience utilisateur.</li>
+          </ul>
+          <a href="/page/contact.html"><button>Me Contacter</button></a>
+        </div>
+      </div>
+    </div>
+
     <footer>
-      <p>&copy; 2023 - Portfolio de Gabin SUBRI</p>
+      <p>&copy; Gabin Subri - 2025</p>
     </footer>
 
-    <script type="module" src="./script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
