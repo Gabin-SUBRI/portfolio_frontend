@@ -1,32 +1,33 @@
-const carouselImages = document.querySelector(".carousel-images");
-const indicators = document.querySelectorAll(".carousel-indicators div");
-const totalImages = indicators.length;
-let currentIndex = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  var controller = new ScrollMagic.Controller();
 
-function updateCarousel() {
-  const offset = -currentIndex * 100;
-  carouselImages.style.transform = `translateX(${offset}%)`;
+  var sections = document.querySelectorAll(".presta");
+  sections.forEach(function (section) {
+    var tween = gsap.fromTo(
+      section,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1 }
+    );
 
-  indicators.forEach((indicator, index) => {
-    indicator.classList.toggle("active", index === currentIndex);
-  });
-}
-
-function goToNextImage() {
-  currentIndex = (currentIndex + 1) % totalImages;
-  updateCarousel();
-}
-
-function goToPrevImage() {
-  currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-  updateCarousel();
-}
-
-indicators.forEach((indicator) => {
-  indicator.addEventListener("click", () => {
-    currentIndex = parseInt(indicator.dataset.index, 10);
-    updateCarousel();
+    new ScrollMagic.Scene({
+      triggerElement: section,
+      triggerHook: 0.8,
+    })
+      .setTween(tween)
+      .addTo(controller);
   });
 });
 
-setInterval(goToNextImage, 3000);
+document.getElementById("theme-toggle").addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
+  let sunIcon = document.getElementById("sun-icon");
+  let moonIcon = document.getElementById("moon-icon");
+
+  if (document.body.classList.contains("dark-mode")) {
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "block";
+  } else {
+    sunIcon.style.display = "block";
+    moonIcon.style.display = "none";
+  }
+});
