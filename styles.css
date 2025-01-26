@@ -15,27 +15,6 @@ body {
   margin: 0;
   padding: 0;
 }
-body.dark-mode {
-  background-color: #333333;
-  color: #d0d3d4;
-}
-
-body.dark-mode .presta {
-  background-color: #000000;
-  color: #ffffff; /* Texte en blanc pour contraster avec le fond noir */
-}
-
-body.dark-mode .presta h3 {
-  color: #cccccc;
-}
-
-body.dark-mode .presta p {
-  color: #aaaaaa;
-}
-
-body.dark-mode .list li {
-  color: #888888;
-}
 
 header {
   padding-top: 10px;
@@ -47,9 +26,6 @@ header {
   color: #000000;
 }
 
-body.dark-mode header {
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(255, 255, 255, 1));
-}
 nav {
   display: flex;
   flex-direction: row;
@@ -65,27 +41,6 @@ header nav ul {
 
 header nav ul li {
   margin-right: 20px;
-}
-
-/* Style du bouton */
-button#theme-toggle {
-  position: fixed;
-  top: 50px;
-  right: 10px;
-  padding: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-
-/* Style des icônes */
-.icon {
-  font-size: 24px;
-  transition: display 0.3s;
 }
 
 a {
@@ -222,9 +177,6 @@ footer {
 }
 footer p {
   color: #000;
-}
-body.dark-mode footer p {
-  color: #fff;
 }
 
 @media (max-width: 768px) {

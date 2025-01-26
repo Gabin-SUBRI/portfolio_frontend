@@ -17,17 +17,3 @@ document.addEventListener("DOMContentLoaded", function () {
       .addTo(controller);
   });
 });
-
-document.getElementById("theme-toggle").addEventListener("click", function () {
-  document.body.classList.toggle("dark-mode");
-  let sunIcon = document.getElementById("sun-icon");
-  let moonIcon = document.getElementById("moon-icon");
-
-  if (document.body.classList.contains("dark-mode")) {
-    sunIcon.style.display = "none";
-    moonIcon.style.display = "block";
-  } else {
-    sunIcon.style.display = "block";
-    moonIcon.style.display = "none";
-  }
-});
