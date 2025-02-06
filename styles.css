@@ -4,6 +4,41 @@
   box-sizing: border-box;
 }
 
+/* Ecran de chargement */
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #d0d3d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.spinner {
+  border: 8px dotted #333; /* Light grey */
+  border-top: 8px dotted #d0d3d4; /* Blue */
+  border-left: 8px dotted #d0d3d4; /* Blue */
+  border-radius: 50%;
+  width: 60px; /* Modifie la taille ici */
+  height: 60px; /* Modifie la taille ici */
+  animation: spin 0.5s linear infinite; /* Modifie la durée ici */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#main-content {
+  display: none;
+}
+
 /* Styles généraux */
 
 body {
@@ -67,6 +102,37 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 100px;
+
+  word-wrap: break-word;
+}
+
+.Texte p {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.2em; /* Ajuste la hauteur de la ligne */
+  white-space: pre; /* Préserve les espaces pour l'effet de machine à écrire */
+  overflow: hidden; /* Cache le texte débordant */
+  position: relative; /* Nécessaire pour positionner le pseudo-élément */
+}
+
+.Texte p::after {
+  content: ""; /* Contenu vide pour le curseur */
+  position: absolute;
+  right: auto;
+  left: calc(100% - 2px); /* Positionne le curseur à la fin du texte */
+  width: 2px; /* Largeur du curseur */
+  height: 1.2em; /* Hauteur du curseur correspondant à la ligne de texte */
+  background-color: #000; /* Couleur du curseur */
+  animation: caret 0.7s steps(1) infinite; /* Animation du curseur */
+}
+
+@keyframes caret {
+  50% {
+    background-color: transparent;
+  }
 }
 
 .prestation {
@@ -106,8 +172,8 @@ a {
 }
 
 .presta:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .presta h3 {
@@ -168,6 +234,17 @@ a {
 
   .prestations-row {
     flex-direction: column; /* Empile les prestations verticalement */
+  }
+
+  .Texte {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .text-code {
+    max-width: 500px;
   }
 }
 

@@ -6,121 +6,150 @@
     <title>Gabin SUBRI</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/SplitText.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <!-- Calendly badge widget begin -->
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+    ></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        Calendly.initBadgeWidget({
+          url: "https://calendly.com/gabin-subri",
+          text: "Prendre Rdv",
+          color: "#ff4500",
+          textColor: "#ffffff",
+          branding: true,
+        });
+      };
+    </script>
+    <!-- Calendly badge widget end -->
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/index.html">Accueil</a></li>
-          <li>
-            <a href="/page/presentation.html">Parcours</a>
-          </li>
-          <li><a href="/page/projet.html">Projets</a></li>
-          <li><a href="/page/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <div class="info">
-      <div class="avatar">
-        <img id="avatar" src="/img/1737108601526.avif" alt="Photo de profil" />
-      </div>
-      <div class="Texte">
-        <h1>Gabin SUBRI</h1>
-        <p>
-          21 ans <br />
-          Etudiant à l'école IPI <br />
-          Développeur web passionné <br />
-          Affinité avec le frontend et CSS <br />
-          Objectif : Mettre en pratique JavaScript et React <br />
-          Expérience en développement web à Sauvegarde69 <br />
-        </p>
-      </div>
+    <div id="loading-screen">
+      <div class="spinner"></div>
     </div>
-    <div class="prestation">
-      <h2>PRESTATIONS</h2>
-
-      <div class="prestations-row">
-        <!-- Prestation 1: Figma -->
-        <div class="presta">
-          <h3>Création de maquettes professionnelles via Figma</h3>
-          <p>
-            Vous avez une idée pour votre site ou application, mais vous
-            souhaitez visualiser à quoi cela pourrait ressembler avant de
-            commencer le développement ?
-          </p>
-          <ul class="list">
-            <li>Maquettes modernes et épurées adaptées à vos besoins.</li>
-            <li>Wireframes pour organiser efficacement le contenu.</li>
+    <div id="main-content" style="display: none">
+      <header>
+        <nav>
+          <ul>
+            <li><a href="/index.html">Accueil</a></li>
             <li>
-              Design responsive pour tous les appareils (desktop, tablette,
-              mobile).
+              <a href="/page/presentation.html">Parcours</a>
             </li>
+            <li><a href="/page/projet.html">Projets</a></li>
+            <li><a href="/page/contact.html">Contact</a></li>
           </ul>
-          <a href="/page/contact.html" class="contact-btn">Me Contacter</a>
+        </nav>
+      </header>
+
+      <div class="info">
+        <div class="avatar">
+          <img
+            id="avatar"
+            src="/img/1737108601526.avif"
+            alt="Photo de profil"
+          />
         </div>
-        <!-- Prestation 2: HTML/CSS -->
-        <div class="presta">
-          <h3>Conception de pages simples avec HTML et CSS</h3>
-          <p>
-            Besoin d’une page élégante pour mettre en valeur votre activité ou
-            vos produits ?
-          </p>
-          <ul class="list">
-            <li>Pages statiques sur mesure avec un design soigné.</li>
-            <li>Compatible avec tous les écrans grâce au responsive design.</li>
-            <li>Intégration de vos contenus (textes, images, vidéos).</li>
-          </ul>
-          <a href="/page/contact.html" class="contact-btn">Me Contacter</a>
+        <div class="Texte">
+          <h1>Gabin SUBRI</h1>
+          <p id="animated-text" class="text-code"></p>
+        </div>
+      </div>
+      <div class="prestation">
+        <h2>PRESTATIONS</h2>
+
+        <div class="prestations-row">
+          <!-- Prestation 1: Figma -->
+          <div class="presta">
+            <h3>Création de maquettes professionnelles via Figma</h3>
+            <p>
+              Vous avez une idée pour votre site ou application, mais vous
+              souhaitez visualiser à quoi cela pourrait ressembler avant de
+              commencer le développement ?
+            </p>
+            <ul class="list">
+              <li>Maquettes modernes et épurées adaptées à vos besoins.</li>
+              <li>Wireframes pour organiser efficacement le contenu.</li>
+              <li>
+                Design responsive pour tous les appareils (desktop, tablette,
+                mobile).
+              </li>
+            </ul>
+            <a href="/page/contact.html" class="contact-btn">Me Contacter</a>
+          </div>
+          <!-- Prestation 2: HTML/CSS -->
+          <div class="presta">
+            <h3>Conception de pages simples avec HTML et CSS</h3>
+            <p>
+              Besoin d’une page élégante pour mettre en valeur votre activité ou
+              vos produits ?
+            </p>
+            <ul class="list">
+              <li>Pages statiques sur mesure avec un design soigné.</li>
+              <li>
+                Compatible avec tous les écrans grâce au responsive design.
+              </li>
+              <li>Intégration de vos contenus (textes, images, vidéos).</li>
+            </ul>
+            <a href="/page/contact.html" class="contact-btn">Me Contacter</a>
+          </div>
+        </div>
+
+        <div class="prestations-row">
+          <!-- Prestation 3: Palettes de couleurs -->
+          <div class="presta">
+            <h3>Création de palettes de couleurs personnalisées</h3>
+            <p>
+              Une identité visuelle forte commence par une sélection de couleurs
+              cohérentes.
+            </p>
+            <ul class="list">
+              <li>
+                Création de palettes harmonieuses adaptées à votre marque.
+              </li>
+              <li>
+                Conseils sur les meilleures associations pour un rendu
+                professionnel.
+              </li>
+              <li>
+                Fichiers prêts à être utilisés sur vos supports marketing et
+                réseaux sociaux.
+              </li>
+            </ul>
+            <a href="/page/contact.html" class="contact-btn">Me Contacter</a>
+          </div>
+          <!-- Prestation 4: Correction/amélioration de sites -->
+          <div class="presta">
+            <h3>Correction ou amélioration de sites existants</h3>
+            <p>
+              Un site bien conçu est essentiel pour une expérience utilisateur
+              optimale.
+            </p>
+            <ul class="list">
+              <li>Correction de bugs et problèmes d’affichage.</li>
+              <li>
+                Ajustements du design (couleurs, typographies, mise en page).
+              </li>
+              <li>Optimisation pour améliorer l’expérience utilisateur.</li>
+            </ul>
+            <a href="/page/contact.html" class="contact-btn">Me Contacter</a>
+          </div>
         </div>
       </div>
 
-      <div class="prestations-row">
-        <!-- Prestation 3: Palettes de couleurs -->
-        <div class="presta">
-          <h3>Création de palettes de couleurs personnalisées</h3>
-          <p>
-            Une identité visuelle forte commence par une sélection de couleurs
-            cohérentes.
-          </p>
-          <ul class="list">
-            <li>Création de palettes harmonieuses adaptées à votre marque.</li>
-            <li>
-              Conseils sur les meilleures associations pour un rendu
-              professionnel.
-            </li>
-            <li>
-              Fichiers prêts à être utilisés sur vos supports marketing et
-              réseaux sociaux.
-            </li>
-          </ul>
-          <a href="/page/contact.html" class="contact-btn">Me Contacter</a>
-        </div>
-        <!-- Prestation 4: Correction/amélioration de sites -->
-        <div class="presta">
-          <h3>Correction ou amélioration de sites existants</h3>
-          <p>
-            Un site bien conçu est essentiel pour une expérience utilisateur
-            optimale.
-          </p>
-          <ul class="list">
-            <li>Correction de bugs et problèmes d’affichage.</li>
-            <li>
-              Ajustements du design (couleurs, typographies, mise en page).
-            </li>
-            <li>Optimisation pour améliorer l’expérience utilisateur.</li>
-          </ul>
-          <a href="/page/contact.html" class="contact-btn">Me Contacter</a>
-        </div>
-      </div>
+      <footer>
+        <p>&copy; Gabin Subri - 2025</p>
+      </footer>
     </div>
-
-    <footer>
-      <p>&copy; Gabin Subri - 2025</p>
-    </footer>
-
     <script src="script.js"></script>
   </body>
 </html>
