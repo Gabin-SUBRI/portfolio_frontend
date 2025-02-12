@@ -4,14 +4,49 @@
   box-sizing: border-box;
 }
 
+/* Ecran de chargement */
+#loading-screen {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #d0d3d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.spinner {
+  border: 8px dotted #333; /* Light grey */
+  border-top: 8px dotted #d0d3d4; /* Blue */
+  border-left: 8px dotted #d0d3d4; /* Blue */
+  border-radius: 50%;
+  width: 60px; /* Modifie la taille ici */
+  height: 60px; /* Modifie la taille ici */
+  animation: spin 0.5s linear infinite; /* Modifie la durée ici */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#main-content {
+  display: none;
+}
+
 /* Styles généraux */
 
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   margin: 20px;
-  background-color: #000000;
-  color: #f7f7f7;
+  background-color: #d0d3d4;
+  color: #333333;
   margin: 0;
   padding: 0;
 }
@@ -22,11 +57,10 @@ header {
   margin-top: 0px;
   margin-right: 0px;
   margin-left: 0px;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.4),
-    rgba(100, 100, 100, 0.4)
-  );
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 1));
+  color: #000000;
 }
+
 nav {
   display: flex;
   flex-direction: row;
@@ -68,6 +102,37 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-left: 100px;
+
+  word-wrap: break-word;
+}
+
+.Texte p {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #555;
+  line-height: 1.2em; /* Ajuste la hauteur de la ligne */
+  white-space: pre; /* Préserve les espaces pour l'effet de machine à écrire */
+  overflow: hidden; /* Cache le texte débordant */
+  position: relative; /* Nécessaire pour positionner le pseudo-élément */
+}
+
+.Texte p::after {
+  content: ""; /* Contenu vide pour le curseur */
+  position: absolute;
+  right: auto;
+  left: calc(100% - 2px); /* Positionne le curseur à la fin du texte */
+  width: 2px; /* Largeur du curseur */
+  height: 1.2em; /* Hauteur du curseur correspondant à la ligne de texte */
+  background-color: #000; /* Couleur du curseur */
+  animation: caret 0.7s steps(1) infinite; /* Animation du curseur */
+}
+
+@keyframes caret {
+  50% {
+    background-color: transparent;
+  }
 }
 
 .prestation {
@@ -83,49 +148,57 @@ a {
 
 .prestations-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
   margin-bottom: 40px;
-  flex-wrap: wrap; /* Permet de passer à la ligne sur les petits écrans */
 }
 
 .presta {
-  background-color: #999999;
-  border-radius: 12px;
-  padding: 25px;
-  width: 48%; /* Prend 48% de la largeur pour deux éléments côte à côte */
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%; /* Full width on small screens */
+  max-width: 48%; /* Half width on larger screens */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  .presta {
+    max-width: 100%; /* Full width on tablets and smaller screens */
+  }
+}
+
 .presta:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .presta h3 {
-  font-size: 1.4em;
-  margin: 15px 0;
-  color: #fff;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .presta p {
   margin-bottom: 20px;
-  color: #eee;
+  color: #555;
   font-size: 1em;
+  line-height: 1.5;
 }
 
 .list {
-  color: #ddd;
-  font-size: 0.95em;
-  line-height: 1.6;
   list-style: none;
   padding-left: 0;
+  margin-bottom: 20px;
 }
 
 .list li {
-  margin-bottom: 8px;
+  color: #777;
+  font-size: 0.95em;
+  margin-bottom: 10px;
   position: relative;
   padding-left: 20px;
 }
@@ -134,29 +207,23 @@ a {
   content: "•";
   position: absolute;
   left: 0;
-  top: 0;
-  color: #fff;
+  color: #ff6347;
   font-size: 1.2em;
 }
 
-button {
-  background-color: #000;
+.contact-btn {
+  display: inline-block;
+  background-color: #ff6347;
   color: #fff;
-  border: none;
-  padding: 12px 25px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
   font-size: 1em;
-  border-radius: 8px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button a {
-  color: #fff;
-  text-decoration: none;
-}
-
-button a:hover {
-  text-decoration: underline;
+.contact-btn:hover {
+  background-color: #ff4500;
 }
 
 /* Responsive Design */
@@ -168,6 +235,17 @@ button a:hover {
   .prestations-row {
     flex-direction: column; /* Empile les prestations verticalement */
   }
+
+  .Texte {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .text-code {
+    max-width: 500px;
+  }
 }
 
 footer {
@@ -175,7 +253,7 @@ footer {
   margin-top: 10px;
 }
 footer p {
-  color: #fff;
+  color: #000;
 }
 
 @media (max-width: 768px) {

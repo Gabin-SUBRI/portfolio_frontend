@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #d0d3d4;
 }
 
 header {
@@ -8,7 +8,7 @@ header {
   margin-top: 0px;
   margin-right: 0px;
   margin-left: 0px;
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(50, 50, 50, 1));
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 1));
 }
 
 .avatar {
@@ -80,7 +80,6 @@ h2 {
 
 h3 {
   font-size: 1.8em;
-  margin-top: 30px;
   color: #000;
   margin-left: 5%;
   margin-right: 5%;
@@ -96,25 +95,32 @@ h3 {
 }
 .background_CGI {
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.7)
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
     ),
     url(../img/CGI_logo.svg.png);
 
   background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
   background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }
+
 .background_ROLEX {
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.7)
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
     ),
-    url(../img/Rolex.svg);
+    url(../img/Logo_da_Rolex.png);
 
   background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
   background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }
 
 img {
@@ -124,37 +130,46 @@ img {
 }
 .background_SAUVEGARDE {
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
     ),
-    url(../img/S69_Logo01-web.png);
+    url(../img/logo_S69.png);
 
   background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
   background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }
 .background_IPI {
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.7)
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
     ),
-    url(../img/images.png);
+    url(/img/logo\ ipi.png);
 
   background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
   background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }
 
 .background_La_Capsule {
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.7)
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
     ),
     url(../img/0x0.png);
 
   background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
   background-repeat: no-repeat; /* Empêche la répétition de l'image */
   background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
 }
 
 img {
@@ -172,6 +187,24 @@ img {
   font-style: italic;
 }
 
-footer {
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(50, 50, 50, 1));
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Ajustements possibles pour améliorer l'animation */
+.experience,
+.formation {
+  margin-bottom: 20px; /* Spacing entre les sections pour plus de clarté */
 }
