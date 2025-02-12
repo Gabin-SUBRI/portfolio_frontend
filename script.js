@@ -1,4 +1,3 @@
-import { SpeedInsights } from "@vercel/speed-insights/next";
 window.addEventListener("load", function () {
   console.log("Page chargée, lancement de l'écran de chargement.");
   setTimeout(function () {
