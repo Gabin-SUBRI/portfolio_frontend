@@ -1,3 +1,5 @@
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const carouselImages = document.querySelector(".carousel-images");
 const indicators = document.querySelectorAll(".carousel-indicators div");
 const totalImages = indicators.length;
