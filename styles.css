@@ -128,7 +128,14 @@ a {
   background-color: #000; /* Couleur du curseur */
   animation: caret 0.7s steps(1) infinite; /* Animation du curseur */
 }
-
+.logo {
+  margin: 0 10px; /* Espace entre les logos */
+  color: #000;
+}
+.logo.div {
+  display: flex;
+  flex-direction: row;
+}
 @keyframes caret {
   50% {
     background-color: transparent;

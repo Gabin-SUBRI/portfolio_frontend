@@ -51,3 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.from("#main-content", { duration: 3, opacity: 0, y: -50 });
   console.log("Animation du contenu principal lancée.");
 });
+
+window.addEventListener("load", function () {
+  const logos = document.querySelectorAll(".logo");
+  logos.forEach((logo) => {
+    logo.addEventListener("error", function () {
+      console.error("Erreur de chargement d'image pour ", this.href);
+    });
+  });
+});
