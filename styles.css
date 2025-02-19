@@ -214,13 +214,13 @@ a {
   content: "•";
   position: absolute;
   left: 0;
-  color: #ff6347;
+  color: #ecaf86;
   font-size: 1.2em;
 }
 
 .contact-btn {
   display: inline-block;
-  background-color: #ff6347;
+  background-color: #ecaf86;
   color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
@@ -230,7 +230,8 @@ a {
 }
 
 .contact-btn:hover {
-  background-color: #ff4500;
+  background-color: #f0b767;
+  border: 1px solid #000;
 }
 
 /* Responsive Design */
