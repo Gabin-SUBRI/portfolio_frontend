@@ -164,7 +164,7 @@ a {
 .presta {
   background-color: #ffffff;
   border-radius: 15px;
-  padding: 30px;
+  padding: 20px;
   width: 100%; /* Full width on small screens */
   max-width: 48%; /* Half width on larger screens */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -216,22 +216,6 @@ a {
   left: 0;
   color: #ecaf86;
   font-size: 1.2em;
-}
-
-.contact-btn {
-  display: inline-block;
-  background-color: #ecaf86;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-}
-
-.contact-btn:hover {
-  background-color: #f0b767;
-  border: 1px solid #000;
 }
 
 /* Responsive Design */
