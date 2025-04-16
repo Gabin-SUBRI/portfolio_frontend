@@ -1,3 +1,11 @@
+:root {
+  --blanc: #f2f2f2; /* Gris clair */
+  --gris: #252525; /* Gris foncé */
+  --orange-foncé: #e39162; /* Orange foncé */
+  --orange-clair: #ebaf8d; /* Orange clair */
+  --gris-clair: #d0d3d4;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +17,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  background: #d0d3d4;
+  background: var(--gris);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,9 +25,9 @@
 }
 
 .spinner {
-  border: 8px dotted #333; /* Light grey */
-  border-top: 8px dotted #d0d3d4; /* Blue */
-  border-left: 8px dotted #d0d3d4; /* Blue */
+  border: 8px dotted var(--gris); /* Light grey */
+  border-top: 8px dotted var(--blanc); /* Blue */
+  border-left: 8px dotted var(--blanc); /* Blue */
   border-radius: 50%;
   width: 60px; /* Modifie la taille ici */
   height: 60px; /* Modifie la taille ici */
@@ -45,42 +53,15 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   margin: 20px;
-  background-color: #d0d3d4;
-  color: #333333;
+  background-color: var(--gris-clair);
+  color: var(--blanc);
   margin: 0;
   padding: 0;
 }
 
-header {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-  background: linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 1));
-  color: #000000;
-}
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-header nav ul li {
-  margin-right: 20px;
-}
-
 a {
   text-decoration: none;
-  color: white;
+  color: var(--blanc);
 }
 
 #avatar {
@@ -88,6 +69,10 @@ a {
   height: auto;
   border-radius: 50%;
   margin: 20px 0;
+}
+
+p#animated-text {
+  color: var(--gris);
 }
 
 .info {
@@ -111,7 +96,7 @@ a {
   font-family: "Courier New", Courier, monospace;
   font-weight: 600;
   font-size: 1.2em;
-  color: #555;
+  color: var(--gris);
   line-height: 1.2em; /* Ajuste la hauteur de la ligne */
   white-space: pre; /* Préserve les espaces pour l'effet de machine à écrire */
   overflow: hidden; /* Cache le texte débordant */
@@ -125,7 +110,7 @@ a {
   left: calc(100% - 2px); /* Positionne le curseur à la fin du texte */
   width: 2px; /* Largeur du curseur */
   height: 1.2em; /* Hauteur du curseur correspondant à la ligne de texte */
-  background-color: #000; /* Couleur du curseur */
+  background-color: var(--gris); /* Couleur du curseur */
   animation: caret 0.7s steps(1) infinite; /* Animation du curseur */
 }
 .logo {
@@ -136,6 +121,7 @@ a {
   display: flex;
   flex-direction: row;
 }
+
 @keyframes caret {
   50% {
     background-color: transparent;
@@ -151,13 +137,14 @@ a {
   text-align: center;
   font-size: 2em;
   margin-bottom: 40px;
+  color: var(--gris);
 }
 
 .prestations-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
+  justify-content: center; /* Aligne les prestations au centre */
+  gap: 20px; /* Espacement entre les cartes */
   margin-bottom: 40px;
 }
 
@@ -165,19 +152,12 @@ a {
   background-color: #ffffff;
   border-radius: 15px;
   padding: 20px;
-  width: 100%; /* Full width on small screens */
-  max-width: 48%; /* Half width on larger screens */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Pleine largeur sur petits écrans */
+  max-width: 45%; /* Ajuste la largeur pour aligner les cartes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Améliore l'esthétique */
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-@media (max-width: 768px) {
-  .presta {
-    max-width: 100%; /* Full width on tablets and smaller screens */
-  }
-}
-
 .presta:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -194,6 +174,16 @@ a {
   color: #555;
   font-size: 1em;
   line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .presta {
+    max-width: 100%; /* Pleine largeur sur les écrans mobiles */
+  }
+
+  .prestations-row {
+    flex-direction: column; /* Empile les cartes verticalement */
+  }
 }
 
 .list {
@@ -240,14 +230,6 @@ a {
   }
 }
 
-footer {
-  text-align: center;
-  margin-top: 10px;
-}
-footer p {
-  color: #000;
-}
-
 @media (max-width: 768px) {
   .cards {
     flex-direction: column;
@@ -266,4 +248,231 @@ footer p {
     display: flex;
     justify-content: space-evenly;
   }
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #eee;
+}
+
+.info p {
+  font-size: 1.1em;
+  color: #fff;
+}
+
+p {
+  font-size: 1.1em;
+  color: var(--gris);
+}
+
+p span {
+  font-weight: bold;
+}
+
+/* Style pour les containers des expériences */
+
+h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--gris);
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+h3 {
+  font-size: 1.8em;
+  color: var(--gris);
+}
+
+.content {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-top: 10px;
+  color: var(--blanc);
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.background_CGI {
+  color: var(--blanc);
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(../img/CGI_logo.svg.png);
+
+  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.background_ROLEX {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(../img/Logo_da_Rolex.png);
+
+  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+  align-items: center;
+}
+.background_SAUVEGARDE {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(../img/logo_S69.png);
+
+  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+.background_IPI {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(/img/logo\ ipi.png);
+
+  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.background_La_Capsule {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url(../img/0x0.png);
+
+  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  background-position: center; /* Centre l'image dans le conteneur */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+  align-items: center;
+}
+/* Espacement entre les sections */
+.info,
+.content {
+  margin-bottom: 40px;
+}
+
+.Date {
+  font-style: italic;
+  color: var(--gris);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* Ajustements possibles pour améliorer l'animation */
+.experience,
+.formation {
+  margin-bottom: 20px; /* Spacing entre les sections pour plus de clarté */
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 30%; /* Largeur pour tenir 3 cartes par ligne */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  background-color: white;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: 45%; /* Ajuste pour afficher 2 cartes sur les écrans moyens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  text-align: center;
+  color: var(--gris);
+}
+
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; /* S'adapte à la largeur de l'écran */
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+footer p {
+  color: var(--gris);
 }
