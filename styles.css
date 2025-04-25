@@ -11,6 +11,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Styles par défaut */
+.calendly-badge-widget {
+  position: fixed;
+  bottom: 20px; /* Distance du bas de l'écran */
+  left: 20px; /* Distance du bord gauche */
+  z-index: 9999; /* S'assure que le bouton est au premier plan */
+}
+
+/* Spécifiquement pour les téléphones */
+@media (max-width: 768px) {
+  .calendly-badge-widget {
+    position: fixed; /* Fixe la position du bouton */
+    bottom: 10px; /* Ajustement du bas pour les petits écrans */
+    left: 10px; /* Ajustement du bord gauche */
+  }
+}
 
 /* Ecran de chargement */
 #loading-screen {
@@ -294,84 +310,10 @@ h3 {
   margin-right: 5%;
 }
 
-.background_CGI {
-  color: var(--blanc);
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    url(../img/CGI_logo.svg.png);
-
-  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
-  background-repeat: no-repeat; /* Empêche la répétition de l'image */
-  background-position: center; /* Centre l'image dans le conteneur */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-}
-
-.background_ROLEX {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    url(../img/Logo_da_Rolex.png);
-
-  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
-  background-repeat: no-repeat; /* Empêche la répétition de l'image */
-  background-position: center; /* Centre l'image dans le conteneur */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-}
-
 img {
   width: 50%;
   height: 50%;
   align-items: center;
-}
-.background_SAUVEGARDE {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    url(../img/logo_S69.png);
-
-  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
-  background-repeat: no-repeat; /* Empêche la répétition de l'image */
-  background-position: center; /* Centre l'image dans le conteneur */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-}
-.background_IPI {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    url(/img/logo\ ipi.png);
-
-  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
-  background-repeat: no-repeat; /* Empêche la répétition de l'image */
-  background-position: center; /* Centre l'image dans le conteneur */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-}
-
-.background_La_Capsule {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.8),
-      rgba(255, 255, 255, 0.8)
-    ),
-    url(../img/0x0.png);
-
-  background-size: contain; /* Ajuste l'image pour qu'elle rentre dans le conteneur */
-  background-repeat: no-repeat; /* Empêche la répétition de l'image */
-  background-position: center; /* Centre l'image dans le conteneur */
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 30px;
 }
 
 img {
@@ -407,10 +349,6 @@ img {
 }
 
 /* Ajustements possibles pour améliorer l'animation */
-.experience,
-.formation {
-  margin-bottom: 20px; /* Spacing entre les sections pour plus de clarté */
-}
 
 .cards {
   display: flex;
@@ -434,6 +372,86 @@ img {
   height: auto;
   cursor: pointer;
   display: block;
+}
+
+.experiences {
+  width: 235vw;
+  height: 50vh;
+  margin-bottom: 30vh;
+  position: relative; /* Nécessaire pour un positionnement absolu des enfants */
+}
+
+.timeline {
+  position: absolute; /* Permet un placement précis dans .experiences */
+  top: 50%; /* Centre la timeline verticalement */
+  transform: translateY(-50%); /* Ajustement pour vraiment centrer */
+  display: flex; /* Layout horizontal */
+  height: 4px; /* Épaisseur du trait central */
+  background: #000; /* Couleur du trait central */
+  width: 235vw; /* Largeur totale */
+}
+
+.event {
+  position: relative;
+  margin: 0 40px; /* Espacement horizontal entre les boîtes */
+}
+
+.event-content {
+  width: 350px; /* Largeur fixe pour uniformiser */
+  height: 200px; /* Hauteur fixe */
+  display: flex; /* Pour aligner le contenu */
+  flex-direction: column;
+  align-items: center; /* Centrage horizontal */
+  justify-content: center; /* Centrage vertical */
+}
+
+.event-content:nth-child(odd) {
+  top: -100px; /* Boîtes impaires placées en haut */
+}
+
+.event-content:nth-child(even) {
+  top: 100px; /* Boîtes paires placées en bas */
+}
+
+div.logo_expériences {
+  display: flex;
+  justify-content: center;
+}
+
+.event img {
+  width: 100px; /* Largeur standardisée */
+  height: 100px; /* Hauteur standardisée */
+  object-fit: cover; /* Recadre l'image pour s'adapter */
+  border-radius: 8px; /* Coins arrondis (optionnel) */
+}
+
+/* Lorsque l'écran est plus petit qu'un ordinateur */
+@media (max-width: 1024px) {
+  .timeline {
+    flex-direction: column; /* Passe en mode vertical */
+    width: 0px; /* La largeur devient dynamique pour le mode vertical */
+    display: flex;
+    align-items: center;
+    margin-left: 195px;
+    margin-top: -200px;
+  }
+
+  .event {
+    margin: 20px 0; /* Espacement vertical entre les événements */
+  }
+
+  .event-content {
+    height: auto; /* Laisse la hauteur s'ajuster au contenu */
+    text-align: center; /* Centre le texte */
+  }
+
+  .event img {
+    width: 80px; /* Redimensionne les images pour les petits écrans */
+    height: 80px;
+  }
+  .footer {
+    margin-top: 1800px;
+  }
 }
 
 @media (max-width: 1024px) {
