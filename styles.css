@@ -386,10 +386,11 @@ img {
     flex-direction: column;
   }
   .card {
-    width: 100%;
+    width: 90%;
     height: 400px;
     cursor: pointer;
     margin-bottom: 20px;
+    margin-left: 5%;
   }
 
   .card .card-inner {
@@ -402,10 +403,14 @@ img {
   }
   div.experiences {
     margin-left: 25%;
+    width: 50%;
   }
 }
 /* Adaptation pour téléphones */
 @media (max-width: 768px) {
+  body {
+    width: 100%;
+  }
   .cards {
     flex-direction: column;
   }
@@ -427,6 +432,7 @@ img {
 
   div.experiences {
     margin-left: 20px;
+    width: 100%;
   }
 }
 
