@@ -3,7 +3,7 @@
   --gris: #252525; /* Gris foncé */
   --orange-foncé: #e39162; /* Orange foncé */
   --orange-clair: #ebaf8d; /* Orange clair */
-  --gris-clair: #d0d3d4;
+  --gris-clair: #d0d3d4; /* gris clair*/
 }
 
 * {
@@ -152,6 +152,7 @@ p#animated-text {
 .prestation h2 {
   text-align: center;
   font-size: 2em;
+  margin-top: -20px;
   margin-bottom: 40px;
   color: var(--gris);
 }
@@ -294,6 +295,7 @@ h2 {
   color: var(--gris);
   margin-left: 5%;
   margin-right: 5%;
+  margin-top: -20px;
 }
 
 h3 {
@@ -355,23 +357,85 @@ img {
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
+  height: 300px;
+  margin-bottom: 50px;
 }
 
 .card {
   width: 30%; /* Largeur pour tenir 3 cartes par ligne */
+  height: auto;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-front {
   background-color: white;
+  display: flex;
+}
+
+.card-back {
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.card-back span {
+  display: flex;
+  justify-content: center;
+}
+
+.card-back p {
+  margin: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.card-back button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card-back button:hover {
+  background-color: #0056b3;
 }
 
 .card img {
+  display: flex;
   width: 100%;
   height: auto;
   cursor: pointer;
   display: block;
+  align-items: center;
 }
 
 .experiences {
