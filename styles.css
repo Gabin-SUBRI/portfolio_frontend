@@ -252,10 +252,6 @@ p#animated-text {
     flex-direction: column;
     align-items: center;
   }
-
-  .card {
-    width: 90%; /* S'adapte à la largeur de l'écran */
-  }
 }
 @media screen and (max-width: 1024px) {
   .info {
@@ -357,12 +353,12 @@ img {
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  height: 300px;
+  height: auto;
   margin-bottom: 50px;
 }
 
 .card {
-  width: 30%; /* Largeur pour tenir 3 cartes par ligne */
+  width: 30%; /* Par défaut pour desktop */
   height: auto;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -379,8 +375,59 @@ img {
   transition: transform 1s;
 }
 
+/* Par défaut (desktop) : effet hover */
 .card:hover .card-inner {
   transform: rotateY(180deg);
+}
+
+/* Sur les tablettes et téléphones : utiliser un clic à la place */
+@media (max-width: 1024px) {
+  .cards {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    height: 400px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .card .card-inner {
+    transform: none; /* Empêche le hover par défaut */
+    transition: transform 0.5s;
+  }
+
+  .card.clicked .card-inner {
+    transform: rotateY(180deg);
+  }
+  div.experiences {
+    margin-left: 25%;
+  }
+}
+/* Adaptation pour téléphones */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .card .card-inner {
+    transform: none; /* Empêche le hover par défaut */
+    transition: transform 0.5s;
+  }
+
+  .card.clicked .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  div.experiences {
+    margin-left: 20px;
+  }
 }
 
 .card-front,
@@ -518,18 +565,6 @@ div.logo_expériences {
   }
 }
 
-@media (max-width: 1024px) {
-  .card {
-    width: 45%; /* Ajuste pour afficher 2 cartes sur les écrans moyens */
-  }
-}
-
-@media (max-width: 768px) {
-  .card {
-    width: 100%;
-  }
-}
-
 .card:hover {
   transform: translateY(-5px);
 }
@@ -537,17 +572,6 @@ div.logo_expériences {
 h2 {
   text-align: center;
   color: var(--gris);
-}
-
-@media (max-width: 768px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%; /* S'adapte à la largeur de l'écran */
-  }
 }
 
 footer {
