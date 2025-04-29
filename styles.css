@@ -359,7 +359,7 @@ img {
 
 .card {
   width: 30%; /* Par défaut pour desktop */
-  height: auto;
+  height: 300px;
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
@@ -445,7 +445,7 @@ img {
 }
 
 .card-front {
-  background-color: white;
+  background-color: var(--blanc);
   display: flex;
 }
 
@@ -471,15 +471,15 @@ img {
 
 .card-back button {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--orange-foncé);
+  color: var(--blanc);
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
 .card-back button:hover {
-  background-color: #0056b3;
+  background-color: var(--gris);
 }
 
 .card img {
