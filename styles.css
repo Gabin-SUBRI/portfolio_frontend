@@ -69,7 +69,7 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.5;
   margin: 20px;
-  background-color: var(--gris-clair);
+  background-color: var(--gris);
   color: var(--blanc);
   margin: 0;
   padding: 0;
@@ -88,7 +88,7 @@ a {
 }
 
 p#animated-text {
-  color: var(--gris);
+  color: var(--blanc);
 }
 
 .info {
@@ -154,7 +154,7 @@ p#animated-text {
   font-size: 2em;
   margin-top: -20px;
   margin-bottom: 40px;
-  color: var(--gris);
+  color: var(--blanc);
 }
 
 .prestations-row {
@@ -166,7 +166,7 @@ p#animated-text {
 }
 
 .presta {
-  background-color: #ffffff;
+  background-color: var(--gris-clair);
   border-radius: 15px;
   padding: 20px;
   width: 100%; /* Pleine largeur sur petits écrans */
@@ -183,12 +183,12 @@ p#animated-text {
 .presta h3 {
   font-size: 1.5em;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--gris);
 }
 
 .presta p {
   margin-bottom: 20px;
-  color: #555;
+  color: var(--gris);
   font-size: 1em;
   line-height: 1.5;
 }
@@ -210,7 +210,7 @@ p#animated-text {
 }
 
 .list li {
-  color: #777;
+  color: var(--gris);
   font-size: 0.95em;
   margin-bottom: 10px;
   position: relative;
@@ -221,7 +221,7 @@ p#animated-text {
   content: "•";
   position: absolute;
   left: 0;
-  color: #ecaf86;
+  color: var(--orange-foncé);
   font-size: 1.2em;
 }
 
@@ -275,7 +275,7 @@ h1 {
 
 p {
   font-size: 1.1em;
-  color: var(--gris);
+  color: var(--blanc);
 }
 
 p span {
@@ -288,7 +288,7 @@ h2 {
   font-size: 2em;
   text-align: center;
   margin-bottom: 20px;
-  color: var(--gris);
+  color: var(--blanc);
   margin-left: 5%;
   margin-right: 5%;
   margin-top: -20px;
@@ -296,7 +296,7 @@ h2 {
 
 h3 {
   font-size: 1.8em;
-  color: var(--gris);
+  color: var(--blanc);
 }
 
 .content {
@@ -387,10 +387,8 @@ img {
   }
   .card {
     width: 90%;
-    height: 400px;
     cursor: pointer;
     margin-bottom: 20px;
-    margin-left: 5%;
   }
 
   .card .card-inner {
@@ -450,7 +448,7 @@ img {
 }
 
 .card-back {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: var(--blanc);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -466,7 +464,7 @@ img {
 .card-back p {
   margin: 10px;
   font-size: 16px;
-  color: #333;
+  color: var(--gris);
 }
 
 .card-back button {
@@ -535,49 +533,13 @@ div.logo_expériences {
   justify-content: center;
 }
 
-.event img {
-  width: 100px; /* Largeur standardisée */
-  height: 100px; /* Hauteur standardisée */
-  object-fit: cover; /* Recadre l'image pour s'adapter */
-  border-radius: 8px; /* Coins arrondis (optionnel) */
-}
-
-/* Lorsque l'écran est plus petit qu'un ordinateur */
-@media (max-width: 1024px) {
-  .timeline {
-    flex-direction: column; /* Passe en mode vertical */
-    width: 0px; /* La largeur devient dynamique pour le mode vertical */
-    display: flex;
-    align-items: center;
-    margin-left: 195px;
-    margin-top: -200px;
-  }
-
-  .event {
-    margin: 20px 0; /* Espacement vertical entre les événements */
-  }
-
-  .event-content {
-    height: auto; /* Laisse la hauteur s'ajuster au contenu */
-    text-align: center; /* Centre le texte */
-  }
-
-  .event img {
-    width: 80px; /* Redimensionne les images pour les petits écrans */
-    height: 80px;
-  }
-  .footer {
-    margin-top: 1800px;
-  }
-}
-
 .card:hover {
   transform: translateY(-5px);
 }
 
 h2 {
   text-align: center;
-  color: var(--gris);
+  color: var(--blanc);
 }
 
 footer {
@@ -586,5 +548,5 @@ footer {
   margin-bottom: 10px;
 }
 footer p {
-  color: var(--gris);
+  color: var(--blanc);
 }
