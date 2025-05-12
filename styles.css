@@ -542,6 +542,11 @@ h2 {
   color: var(--blanc);
 }
 
+div.map {
+  display: flex;
+  justify-content: center;
+}
+
 footer {
   text-align: center;
   margin-top: 10px;
