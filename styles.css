@@ -19,15 +19,6 @@
   z-index: 9999; /* S'assure que le bouton est au premier plan */
 }
 
-/* Spécifiquement pour les téléphones */
-@media (max-width: 768px) {
-  .calendly-badge-widget {
-    position: fixed; /* Fixe la position du bouton */
-    bottom: 10px; /* Ajustement du bas pour les petits écrans */
-    left: 10px; /* Ajustement du bord gauche */
-  }
-}
-
 /* Ecran de chargement */
 #loading-screen {
   position: fixed;
@@ -103,9 +94,6 @@ p#animated-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 100px;
-
-  word-wrap: break-word;
 }
 
 .Texte p {
@@ -175,10 +163,6 @@ p#animated-text {
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.presta:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
 
 .presta h3 {
   font-size: 1.5em;
@@ -191,16 +175,6 @@ p#animated-text {
   color: var(--gris);
   font-size: 1em;
   line-height: 1.5;
-}
-
-@media (max-width: 768px) {
-  .presta {
-    max-width: 100%; /* Pleine largeur sur les écrans mobiles */
-  }
-
-  .prestations-row {
-    flex-direction: column; /* Empile les cartes verticalement */
-  }
 }
 
 .list {
@@ -223,44 +197,6 @@ p#animated-text {
   left: 0;
   color: var(--orange-foncé);
   font-size: 1.2em;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .presta {
-    width: 100%; /* Sur les petits écrans, les prestations prennent toute la largeur */
-  }
-
-  .prestations-row {
-    flex-direction: column; /* Empile les prestations verticalement */
-  }
-
-  .Texte {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-  }
-
-  .text-code {
-    max-width: 500px;
-  }
-}
-
-@media (max-width: 768px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-@media screen and (max-width: 1024px) {
-  .info {
-    flex-direction: column;
-  }
-  .avatar {
-    display: flex;
-    justify-content: space-evenly;
-  }
 }
 
 h1 {
@@ -376,63 +312,6 @@ img {
 }
 
 /* Par défaut (desktop) : effet hover */
-.card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-/* Sur les tablettes et téléphones : utiliser un clic à la place */
-@media (max-width: 1024px) {
-  .cards {
-    flex-direction: column;
-  }
-  .card {
-    width: 90%;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-
-  .card .card-inner {
-    transform: none; /* Empêche le hover par défaut */
-    transition: transform 0.5s;
-  }
-
-  .card.clicked .card-inner {
-    transform: rotateY(180deg);
-  }
-  div.experiences {
-    margin-left: 25%;
-    width: 50%;
-  }
-}
-/* Adaptation pour téléphones */
-@media (max-width: 768px) {
-  body {
-    width: 100%;
-  }
-  .cards {
-    flex-direction: column;
-  }
-  .card {
-    width: 100%;
-    height: 200px;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-
-  .card .card-inner {
-    transform: none; /* Empêche le hover par défaut */
-    transition: transform 0.5s;
-  }
-
-  .card.clicked .card-inner {
-    transform: rotateY(180deg);
-  }
-
-  div.experiences {
-    margin-left: 20px;
-    width: 100%;
-  }
-}
 
 .card-front,
 .card-back {
@@ -533,8 +412,17 @@ div.logo_expériences {
   justify-content: center;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.card .card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-back {
+  cursor: pointer;
 }
 
 h2 {
@@ -555,4 +443,72 @@ footer {
 }
 footer p {
   color: var(--blanc);
+}
+
+/* Sur les tablettes et téléphones : utiliser un clic à la place */
+@media (max-width: 1024px) {
+  .info {
+    flex-direction: column;
+  }
+  .avatar {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+  .card {
+    width: 90%;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  .card:hover .card-inner {
+    transform: none;
+  }
+  .card.clicked {
+    transform: rotateY(180deg);
+  }
+  div.experiences {
+    margin-left: 25%;
+    width: 50%;
+  }
+}
+
+/* Adaptation pour téléphones */
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+  div.Texte {
+    width: 90%;
+    margin-left: 5%;
+  }
+  #animated-text {
+    width: 90%;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 90%;
+    height: 300px;
+  }
+  div.experiences {
+    margin-left: 20px;
+    width: 100%;
+  }
+  .calendly-badge-widget {
+    bottom: 10px;
+    left: 10px;
+  }
+  .presta {
+    max-width: 100%;
+  }
+  .prestations-row {
+    flex-direction: column;
+  }
 }

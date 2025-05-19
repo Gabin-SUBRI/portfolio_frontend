@@ -7,7 +7,7 @@ window.addEventListener("load", function () {
   }, 1500); // délai de 1.5 seconde
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM entièrement chargé et analysé.");
   const textElement = document.getElementById("animated-text");
   const fullText = `Etudiant en développement web passionné par la création de solutions web performantes et innovantes. Spécialisé en HTML, CSS et Javascript, avec 1 ans d’expérience en Analyste et développement d'applications. Toujours prêt pour de nouveaux défis technologiques.`;
@@ -47,10 +47,15 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Action après 3 secondes !");
     typeWriter(); // Démarre l'animation de texte
   }, 3000);
-  /* Animations */
+  // Animations 
   gsap.from("#main-content", { duration: 3, opacity: 0, y: -50 });
   console.log("Animation du contenu principal lancée.");
 });
+*/
+
+function toggleFlip(card) {
+  card.classList.toggle("flipped");
+}
 
 window.addEventListener("load", function () {
   const logos = document.querySelectorAll(".logo");
