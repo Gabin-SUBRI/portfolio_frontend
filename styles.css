@@ -488,12 +488,19 @@ footer p {
 }
 
 .recto {
+  height: 250px;
+  width: 500px;
   background-color: var(--gris-clair);
   border-radius: 25px;
   border: 2px solid var(--gris);
   display: flex;
   justify-content: center;
 }
+
+#logo_contact {
+  height: auto;
+}
+
 .verso {
   height: 250px;
   width: 500px;
@@ -571,5 +578,12 @@ footer p {
   }
   .prestations-row {
     flex-direction: column;
+  }
+  #carte_de_visite {
+    flex-direction: column;
+  }
+  #recto #verso {
+    width: 100px;
+    height: 50px;
   }
 }
