@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projets</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/SplitText.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="icon" href="/img/logo GS fond sombre.png" type="image/png" />
+    <!-- Début de widget de badge Calendly -->
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+    ></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        Calendly.initBadgeWidget({
+          url: "https://calendly.com/gabinsubri",
+          text: "Prends un rdv",
+          color: "#e39162",
+          textColor: "#F2F2F2",
+          branding: true,
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <a href="/index.html">
+        <img id="logo" src="/img/logo GS fond clair.png"
+      /></a>
+      <a id="titre_header" href="/page/Projet.html">Projets</a>
+      <a id="titre_header" href="/page/Contact.html">Contact</a>
+    </div>
+    <div class="section">
+      <h2 id="pro">PROJETS PROFESSIONNELS</h2>
+      <br />
+      <div class="cards">
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="/img/lesdulcesdaurore.png"
+                alt="Assortiment coloré de bonbons avec un message promotionnel et le texte 'Bienvenue sur Les Dulces d'Aurore'"
+              />
+            </div>
+            <div class="card-back">
+              <p>
+                Site e-commerce de bonbons, basé sur Shopify pour une gestion
+                optimisée des produits et commandes.
+                <span>Mai 2024</span>
+              </p>
+              <button>
+                <a href="https://lesdulcesdaurore.com" target="_blank">
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="section">
+      <h2 id="perso">PROJETS PERSONNELS / FORMATIONS</h2>
+      <br />
+      <div class="cards">
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="/img/fourre-tout-pokemon.vercel.app.png"
+                alt="Site Fourre-tout Pokémon"
+              />
+            </div>
+            <div class="card-back">
+              <p>
+                Application web permettant de gérer et de conserver des URLs en
+                favori, développée pour l'EPSM74 avec un thème Pokémon et une
+                vidéo d'introduction intégrée.
+                <span>Avril 2025</span>
+              </p>
+              <button>
+                <a
+                  href="https://fourre-tout-pokemon.vercel.app"
+                  target="_blank"
+                >
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/img/ed-moi.png" alt="Projet Ed-Moi" />
+            </div>
+            <div class="card-back">
+              <p>
+                Site pour apprendre différents domaines, projet de deux ans au
+                sein de l'école IPI.
+                <span>Janvier 2025 - Juin 2027</span>
+              </p>
+              <button>
+                <a
+                  href="https://ed-moi-gabinsubris-projects.vercel.app"
+                  target="_blank"
+                >
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/img/todolist.png" alt="Site To-Do List" />
+            </div>
+            <div class="card-back">
+              <p>
+                Site pour créer une to-do list avec une gestion des priorités et
+                une sauvegarde interne.
+                <span>Janvier 2025</span>
+              </p>
+              <button>
+                <a href="https://tod-do-list.vercel.app" target="_blank">
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/img/calculatrice.png" alt="Calculatrice en ligne" />
+            </div>
+            <div class="card-back">
+              <p>
+                Site pour avoir une calculatrice en ligne.
+                <span>Janvier 2025</span>
+              </p>
+              <button>
+                <a href="https://calculatrice-tan.vercel.app" target="_blank">
+                  Visitez le site
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/img/ecoexplorer.png" alt="Projet Eco-Explorer" />
+            </div>
+            <div class="card-back">
+              <p>
+                Site vitrine pour un projet au sein de l'école IPI afin de créer
+                un jeu vidéo écologique.
+                <span>Novembre 2024</span>
+              </p>
+              <button>
+                <a href="https://eco-explorer.vercel.app" target="_blank">
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img
+                src="/img/livre-de-recettes.png"
+                alt="Livre de Recettes en ligne"
+              />
+            </div>
+            <div class="card-back">
+              <p>
+                Site vitrine de recettes en ligne inspiré d'un vieux grimoire.
+                <span>Novembre 2024</span>
+              </p>
+              <button>
+                <a href="https://livre-de-recettes.vercel.app" target="_blank">
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/img/idun_logo.png" alt="Site Idun" />
+            </div>
+            <div class="card-back">
+              <p>
+                Site vitrine pour un groupe de danse.
+                <span>Juin 2023</span>
+              </p>
+              <button>
+                <a href="https://idun.vercel.app" target="_blank">
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/img/mymoviz.png" alt="MyMoviz" />
+            </div>
+            <div class="card-back">
+              <p>
+                Site dédié au cinéma, intégrant des requêtes API pour récupérer
+                en temps réel les informations sur les films.
+                <span>Novembre 2022</span>
+              </p>
+              <button>
+                <a href="https://frontend-mymoviz.vercel.app" target="_blank">
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/img/site du renard.PNG" alt="Site du Renard" />
+            </div>
+            <div class="card-back">
+              <p>
+                Site vitrine pour e-commerce, conçu pour présenter des produits
+                en ligne avec une mise en page responsive.
+                <span>Juin 2022</span>
+              </p>
+              <button>
+                <a href="https://renarde.vercel.app/" target="_blank">
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" onclick="toggleFlip(this)">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="/img/sauvegarde69.PNG" alt="Sauvegarde 69" />
+            </div>
+            <div class="card-back">
+              <p>
+                Plateforme web pour la présentation des services sociaux et
+                médico-sociaux de l'association Sauvegarde 69.
+                <span>Juin - Juillet 2022</span>
+              </p>
+              <button>
+                <a href="https://www.sauvegarde69.fr" target="_blank">
+                  Visitez le site</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>&copy; Gabin Subri - 2025</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

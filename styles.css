@@ -52,6 +52,7 @@
 
 #main-content {
   display: none;
+  margin-top: 15px;
 }
 
 /* Styles généraux */
@@ -64,6 +65,25 @@ body {
   color: var(--blanc);
   margin: 0;
   padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: var(--gris-clair);
+  color: var(--gris);
+  padding-top: 10px;
+}
+
+#logo {
+  height: 100px;
+  width: 100px;
+}
+
+#titre_header {
+  margin: 30px 50px 0px 50px;
+  color: var(--gris);
+  font-weight: bold;
 }
 
 a {
@@ -82,11 +102,21 @@ p#animated-text {
   color: var(--blanc);
 }
 
+#icon_div {
+  display: flex;
+  justify-content: center;
+}
+
+#icon {
+  width: 30px;
+  height: auto;
+  margin: 15px;
+}
+
 .info {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 25px;
 }
 
 .Texte {
@@ -227,7 +257,10 @@ h2 {
   color: var(--blanc);
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: -20px;
+}
+
+#pro {
+  margin-top: 50px;
 }
 
 h3 {
@@ -443,6 +476,34 @@ footer {
 }
 footer p {
   color: var(--blanc);
+}
+
+/* Contact */
+
+#carte_de_visite {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.recto {
+  background-color: var(--gris-clair);
+  border-radius: 25px;
+  border: 2px solid var(--gris);
+  display: flex;
+  justify-content: center;
+}
+.verso {
+  height: 250px;
+  width: 500px;
+  background-color: var(--gris);
+  border-radius: 25px;
+  border: 2px solid var(--gris-clair);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Sur les tablettes et téléphones : utiliser un clic à la place */
