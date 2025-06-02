@@ -70,7 +70,7 @@ body {
 .header {
   display: flex;
   justify-content: center;
-  background-color: var(--gris-clair);
+  background: linear-gradient(to bottom, #d0d3d4, rgba(208, 211, 212, 0));
   color: var(--gris);
   padding-top: 10px;
 }
@@ -162,110 +162,140 @@ p#animated-text {
   }
 }
 
-.prestation {
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.prestation h2 {
-  text-align: center;
-  font-size: 2em;
-  margin-top: -20px;
-  margin-bottom: 40px;
-  color: var(--blanc);
-}
-
-.prestations-row {
+/* 🌟 Styles généraux */
+.tarif-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Aligne les prestations au centre */
-  gap: 20px; /* Espacement entre les cartes */
-  margin-bottom: 40px;
-}
-
-.presta {
-  background-color: var(--gris-clair);
-  border-radius: 15px;
+  justify-content: center;
+  gap: 20px;
   padding: 20px;
-  width: 100%; /* Pleine largeur sur petits écrans */
-  max-width: 45%; /* Ajuste la largeur pour aligner les cartes */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Améliore l'esthétique */
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.presta h3 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
   color: var(--gris);
 }
 
-.presta p {
-  margin-bottom: 20px;
-  color: var(--gris);
-  font-size: 1em;
-  line-height: 1.5;
+/* 🛒 Cartes de prestations */
+.tarif-card {
+  background: var(--blanc); /* Fond clair */
+  padding: 25px;
+  width: 320px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+
+  /* 🌟 Ajout pour centrer le contenu verticalement */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
-.list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 20px;
+/* 🖼️ Effet de survol */
+.tarif-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.list li {
-  color: var(--gris);
-  font-size: 0.95em;
-  margin-bottom: 10px;
-  position: relative;
-  padding-left: 20px;
+/* 🎨 Titre + emojis */
+.tarif-card .emoji {
+  display: block;
+  font-size: 40px;
+  margin-bottom: 8px;
 }
 
-.list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
+.tarif-card h3 {
   color: var(--orange-foncé);
-  font-size: 1.2em;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.section-title h3 {
+  color: var(--orange-foncé);
 }
 
-h1 {
-  font-size: 2.5em;
-  color: #eee;
+/* 📄 Texte */
+.tarif-card p {
+  font-size: 16px;
+  color: var(--gris);
 }
 
-.info p {
-  font-size: 1.1em;
-  color: #fff;
+/* 📜 Liste alignée au centre */
+.tarif-card ul {
+  text-align: center; /* Centrer les listes */
+  padding-left: 0; /* Supprimer l’espace de gauche */
+  list-style-position: inside; /* Garder les puces alignées */
 }
 
-p {
-  font-size: 1.1em;
-  color: var(--blanc);
-}
-
-p span {
+/* 💰 Prix bien centré */
+.tarif-card .price {
+  font-size: 20px;
   font-weight: bold;
+  color: var(--orange-clair);
+  display: block;
+  margin-top: 15px;
+}
+
+/* 🌟 Section titres */
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  text-align: center;
+}
+
+/* ✨ Texte des options */
+.options-text {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: var(--gris-fonce);
+}
+
+/*Information importante*/
+/* 🌟 Section informations */
+.info-section {
+  background: var(--gris-clair); /* Fond légèrement contrasté */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+/* 🔹 Titre */
+.info-section h3 {
+  color: var(--orange-foncé); /* Couleur bien visible */
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* 📜 Texte */
+.info-hosting {
+  font-size: 16px;
+  color: var(--gris);
+  line-height: 1.6;
+}
+
+/* ✨ Icônes & emojis */
+.info-hosting strong {
+  color: var(--orange-clair); /* Texte important en couleur */
+}
+
+.offer {
+  background: var(--orange-clair); /* Couleur qui attire l'œil */
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--gris);
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* Style pour les containers des expériences */
 
-h2 {
-  font-size: 2em;
-  text-align: center;
-  margin-bottom: 20px;
-  color: var(--blanc);
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
 #pro {
   margin-top: 50px;
-}
-
-h3 {
-  font-size: 1.8em;
-  color: var(--blanc);
 }
 
 .content {
@@ -480,110 +510,128 @@ footer p {
 
 /* Contact */
 
-#carte_de_visite {
-  height: 100vh;
+.section-contact {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
+  justify-content: center;
+  height: 80vh;
 }
 
-.recto {
-  height: 250px;
-  width: 500px;
-  background-color: var(--gris-clair);
-  border-radius: 25px;
-  border: 2px solid var(--gris);
-  display: flex;
+.card {
+  width: 550px; /* Augmenté pour un format carte de visite */
+  height: 350px; /* Hauteur réduite */
+  perspective: 1000px;
+  text-align: center;
+  display: flex; /* Permet le centrage */
+  align-items: center;
   justify-content: center;
 }
 
-#logo_contact {
-  height: auto;
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
 }
 
-.verso {
-  height: 250px;
-  width: 500px;
-  background-color: var(--gris);
-  border-radius: 25px;
-  border: 2px solid var(--gris-clair);
+/* Rotation de la carte au survol */
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Face avant */
+.card-front {
+  background-color: var(--gris-clair);
+  align-items: center;
+}
+
+/* Face arrière */
+.card-back {
+  transform: rotateY(180deg);
+  background: var(--gris);
+  color: var(--blanc);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* Sur les tablettes et téléphones : utiliser un clic à la place */
+.card-back p {
+  color: var(--blanc);
+}
+.card-back .card-icons a {
+  font-size: 18px;
+  color: white;
+  background: black;
+  width: 42px;
+  height: 42px;
+  border-radius: 100%;
+  margin: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.card-bar {
+  position: absolute;
+  width: 220px; /* Augmenté pour une barre plus longue */
+  height: 60px; /* Augmenté pour une barre plus épaisse */
+  top: 20px; /* Position ajustée */
+  right: -55px; /* Alignement à droite */
+  background-color: var(--gris-clair); /* Couleur de la barre */
+  color: white; /* Couleur du texte */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  transform: rotate(45deg); /* Inclinaison */
+}
+
+/* Effet au survol */
+.card-back .card-icons a:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* Correction du problème de clic */
+.card-front {
+  transition: opacity 0.6s;
+}
+
+.card:hover .card-front {
+  opacity: 0;
+}
+
+/* 🖥️ Effet hover uniquement sur desktop */
+@media (hover: hover) {
+  .tarif-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* 📱 Mobile & Tablette - Effet au clic */
 @media (max-width: 1024px) {
-  .info {
-    flex-direction: column;
-  }
-  .avatar {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .cards {
-    flex-direction: column;
-  }
-  .card {
-    width: 90%;
+  .tarif-card {
     cursor: pointer;
-    margin-bottom: 20px;
   }
-  .card:hover .card-inner {
-    transform: none;
-  }
-  .card.clicked {
-    transform: rotateY(180deg);
-  }
-  div.experiences {
-    margin-left: 25%;
-    width: 50%;
-  }
-}
 
-/* Adaptation pour téléphones */
-@media (max-width: 768px) {
-  body {
-    width: 100%;
-  }
-  div.Texte {
-    width: 90%;
-    margin-left: 5%;
-  }
-  #animated-text {
-    width: 90%;
-    white-space: normal;
-    word-wrap: break-word;
-  }
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    width: 90%;
-    height: 300px;
-  }
-  div.experiences {
-    margin-left: 20px;
-    width: 100%;
-  }
-  .calendly-badge-widget {
-    bottom: 10px;
-    left: 10px;
-  }
-  .presta {
-    max-width: 100%;
-  }
-  .prestations-row {
-    flex-direction: column;
-  }
-  #carte_de_visite {
-    flex-direction: column;
-  }
-  #recto #verso {
-    width: 100px;
-    height: 50px;
+  .tarif-card.active {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
   }
 }

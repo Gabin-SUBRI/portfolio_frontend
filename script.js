@@ -65,3 +65,17 @@ window.addEventListener("load", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const cards = document.querySelectorAll(".tarif-card");
+
+  cards.forEach((card) => {
+    card.addEventListener("click", function () {
+      // Supprime la classe active de toutes les cartes
+      cards.forEach((c) => c.classList.remove("active"));
+
+      // Ajoute la classe active à l'élément cliqué
+      this.classList.add("active");
+    });
+  });
+});
