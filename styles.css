@@ -218,6 +218,15 @@ p#animated-text {
   color: var(--gris);
 }
 
+.section-title,
+.options-text {
+  max-width: 90%; /* Réduit la largeur pour s'adapter à l'écran */
+  margin: auto; /* Centre le texte */
+  text-align: center; /* Assure un alignement propre */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 /* 📜 Liste alignée au centre */
 .tarif-card ul {
   text-align: center; /* Centrer les listes */
@@ -364,24 +373,32 @@ img {
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
+  border: none;
 }
 
 .card-inner {
-  position: relative;
-  width: 100%;
   height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 1s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  border: none;
 }
-
-/* Par défaut (desktop) : effet hover */
 
 .card-front,
 .card-back {
-  position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
+  border: none;
+}
+
+.card-front img {
+  max-height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .card-front {
@@ -407,6 +424,7 @@ img {
   margin: 10px;
   font-size: 16px;
   color: var(--gris);
+  border: none;
 }
 
 .card-back button {
@@ -429,6 +447,31 @@ img {
   cursor: pointer;
   display: block;
   align-items: center;
+}
+
+.card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.card.active .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-back {
+  transform: rotateY(180deg);
 }
 
 .experiences {
@@ -508,112 +551,72 @@ footer p {
   color: var(--blanc);
 }
 
-/* Contact */
+.card {
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.card .card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.active .card-inner {
+  transform: rotateY(180deg); /* Rotation au clic */
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card.active .card-back {
+  backface-visibility: visible;
+  opacity: 1;
+  display: flex !important;
+}
+
+.card-back {
+  display: flex !important; /* Assure que la face arrière est bien visible */
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 2; /* S'assure que la face arrière est bien au-dessus */
+  background-color: var(--gris);
+}
+
+.card-back p {
+  color: var(--blanc);
+}
+
+#front-visite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  transition: opacity 0.6s;
+  align-items: center;
+}
+
+.card.active .card-front {
+  opacity: 0; /* Cache la face avant quand la carte est retournée */
+}
+.card.active .card-inner {
+  transform: rotateY(180deg);
+}
 
 .section-contact {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 80vh;
-}
-
-.card {
-  width: 550px; /* Augmenté pour un format carte de visite */
-  height: 350px; /* Hauteur réduite */
-  perspective: 1000px;
-  text-align: center;
-  display: flex; /* Permet le centrage */
-  align-items: center;
-  justify-content: center;
-}
-
-.card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-/* Rotation de la carte au survol */
-.card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-.card-front,
-.card-back {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Face avant */
-.card-front {
-  background-color: var(--gris-clair);
-  align-items: center;
-}
-
-/* Face arrière */
-.card-back {
-  transform: rotateY(180deg);
-  background: var(--gris);
-  color: var(--blanc);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-back p {
-  color: var(--blanc);
-}
-.card-back .card-icons a {
-  font-size: 18px;
-  color: white;
-  background: black;
-  width: 42px;
-  height: 42px;
-  border-radius: 100%;
-  margin: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.card-bar {
-  position: absolute;
-  width: 220px; /* Augmenté pour une barre plus longue */
-  height: 60px; /* Augmenté pour une barre plus épaisse */
-  top: 20px; /* Position ajustée */
-  right: -55px; /* Alignement à droite */
-  background-color: var(--gris-clair); /* Couleur de la barre */
-  color: white; /* Couleur du texte */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  transform: rotate(45deg); /* Inclinaison */
-}
-
-/* Effet au survol */
-.card-back .card-icons a:hover {
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-/* Correction du problème de clic */
-.card-front {
-  transition: opacity 0.6s;
-}
-
-.card:hover .card-front {
-  opacity: 0;
 }
 
 /* 🖥️ Effet hover uniquement sur desktop */
@@ -633,5 +636,272 @@ footer p {
   .tarif-card.active {
     transform: translateY(-10px);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* 🌍 Ajout des Media Queries */
+@media (max-width: 1024px) {
+  .info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Texte p {
+    font-size: 1em;
+  }
+
+  .tarif-container {
+    flex-direction: column;
+  }
+
+  .tarif-card {
+    width: 90%;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  #titre_header {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  .info-section {
+    width: 100%;
+  }
+
+  .event-content {
+    width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .Texte p {
+    font-size: 0.9em;
+  }
+
+  .tarif-card h3 {
+    font-size: 18px;
+  }
+
+  .tarif-card p {
+    font-size: 14px;
+  }
+
+  .card-back p {
+    font-size: 14px;
+  }
+
+  .info-section h3 {
+    font-size: 20px;
+  }
+}
+
+/* 🖼️ Optimisation des images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 🚀 Correction des styles */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 📱 Responsive pour la section contact */
+@media (max-width: 1024px) {
+  .section-contact {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .card-bar {
+    width: 180px;
+    height: 50px;
+    font-size: 14px;
+    top: 10px;
+    right: -40px;
+  }
+}
+
+/* ✨ Effet tactile en plus du hover */
+@media (max-width: 1024px) {
+  .tarif-card {
+    cursor: pointer;
+  }
+
+  .tarif-card.active {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .card {
+    width: 45%; /* Réduit la largeur pour un affichage plus équilibré */
+    height: auto; /* Ajuste la hauteur dynamiquement */
+  }
+
+  .tarif-card {
+    cursor: pointer; /* Indique que l'élément est cliquable */
+  }
+
+  .tarif-card.active {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+@media (max-width: 768px) {
+  .header a.patate {
+    color: var(--blanc) !important;
+  }
+
+  .avatar {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement si nécessaire */
+    width: 100%; /* Prend toute la largeur disponible */
+  }
+
+  #avatar {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .Texte {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+    overflow: hidden; /* Empêche tout débordement */
+  }
+
+  #animated-text {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 0 5%; /* Ajoute un peu d'espace des deux côtés */
+    box-sizing: border-box; /* Évite que la largeur totale dépasse son conteneur */
+  }
+  .tarif-container {
+    display: flex;
+    flex-direction: column; /* Dispose les cartes en colonne */
+    align-items: center; /* Centre les cartes */
+  }
+
+  #tarif-card {
+    width: 90%; /* Évite que la carte soit trop large */
+    margin: 10px auto; /* Centre la carte avec une petite marge */
+  }
+
+  .options-text {
+    font-size: 0.9rem; /* Réduit un peu la taille */
+    padding: 0 10px; /* Ajoute une marge intérieure pour éviter le débordement */
+  }
+
+  .card {
+    display: block !important;
+    width: 90%;
+    height: auto;
+  }
+
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Change de absolute à relative */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+  }
+
+  .cards {
+    flex-direction: column; /* Place les cartes en colonne */
+    align-items: center; /* Centre l'affichage */
+  }
+
+  .card-front img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Assure que l'image ne dépasse pas */
+    display: block;
+  }
+
+  .Texte {
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+    overflow: hidden; /* Empêche tout débordement */
+  }
+
+  #animated-text {
+    display: block;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Force le retour à la ligne */
+    width: 100%; /* Assure que le texte reste bien dans son conteneur */
+    max-width: 90%; /* Limite la largeur */
+    padding: 0 5%; /* Évite que le texte touche les bords */
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column; /* Affiche les faces l'une sous l'autre */
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .card-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: none; /* Désactive la rotation */
+  }
+
+  .card-front,
+  .card-back {
+    position: relative;
+    width: 100%;
+    height: auto;
+    backface-visibility: visible; /* Assure que tout est affiché */
+  }
+
+  .card-back {
+    transform: none !important; /* Assure l'affichage */
+    display: flex;
   }
 }

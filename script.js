@@ -66,16 +66,14 @@ window.addEventListener("load", function () {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const cards = document.querySelectorAll(".tarif-card");
-
-  cards.forEach((card) => {
-    card.addEventListener("click", function () {
-      // Supprime la classe active de toutes les cartes
-      cards.forEach((c) => c.classList.remove("active"));
-
-      // Ajoute la classe active à l'élément cliqué
-      this.classList.add("active");
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".card").forEach((card) => {
+    if (window.innerWidth > 768) {
+      // Seuil pour désactiver sur mobile
+      card.addEventListener("click", function () {
+        this.classList.toggle("active");
+        console.log("Classe active :", this.classList.contains("active"));
+      });
+    }
   });
 });
