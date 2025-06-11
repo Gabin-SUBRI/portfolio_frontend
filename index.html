@@ -1,273 +1,368 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gabin SUBRI</title>
+    <title>Gabin Subri - Développeur Web & Designer</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/SplitText.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link rel="icon" href="/img/logo GS fond sombre.png" type="image/png" />
-    <!-- Début de widget de badge Calendly -->
-    <link
-      href="https://assets.calendly.com/assets/external/widget.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://assets.calendly.com/assets/external/widget.js"
-      type="text/javascript"
-      async
-    ></script>
-    <script type="text/javascript">
-      window.onload = function () {
-        Calendly.initBadgeWidget({
-          url: "https://calendly.com/gabinsubri",
-          text: "Prends un rdv",
-          color: "#e39162",
-          textColor: "#F2F2F2",
-          branding: true,
-        });
-      };
-    </script>
-    <!-- Fin de widget de badge Calendly -->
   </head>
   <body>
-    <div id="loading-screen">
-      <div class="spinner"></div>
-    </div>
-    <div class="header">
-      <a href="/index.html">
-        <img id="logo" src="/img/logo GS fond clair.png"
-      /></a>
-      <a id="titre_header" href="/page/Projet.html">Projets</a>
-      <a id="titre_header" class="patate" href="/page/Contact.html">Contact</a>
-    </div>
-    <div id="main-content" style="display: none">
-      <div class="info">
-        <div class="avatar">
-          <img id="avatar" src="/img/pp_gabin.jpg" />
+    <!-- Particules animées -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#option">Options</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="profile-image">
+          <img src="/img/pp_gabin.jpg" alt="photo de profil" />
         </div>
-        <div class="Texte">
-          <p id="animated-text" class="text-code">
-            Etudiant en développement web passionné par la création de solutions
-            web performantes et innovantes. Spécialisé en HTML, CSS et
-            Javascript, avec 1 ans d’expérience en Analyste et développement
-            d'applications. Toujours prêt pour de nouveaux défis technologiques.
+        <h1>Gabin Subri</h1>
+        <p class="subtitle">Développeur Web & Designer Créatif</p>
+        <a href="#services" class="cta-button">Découvrir Mes Services</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <h2 class="section-title fade-in">🌟 Mes Services</h2>
+      <div class="services-grid">
+        <div class="service-card fade-in stagger-animation" style="--i: 0">
+          <span class="service-icon">🌐</span>
+          <h3>Site Vitrine</h3>
+          <p>
+            Un site web professionnel pour présenter votre activité en ligne.
           </p>
-          <div id="icon_div">
-            <a href="https://github.com/Gabin-SUBRI" target="_blank"
-              ><img id="icon" src="/img/github-sign.png" alt="icon_github"
-            /></a>
-            <a href="https://www.linkedin.com/in/gabin-subri/" target="_blank"
-              ><img id="icon" src="/img/linkedin-logo.png" alt="icon_likedin"
-            /></a>
-            <a href="mailto:gabin.subri@gmail.com" target="_blank"
-              ><img id="icon" src="/img/email-modified.png" alt="icon_mail"
-            /></a>
-            <a href="https://www.malt.fr/profile/gabinsubri" target="_blank">
-              <img id="icon" src="/img/malt.png" alt="icon_malt" />
-            </a>
-            <a href="https://www.instagram.com/gabin_subri/" target="_blank">
-              <img id="icon" src="/img/instagram.png" alt="icon_instagram" />
-            </a>
-          </div>
+          <ul class="service-features">
+            <li>Pages essentielles complètes</li>
+            <li>Design responsive</li>
+            <li>Optimisation SEO de base</li>
+            <li>Maquette gratuite incluse</li>
+          </ul>
+          <div class="price">À partir de 1000€</div>
+        </div>
+
+        <div class="service-card fade-in stagger-animation" style="--i: 1">
+          <span class="service-icon">🛒</span>
+          <h3>Site E-commerce</h3>
+          <p>Boutique en ligne avec gestion des stocks et paiement sécurisé.</p>
+          <ul class="service-features">
+            <li>Design personnalisé</li>
+            <li>Gestion des stocks</li>
+            <li>Paiement sécurisé</li>
+            <li>SEO avancé</li>
+          </ul>
+          <div class="price">Sur devis</div>
+        </div>
+
+        <div class="service-card fade-in stagger-animation" style="--i: 2">
+          <span class="service-icon">🔄</span>
+          <h3>Refonte de Site</h3>
+          <p>
+            Modernisez votre site existant avec une nouvelle structure
+            optimisée.
+          </p>
+          <ul class="service-features">
+            <li>Refonte complète</li>
+            <li>Design moderne</li>
+            <li>Optimisation performances</li>
+            <li>Migration sécurisée</li>
+          </ul>
+          <div class="price">Sur devis</div>
         </div>
       </div>
-      <section class="tarifs">
-        <h2>🌟 Mes Services et Tarifs</h2>
-
-        <!-- Offres principales -->
-        <h3 class="section-title">🔹 Packs principaux</h3>
-        <div class="tarif-container">
-          <!-- Site vitrine -->
-          <div class="tarif-card">
-            <span class="emoji">💻</span>
-            <h3>Site vitrine</h3>
-            <p>
-              Un site web professionnel pour présenter votre activité en ligne.
-            </p>
-            <ul>
-              <li>
-                📄 Pages essentielles (Accueil, Services, À propos, Contact).
-              </li>
-              <li>📱 Site responsive adapté aux mobiles.</li>
-              <li>📈 Optimisation SEO de base.</li>
-              <li>
-                🎨 <strong>Première maquette gratuite</strong> pour visualiser
-                votre projet.
-              </li>
-            </ul>
-
-            <span class="price">1 000,00 €</span>
-          </div>
-
-          <!-- Site e-commerce -->
-          <div class="tarif-card">
-            <span class="emoji">🛒</span>
-            <h3>Site e-commerce</h3>
-            <p>
-              Boutique en ligne avec gestion des stocks et paiement sécurisé.
-            </p>
-            <ul>
-              <li>🎨 Design personnalisé et adaptatif.</li>
-              <li>🔍 Optimisation SEO avancée.</li>
-              <li>🖥️ Site responsive.</li>
-              <li>
-                🎨 <strong>Première maquette gratuite</strong> pour valider le
-                concept.
-              </li>
-            </ul>
-
-            <span class="price">Sur devis</span>
-          </div>
-
-          <!-- Refonte de site web -->
-          <div class="tarif-card">
-            <span class="emoji">🔧</span>
-            <h3>Refonte de site web</h3>
-            <p>
-              Améliorez ou modernisez votre site existant avec une nouvelle
-              structure et un design optimisé.
-            </p>
-            <ul>
-              <li>⚙️ Refonte complète du site en dur ou sous WordPress.</li>
-              <li>🎨 Mise à jour du design pour un look plus moderne.</li>
-              <li>🚀 Optimisation des performances et du SEO.</li>
-            </ul>
-            <span class="price">Sur devis</span>
-          </div>
+    </section>
+    <!-- Services Option -->
+    <section class="services" id="option">
+      <h2 class="section-title fade-in">🌟 Mes Options</h2>
+      <div class="services-grid">
+        <div class="service-card fade-in stagger-animation" style="--i: 1">
+          <span class="service-icon">📅</span>
+          <h3>Module de Réservation</h3>
+          <p>Ajoutez un système de réservation simple et intuitif.</p>
+          <ul class="service-features">
+            <li>Interface intuitive</li>
+            <li>Gestion des créneaux</li>
+            <li>Notifications automatiques</li>
+            <li>Synchronisation calendrier</li>
+          </ul>
+          <div class="price">200€</div>
         </div>
 
-        <!-- Services optionnels -->
-        <h3 class="section-title">✨ Options supplémentaires</h3>
-        <p class="options-text">
-          Ajoutez des fonctionnalités pour optimiser votre site et améliorer
-          l'expérience utilisateur.
-        </p>
+        <div class="service-card fade-in stagger-animation" style="--i: 2">
+          <span class="service-icon">🔍</span>
+          <h3>SEO avancé</h3>
+          <p>
+            Améliorez votre visibilité sur Google avec une optimisation poussée.
+          </p>
+          <ul class="service-features">
+            <li>Optimisation technique du site</li>
+            <li>Recherche et intégration de mots-clés</li>
+            <li>Création de contenu SEO-friendly</li>
+            <li>Netlinking et autorité</li>
+          </ul>
 
-        <div class="tarif-container">
-          <!-- Réservation en ligne -->
-          <div class="tarif-card">
-            <span class="emoji">📅</span>
-            <h3>Module de réservation</h3>
-            <p>Ajoutez un système de réservation simple et intuitif.</p>
-            <span class="price">200,00 €</span>
-          </div>
-
-          <!-- SEO avancé -->
-          <div class="tarif-card">
-            <span class="emoji">🔍</span>
-            <h3>SEO avancé</h3>
-            <p>
-              Améliorez votre visibilité sur Google avec une optimisation
-              poussée.
-            </p>
-            <span class="price">300,00 €</span>
-          </div>
-
-          <!-- Gestion réseaux sociaux -->
-          <div class="tarif-card">
-            <span class="emoji">📱</span>
-            <h3>Gestion réseaux sociaux</h3>
-            <p>Publications et engagement avec votre audience.</p>
-            <span class="price">150,00 € / mois</span>
-          </div>
-
-          <!-- Maintenance (annuelle & mensuelle) -->
-          <div class="tarif-card">
-            <span class="emoji">🔧</span>
-            <h3>Maintenance du site</h3>
-            <p>
-              Choisissez une maintenance
-              <strong>annuelle ou mensuelle</strong> pour garder votre site
-              performant et sécurisé.
-            </p>
-            <ul>
-              <li>🔄 Mises à jour régulières.</li>
-              <li>🛡️ Sécurité renforcée.</li>
-              <li>📞 Support technique réactif.</li>
-            </ul>
-            <p class="offer">
-              💡 <strong>Abonnement annuel : 2 mois offerts !</strong>
-            </p>
-            <span class="price">250,00 € / an | 25,00 € / mois</span>
-          </div>
-
-          <div class="tarif-card">
-            <span class="emoji">🌐</span>
-            <h3>Gestion Hébergement & Nom de Domaine</h3>
-            <p>
-              Vous souhaitez un accompagnement complet ? Je peux gérer votre
-              <strong
-                >hébergement web et l'achat de votre nom de domaine</strong
-              >
-              selon vos besoins.
-            </p>
-            <ul>
-              <li>Ouverture de compte chez Hostinger (ou autre hébergeur)</li>
-              <li>Achat & configuration du nom de domaine</li>
-              <li>Paramétrage du site et des emails professionnels</li>
-              <li>
-                Gestion et renouvellement annuel de votre domaine et hébergement
-              </li>
-            </ul>
-            <p class="price">Sur devis</p>
-          </div>
-          <div class="tarif-card">
-            <span class="emoji">🎨</span>
-            <h3>Création Design & Animation</h3>
-            <p>
-              Vous cherchez une identité visuelle forte et des animations
-              engageantes ? Je vous propose une solution adaptée à votre marque
-              pour un rendu professionnel et unique.
-            </p>
-            <ul>
-              <li>
-                Conception graphique sur-mesure (logo, visuels, illustrations)
-              </li>
-              <li>
-                Animation et motion design pour votre communication digitale
-              </li>
-              <li>
-                Montage vidéo et effets spéciaux pour un contenu captivant
-              </li>
-              <li>Optimisation pour les réseaux sociaux et supports web</li>
-            </ul>
-            <p class="price">300€</p>
-          </div>
+          <div class="price">300€</div>
         </div>
-      </section>
-      <section class="info-section">
-        <h3>ℹ️ Informations importantes</h3>
-        <p class="info-hosting">
-          🖥️ <strong>Hébergement & domaine</strong> : À gérer par le client,
-          option disponible sur devis. 🔄 <br /><strong>Maintenance</strong> :
-          Disponible en formule mensuelle ou annuelle. 🎨<br />
-          <strong>Maquette gratuite</strong> incluse dans les packs vitrine et
-          e-commerce.
-        </p>
-      </section>
 
-      <footer class="footer">
-        <p>&copy; Gabin Subri - 2025</p>
-      </footer>
-    </div>
-    <script src="script.js"></script>
-    <script>
-      window.si =
-        window.si ||
-        function () {
-          (window.siq = window.siq || []).push(arguments);
-        };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+        <div class="service-card fade-in stagger-animation" style="--i: 3">
+          <span class="service-icon">📱</span>
+          <h3>Gestion Réseaux Sociaux</h3>
+          <p>Publications et engagement avec votre audience.</p>
+          <ul class="service-features">
+            <li>Stratégie de contenu optimisée</li>
+            <li>Engagement et interaction</li>
+            <li>Analyse des performances</li>
+            <li>Publicité ciblée</li>
+          </ul>
+          <div class="price">150€ / mois</div>
+        </div>
+
+        <div class="service-card fade-in stagger-animation" style="--i: 4">
+          <span class="service-icon">🔧</span>
+          <h3>Maintenance du Site</h3>
+          <p>
+            Choisissez une maintenance annuelle ou mensuelle pour garder votre
+            site performant et sécurisé.
+          </p>
+          <ul class="service-features">
+            <li>Mises à jour régulières</li>
+            <li>Sécurité renforcée</li>
+            <li>Support technique réactif</li>
+            <li>Abonnement annuel : 2 mois offerts !</li>
+          </ul>
+          <div class="price">250€ / an | 25€ / mois</div>
+        </div>
+
+        <div class="service-card fade-in stagger-animation" style="--i: 5">
+          <span class="service-icon">🌐</span>
+          <h3>Gestion Hébergement & Nom de Domaine</h3>
+          <p>
+            Accompagnement complet pour votre hébergement et votre nom de
+            domaine.
+          </p>
+          <ul class="service-features">
+            <li>Ouverture de compte chez un hébergeur</li>
+            <li>Achat & configuration du nom de domaine</li>
+            <li>Paramétrage du site et des emails pro</li>
+            <li>Gestion et renouvellement annuel</li>
+          </ul>
+          <div class="price">Sur devis</div>
+        </div>
+
+        <div class="service-card fade-in stagger-animation" style="--i: 6">
+          <span class="service-icon">🎨</span>
+          <h3>Création Design & Animation</h3>
+          <p>
+            Une identité visuelle forte et des animations engageantes adaptées à
+            votre marque.
+          </p>
+          <ul class="service-features">
+            <li>
+              Conception graphique sur-mesure (logo, visuels, illustrations)
+            </li>
+            <li>
+              Animation et motion design pour votre communication digitale
+            </li>
+            <li>Montage vidéo et effets spéciaux pour un contenu captivant</li>
+            <li>Optimisation pour les réseaux sociaux et supports web</li>
+          </ul>
+          <div class="price">300€</div>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="section-title fade-in">🎨 Mon Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 1">
+          <img src="/img/lesdulcesdaurore.png" alt="Les Dulces d'Aurore" />
+          <h3>Les Dulces d'Aurore</h3>
+          <p>
+            Site e-commerce de bonbons, basé sur Shopify pour une gestion
+            optimisée des produits et commandes.
+          </p>
+          <a
+            href="https://lesdulcesdaurore.com"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 2">
+          <img
+            src="/img/fourre-tout-pokemon.vercel.app.png"
+            alt="fourre-tout-pokemon"
+          />
+          <h3>Fourre tout Pokemon</h3>
+          <p>
+            Application web permettant de gérer et de conserver des URLs en
+            favori, développée pour l'EPSM74 avec un thème Pokémon et une vidéo
+            d'introduction intégrée.
+          </p>
+          <a
+            href="https://fourre-tout-pokemon.vercel.app"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 3">
+          <img src="/img/ed-moi.png" alt="ed-moi" />
+          <h3>Ed'moi</h3>
+          <p>
+            Site pour apprendre différents domaines, projet de deux ans au sein
+            de l'école IPI.
+          </p>
+          <a
+            href="https://ed-moi-gabinsubris-projects.vercel.app"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 4">
+          <img src="/img/todolist.png" alt="Site To-Do List" />
+          <h3>To-Do List</h3>
+          <p>
+            Site pour créer une to-do list avec gestion des priorités et
+            sauvegarde interne.
+          </p>
+          <a
+            href="https://tod-do-list.vercel.app"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 5">
+          <img src="/img/calculatrice.png" alt="Calculatrice en ligne" />
+          <h3>Calculatrice</h3>
+          <p>Site pour avoir une calculatrice en ligne.</p>
+          <a
+            href="https://calculatrice-tan.vercel.app"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 6">
+          <img src="/img/ecoexplorer.png" alt="Projet Eco-Explorer" />
+          <h3>Eco-Explorer</h3>
+          <p>
+            Site vitrine pour un projet de création d’un jeu vidéo écologique.
+          </p>
+          <a
+            href="https://eco-explorer.vercel.app"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 7">
+          <img
+            src="/img/livre-de-recettes.png"
+            alt="Livre de Recettes en ligne"
+          />
+          <h3>Livre de Recettes</h3>
+          <p>Site vitrine de recettes en ligne inspiré d'un vieux grimoire.</p>
+          <a
+            href="https://livre-de-recettes.vercel.app"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 8">
+          <img src="/img/idun_logo.png" alt="Site Idun" />
+          <h3>Idun</h3>
+          <p>Site vitrine pour un groupe de danse.</p>
+          <a
+            href="https://idun.vercel.app"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 9">
+          <img src="/img/mymoviz.png" alt="MyMoviz" />
+          <h3>MyMoviz</h3>
+          <p>
+            Site dédié au cinéma, intégrant des requêtes API pour récupérer en
+            temps réel les infos sur les films.
+          </p>
+          <a
+            href="https://frontend-mymoviz.vercel.app"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 10">
+          <img src="/img/site du renard.PNG" alt="Site du Renard" />
+          <h3>Site du Renard</h3>
+          <p>
+            Site e-commerce conçu pour présenter des produits avec une mise en
+            page responsive.
+          </p>
+          <a
+            href="https://renarde.vercel.app/"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+
+        <div class="portfolio-item fade-in stagger-animation" style="--i: 11">
+          <img src="/img/sauvegarde69.PNG" alt="Sauvegarde 69" />
+          <h3>Sauvegarde 69</h3>
+          <p>
+            Plateforme web pour la présentation des services sociaux et
+            médico-sociaux.
+          </p>
+          <a
+            href="https://www.sauvegarde69.fr"
+            target="_blank"
+            class="portfolio-button"
+            >Voir le site</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2 class="section-title fade-in">💬 Contactez-moi</h2>
+      <div class="contact-form fade-in">
+        <form>
+          <a href="https://calendly.com/gabinsubri/30min" target="_blank">
+            <button type="button" class="cta-button">
+              Prendre rendez-vous
+            </button>
+          </a>
+        </form>
+      </div>
+    </section>
+
+    <script src="/script.js"></script>
   </body>
-  <!--patate-->
 </html>

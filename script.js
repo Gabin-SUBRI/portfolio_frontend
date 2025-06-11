@@ -1,79 +1,70 @@
-window.addEventListener("load", function () {
-  console.log("Page chargée, lancement de l'écran de chargement.");
-  setTimeout(function () {
-    document.getElementById("loading-screen").style.display = "none";
-    document.getElementById("main-content").style.display = "block";
-    console.log("Écran de chargement caché, affichage du contenu principal.");
-  }, 1500); // délai de 1.5 seconde
-});
+// Création des particules
+function createParticles() {
+  const particles = document.getElementById("particles");
+  const particleCount = 50;
 
-/*document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM entièrement chargé et analysé.");
-  const textElement = document.getElementById("animated-text");
-  const fullText = `Etudiant en développement web passionné par la création de solutions web performantes et innovantes. Spécialisé en HTML, CSS et Javascript, avec 1 ans d’expérience en Analyste et développement d'applications. Toujours prêt pour de nouveaux défis technologiques.`;
-  let charIndex = 0;
-
-  function typeWriter() {
-    if (charIndex < fullText.length) {
-      textElement.textContent += fullText.charAt(charIndex);
-      charIndex++;
-
-      // Vérifier la longueur de la ligne actuelle sans couper les mots
-      const lines = textElement.textContent.split("\n");
-      const currentLine = lines[lines.length - 1];
-
-      if (currentLine.length >= 30) {
-        const lastSpaceIndex = currentLine.lastIndexOf(" ");
-        if (lastSpaceIndex !== -1) {
-          textElement.textContent =
-            textElement.textContent.slice(
-              0,
-              textElement.textContent.lastIndexOf(" ")
-            ) +
-            "\n" +
-            textElement.textContent.slice(
-              textElement.textContent.lastIndexOf(" ") + 1
-            );
-        }
-      }
-
-      setTimeout(typeWriter, 20);
-    } else {
-      textElement.style.border = "none"; // Supprime le curseur clignotant après animation
-    }
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement("div");
+    particle.className = "particle";
+    particle.style.left = Math.random() * 100 + "%";
+    particle.style.animationDelay = Math.random() * 20 + "s";
+    particle.style.animationDuration = Math.random() * 10 + 10 + "s";
+    particles.appendChild(particle);
   }
-
-  setTimeout(function () {
-    console.log("Action après 3 secondes !");
-    typeWriter(); // Démarre l'animation de texte
-  }, 3000);
-  // Animations 
-  gsap.from("#main-content", { duration: 3, opacity: 0, y: -50 });
-  console.log("Animation du contenu principal lancée.");
-});
-*/
-
-function toggleFlip(card) {
-  card.classList.toggle("flipped");
 }
 
-window.addEventListener("load", function () {
-  const logos = document.querySelectorAll(".logo");
-  logos.forEach((logo) => {
-    logo.addEventListener("error", function () {
-      console.error("Erreur de chargement d'image pour ", this.href);
+// Animation au scroll
+function handleScrollAnimations() {
+  const fadeElements = document.querySelectorAll(".fade-in");
+
+  fadeElements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top;
+    const elementVisible = 150;
+
+    if (elementTop < window.innerHeight - elementVisible) {
+      element.classList.add("visible");
+    }
+  });
+}
+
+// Smooth scroll pour la navigation
+document.querySelectorAll("nav a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+
+    targetSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
     });
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".card").forEach((card) => {
-    if (window.innerWidth > 768) {
-      // Seuil pour désactiver sur mobile
-      card.addEventListener("click", function () {
-        this.classList.toggle("active");
-        console.log("Classe active :", this.classList.contains("active"));
-      });
-    }
+// Effet de survol sur les cartes de service
+document.querySelectorAll(".service-card").forEach((card) => {
+  card.addEventListener("mouseenter", function () {
+    this.style.transform = "translateY(-15px) scale(1.03)";
   });
+
+  card.addEventListener("mouseleave", function () {
+    this.style.transform = "translateY(0) scale(1)";
+  });
+});
+
+// Initialisation
+document.addEventListener("DOMContentLoaded", function () {
+  createParticles();
+  handleScrollAnimations();
+
+  window.addEventListener("scroll", handleScrollAnimations);
+});
+
+// Effet de parallaxe sur le hero
+window.addEventListener("scroll", () => {
+  const scrolled = window.pageYOffset;
+  const hero = document.querySelector(".hero");
+  const rate = scrolled * -0.5;
+
+  hero.style.transform = `translateY(${rate}px)`;
 });

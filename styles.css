@@ -1,47 +1,194 @@
-:root {
-  --blanc: #f2f2f2; /* Gris clair */
-  --gris: #252525; /* Gris foncé */
-  --orange-foncé: #e39162; /* Orange foncé */
-  --orange-clair: #ebaf8d; /* Orange clair */
-  --gris-clair: #d0d3d4; /* gris clair*/
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Styles par défaut */
-.calendly-badge-widget {
-  position: fixed;
-  bottom: 20px; /* Distance du bas de l'écran */
-  left: 20px; /* Distance du bord gauche */
-  z-index: 9999; /* S'assure que le bouton est au premier plan */
+
+:root {
+  --primary-color: #e39162; /* Orange foncé */
+  --secondary-color: #ebaf8d; /* Orange clair */
+  --accent-color: #d0d3d4; /* Gris clair */
+  --text-light: #f2f2f2; /* Blanc */
+  --text-dark: #252525; /* Gris foncé */
+  --background-dark: #252525; /* Gris foncé */
+  --glass-bg: rgba(242, 242, 242, 0.1); /* Adapté au blanc */
+  --glass-border: rgba(242, 242, 242, 0.2); /* Adapté au blanc */
 }
 
-/* Ecran de chargement */
-#loading-screen {
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(
+    -45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color),
+    #e39162
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: var(--text-dark);
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Particules flottantes */
+.particles {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: var(--gris);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: float 20s infinite linear;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  padding: 10px 20px;
+  animation: slideInRight 1s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-.spinner {
-  border: 8px dotted var(--gris); /* Light grey */
-  border-top: 8px dotted var(--blanc); /* Blue */
-  border-left: 8px dotted var(--blanc); /* Blue */
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  width: 60px; /* Modifie la taille ici */
-  height: 60px; /* Modifie la taille ici */
-  animation: spin 0.5s linear infinite; /* Modifie la durée ici */
+  margin: 0 auto 2rem;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  animation: profileFloat 6s ease-in-out infinite;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes spin {
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-image::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    var(--accent-color),
+    #e39162,
+    #ebaf8d,
+    #e39162
+  );
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes profileFloat {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -50,298 +197,53 @@
   }
 }
 
-#main-content {
-  display: none;
-  margin-top: 15px;
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease 0.5s both;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Styles généraux */
-
-body {
-  font-family: "Montserrat", sans-serif;
-  line-height: 1.5;
-  margin: 20px;
-  background-color: var(--gris);
-  color: var(--blanc);
-  margin: 0;
-  padding: 0;
+.hero .subtitle {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease 0.7s both;
+  opacity: 0.9;
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(to bottom, #d0d3d4, rgba(208, 211, 212, 0));
-  color: var(--gris);
-  padding-top: 10px;
-}
-
-#logo {
-  height: 100px;
-  width: 100px;
-}
-
-#titre_header {
-  margin: 30px 50px 0px 50px;
-  color: var(--gris);
-  font-weight: bold;
-}
-
-a {
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
   text-decoration: none;
-  color: var(--blanc);
-}
-
-#avatar {
-  max-width: 400px;
-  height: auto;
-  border-radius: 50%;
-  margin: 20px 0;
-}
-
-p#animated-text {
-  color: var(--blanc);
-}
-
-#icon_div {
-  display: flex;
-  justify-content: center;
-}
-
-#icon {
-  width: 30px;
-  height: auto;
-  margin: 15px;
-}
-
-.info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.Texte {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.Texte p {
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 600;
-  font-size: 1.2em;
-  color: var(--gris);
-  line-height: 1.2em; /* Ajuste la hauteur de la ligne */
-  white-space: pre; /* Préserve les espaces pour l'effet de machine à écrire */
-  overflow: hidden; /* Cache le texte débordant */
-  position: relative; /* Nécessaire pour positionner le pseudo-élément */
-}
-
-.Texte p::after {
-  content: ""; /* Contenu vide pour le curseur */
-  position: absolute;
-  right: auto;
-  left: calc(100% - 2px); /* Positionne le curseur à la fin du texte */
-  width: 2px; /* Largeur du curseur */
-  height: 1.2em; /* Hauteur du curseur correspondant à la ligne de texte */
-  background-color: var(--gris); /* Couleur du curseur */
-  animation: caret 0.7s steps(1) infinite; /* Animation du curseur */
-}
-.logo {
-  margin: 0 10px; /* Espace entre les logos */
-  color: #000;
-}
-.logo.div {
-  display: flex;
-  flex-direction: row;
-}
-
-@keyframes caret {
-  50% {
-    background-color: transparent;
-  }
-}
-
-/* 🌟 Styles généraux */
-.tarif-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  color: var(--gris);
-}
-
-/* 🛒 Cartes de prestations */
-.tarif-card {
-  background: var(--blanc); /* Fond clair */
-  padding: 25px;
-  width: 320px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-
-  /* 🌟 Ajout pour centrer le contenu verticalement */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-}
-
-/* 🖼️ Effet de survol */
-.tarif-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* 🎨 Titre + emojis */
-.tarif-card .emoji {
-  display: block;
-  font-size: 40px;
-  margin-bottom: 8px;
-}
-
-.tarif-card h3 {
-  color: var(--orange-foncé);
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-.section-title h3 {
-  color: var(--orange-foncé);
-}
-
-/* 📄 Texte */
-.tarif-card p {
-  font-size: 16px;
-  color: var(--gris);
-}
-
-.section-title,
-.options-text {
-  max-width: 90%; /* Réduit la largeur pour s'adapter à l'écran */
-  margin: auto; /* Centre le texte */
-  text-align: center; /* Assure un alignement propre */
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* 📜 Liste alignée au centre */
-.tarif-card ul {
-  text-align: center; /* Centrer les listes */
-  padding-left: 0; /* Supprimer l’espace de gauche */
-  list-style-position: inside; /* Garder les puces alignées */
-}
-
-/* 💰 Prix bien centré */
-.tarif-card .price {
-  font-size: 20px;
+  border-radius: 50px;
   font-weight: bold;
-  color: var(--orange-clair);
-  display: block;
-  margin-top: 15px;
+  animation: fadeInUp 1s ease 0.9s both, pulse 2s infinite;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
 
-/* 🌟 Section titres */
-.section-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 30px;
-  text-align: center;
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
 }
 
-/* ✨ Texte des options */
-.options-text {
-  text-align: center;
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: var(--gris-fonce);
-}
-
-/*Information importante*/
-/* 🌟 Section informations */
-.info-section {
-  background: var(--gris-clair); /* Fond légèrement contrasté */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 80%;
-  margin: auto;
-}
-
-/* 🔹 Titre */
-.info-section h3 {
-  color: var(--orange-foncé); /* Couleur bien visible */
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-/* 📜 Texte */
-.info-hosting {
-  font-size: 16px;
-  color: var(--gris);
-  line-height: 1.6;
-}
-
-/* ✨ Icônes & emojis */
-.info-hosting strong {
-  color: var(--orange-clair); /* Texte important en couleur */
-}
-
-.offer {
-  background: var(--orange-clair); /* Couleur qui attire l'œil */
-  padding: 8px;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--gris);
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* Style pour les containers des expériences */
-
-#pro {
-  margin-top: 50px;
-}
-
-.content {
-  font-size: 1.1em;
-  line-height: 1.6;
-  margin-top: 10px;
-  color: var(--blanc);
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
-img {
-  width: 50%;
-  height: 50%;
-  align-items: center;
-}
-
-img {
-  width: 50%;
-  height: 50%;
-  align-items: center;
-}
-/* Espacement entre les sections */
-.info,
-.content {
-  margin-bottom: 40px;
-}
-
-.Date {
-  font-style: italic;
-  color: var(--gris);
-}
-
-@keyframes fadeIn {
+@keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(50px);
   }
   to {
     opacity: 1;
@@ -349,559 +251,294 @@ img {
   }
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
 
-/* Ajustements possibles pour améliorer l'animation */
-
-.cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: auto;
-  margin-bottom: 50px;
-}
-
-.card {
-  width: 30%; /* Par défaut pour desktop */
-  height: 300px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-  border: none;
-}
-
-.card-inner {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+/* Services Section */
+.services {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
-  border: none;
+  z-index: 2;
 }
 
-.card-front,
-.card-back {
-  width: 100%;
-  height: 100%;
-  border: none;
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.card-front img {
-  max-height: 100%;
-  width: 100%;
-  object-fit: cover;
-  display: block;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
 }
 
-.card-front {
-  background-color: var(--blanc);
-  display: flex;
+.service-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.card-back {
-  background-color: var(--blanc);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: rotateY(180deg);
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
-.card-back span {
-  display: flex;
-  justify-content: center;
-}
-
-.card-back p {
-  margin: 10px;
-  font-size: 16px;
-  color: var(--gris);
-  border: none;
-}
-
-.card-back button {
-  padding: 10px 20px;
-  background-color: var(--orange-foncé);
-  color: var(--blanc);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.card-back button:hover {
-  background-color: var(--gris);
-}
-
-.card img {
-  display: flex;
-  width: 100%;
-  height: auto;
-  cursor: pointer;
-  display: block;
-  align-items: center;
-}
-
-.card {
-  perspective: 1000px;
-}
-
-.card-inner {
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease-in-out;
-}
-
-.card.active .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  backface-visibility: hidden;
+.service-card::before {
+  content: "";
   position: absolute;
   top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.service-features {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.service-features li {
+  padding: 5px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.service-features li::before {
+  content: "✨";
+  position: absolute;
   left: 0;
 }
 
-.card-back {
-  transform: rotateY(180deg);
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  margin-top: 1rem;
 }
 
-.experiences {
-  width: 235vw;
-  height: 50vh;
-  margin-bottom: 30vh;
-  position: relative; /* Nécessaire pour un positionnement absolu des enfants */
-}
-
-.timeline {
-  position: absolute; /* Permet un placement précis dans .experiences */
-  top: 50%; /* Centre la timeline verticalement */
-  transform: translateY(-50%); /* Ajustement pour vraiment centrer */
-  display: flex; /* Layout horizontal */
-  height: 4px; /* Épaisseur du trait central */
-  background: #000; /* Couleur du trait central */
-  width: 235vw; /* Largeur totale */
-}
-
-.event {
+/* Portfolio Section */
+.portfolio {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
-  margin: 0 40px; /* Espacement horizontal entre les boîtes */
+  z-index: 2;
 }
 
-.event-content {
-  width: 350px; /* Largeur fixe pour uniformiser */
-  height: 200px; /* Hauteur fixe */
-  display: flex; /* Pour aligner le contenu */
-  flex-direction: column;
-  align-items: center; /* Centrage horizontal */
-  justify-content: center; /* Centrage vertical */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
 }
 
-.event-content:nth-child(odd) {
-  top: -100px; /* Boîtes impaires placées en haut */
+.portfolio-item {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.event-content:nth-child(even) {
-  top: 100px; /* Boîtes paires placées en bas */
+.portfolio-item:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
-div.logo_expériences {
-  display: flex;
-  justify-content: center;
-}
-
-.card .card-inner {
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.card.flipped .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-back {
-  cursor: pointer;
-}
-
-h2 {
-  text-align: center;
-  color: var(--blanc);
-}
-
-div.map {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-footer {
-  text-align: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-footer p {
-  color: var(--blanc);
-}
-
-.card {
-  cursor: pointer;
-  perspective: 1000px;
-}
-
-.card .card-inner {
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.card.active .card-inner {
-  transform: rotateY(180deg); /* Rotation au clic */
-}
-
-.card-front,
-.card-back {
-  position: absolute;
+.portfolio-item img {
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-
-.card.active .card-back {
-  backface-visibility: visible;
-  opacity: 1;
-  display: flex !important;
-}
-
-.card-back {
-  display: flex !important; /* Assure que la face arrière est bien visible */
-  transform: rotateY(180deg);
-  width: 100%;
-  height: 100%;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 2; /* S'assure que la face arrière est bien au-dessus */
-  background-color: var(--gris);
-}
-
-.card-back p {
-  color: var(--blanc);
-}
-
-#front-visite {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-front {
-  transition: opacity 0.6s;
-  align-items: center;
-}
-
-.card.active .card-front {
-  opacity: 0; /* Cache la face avant quand la carte est retournée */
-}
-.card.active .card-inner {
-  transform: rotateY(180deg);
-}
-
-.section-contact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-}
-
-/* 🖥️ Effet hover uniquement sur desktop */
-@media (hover: hover) {
-  .tarif-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-  }
-}
-
-/* 📱 Mobile & Tablette - Effet au clic */
-@media (max-width: 1024px) {
-  .tarif-card {
-    cursor: pointer;
-  }
-
-  .tarif-card.active {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-  }
-}
-
-/* 🌍 Ajout des Media Queries */
-@media (max-width: 1024px) {
-  .info {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .Texte p {
-    font-size: 1em;
-  }
-
-  .tarif-container {
-    flex-direction: column;
-  }
-
-  .tarif-card {
-    width: 90%;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    width: 90%;
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #logo {
-    width: 80px;
-    height: 80px;
-  }
-
-  #titre_header {
-    text-align: center;
-    font-size: 1.2em;
-  }
-
-  .info-section {
-    width: 100%;
-  }
-
-  .event-content {
-    width: 90%;
-    height: auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .Texte p {
-    font-size: 0.9em;
-  }
-
-  .tarif-card h3 {
-    font-size: 18px;
-  }
-
-  .tarif-card p {
-    font-size: 14px;
-  }
-
-  .card-back p {
-    font-size: 14px;
-  }
-
-  .info-section h3 {
-    font-size: 20px;
-  }
-}
-
-/* 🖼️ Optimisation des images */
-img {
-  max-width: 100%;
   height: auto;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.3);
 }
 
-/* 🚀 Correction des styles */
-.cards {
+.portfolio-item h3 {
+  font-size: 1.5rem;
+  margin: 1rem;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.portfolio-item p {
+  text-align: center;
+  padding: 0 20px 20px;
+  color: var(--text-dark);
+}
+.portfolio-item {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Permet une meilleure répartition */
+  text-align: center;
+  padding: 20px;
 }
 
-/* 📱 Responsive pour la section contact */
-@media (max-width: 1024px) {
-  .section-contact {
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-  }
+.portfolio-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
 
-  .card {
-    width: 90%;
-    height: auto;
-    margin-bottom: 20px;
-  }
+.portfolio-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
 
-  .card-bar {
-    width: 180px;
-    height: 50px;
-    font-size: 14px;
+/* Contact Section */
+.contact {
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-light);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Scroll animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
     top: 10px;
-    right: -40px;
+    right: 10px;
+    padding: 8px 15px;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  nav a {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-form {
+    margin: 0 10px;
+    padding: 30px 20px;
   }
 }
 
-/* ✨ Effet tactile en plus du hover */
-@media (max-width: 1024px) {
-  .tarif-card {
-    cursor: pointer;
-  }
-
-  .tarif-card.active {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .card {
-    width: 45%; /* Réduit la largeur pour un affichage plus équilibré */
-    height: auto; /* Ajuste la hauteur dynamiquement */
-  }
-
-  .tarif-card {
-    cursor: pointer; /* Indique que l'élément est cliquable */
-  }
-
-  .tarif-card.active {
-    transform: translateY(-10px);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
-  }
-}
-@media (max-width: 768px) {
-  .header a.patate {
-    color: var(--blanc) !important;
-  }
-
-  .avatar {
-    display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement si nécessaire */
-    width: 100%; /* Prend toute la largeur disponible */
-  }
-
-  #avatar {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .Texte {
-    max-width: 90%;
-    margin: auto;
-    text-align: center;
-    overflow: hidden; /* Empêche tout débordement */
-  }
-
-  #animated-text {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    font-size: 1rem;
-    max-width: 100%;
-    padding: 0 5%; /* Ajoute un peu d'espace des deux côtés */
-    box-sizing: border-box; /* Évite que la largeur totale dépasse son conteneur */
-  }
-  .tarif-container {
-    display: flex;
-    flex-direction: column; /* Dispose les cartes en colonne */
-    align-items: center; /* Centre les cartes */
-  }
-
-  #tarif-card {
-    width: 90%; /* Évite que la carte soit trop large */
-    margin: 10px auto; /* Centre la carte avec une petite marge */
-  }
-
-  .options-text {
-    font-size: 0.9rem; /* Réduit un peu la taille */
-    padding: 0 10px; /* Ajoute une marge intérieure pour éviter le débordement */
-  }
-
-  .card {
-    display: block !important;
-    width: 90%;
-    height: auto;
-  }
-
-  .card-front,
-  .card-back {
-    width: 100%;
-    height: 100%;
-    position: relative; /* Change de absolute à relative */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden;
-  }
-
-  .cards {
-    flex-direction: column; /* Place les cartes en colonne */
-    align-items: center; /* Centre l'affichage */
-  }
-
-  .card-front img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Assure que l'image ne dépasse pas */
-    display: block;
-  }
-
-  .Texte {
-    max-width: 90%;
-    margin: auto;
-    text-align: center;
-    overflow: hidden; /* Empêche tout débordement */
-  }
-
-  #animated-text {
-    display: block;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal; /* Force le retour à la ligne */
-    width: 100%; /* Assure que le texte reste bien dans son conteneur */
-    max-width: 90%; /* Limite la largeur */
-    padding: 0 5%; /* Évite que le texte touche les bords */
-    box-sizing: border-box;
-  }
-}
-
-@media (max-width: 768px) {
-  .card {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column; /* Affiche les faces l'une sous l'autre */
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ccc;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  .card-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: none; /* Désactive la rotation */
-  }
-
-  .card-front,
-  .card-back {
-    position: relative;
-    width: 100%;
-    height: auto;
-    backface-visibility: visible; /* Assure que tout est affiché */
-  }
-
-  .card-back {
-    transform: none !important; /* Assure l'affichage */
-    display: flex;
-  }
+/* Animation pour les éléments lors du scroll */
+.stagger-animation {
+  animation-delay: calc(var(--i) * 0.1s);
 }
