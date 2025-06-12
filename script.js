@@ -68,3 +68,52 @@ window.addEventListener("scroll", () => {
 
   hero.style.transform = `translateY(${rate}px)`;
 });
+
+// Menu mobile
+const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+const mobileNav = document.getElementById("mobileNav");
+let mobileMenuOpen = false;
+
+mobileMenuBtn.addEventListener("click", () => {
+  mobileMenuOpen = !mobileMenuOpen;
+
+  if (mobileMenuOpen) {
+    mobileNav.style.display = "block";
+    setTimeout(() => {
+      mobileNav.classList.add("active");
+    }, 10);
+    mobileMenuBtn.innerHTML = "✕";
+    mobileMenuBtn.style.transform = "rotate(90deg)";
+  } else {
+    mobileNav.classList.remove("active");
+    setTimeout(() => {
+      mobileNav.style.display = "none";
+    }, 300);
+    mobileMenuBtn.innerHTML = "☰";
+    mobileMenuBtn.style.transform = "rotate(0deg)";
+  }
+});
+
+// Fermer le menu mobile en cliquant sur un lien
+document.querySelectorAll(".mobile-nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mobileMenuOpen = false;
+    mobileNav.classList.remove("active");
+    setTimeout(() => {
+      mobileNav.style.display = "none";
+    }, 300);
+    mobileMenuBtn.innerHTML = "☰";
+    mobileMenuBtn.style.transform = "rotate(0deg)";
+  });
+});
+
+// Fermer le menu mobile si on redimensionne la fenêtre
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768 && mobileMenuOpen) {
+    mobileMenuOpen = false;
+    mobileNav.classList.remove("active");
+    mobileNav.style.display = "none";
+    mobileMenuBtn.innerHTML = "☰";
+    mobileMenuBtn.style.transform = "rotate(0deg)";
+  }
+});

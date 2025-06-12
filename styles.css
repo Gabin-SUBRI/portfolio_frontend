@@ -124,6 +124,83 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
+.mobile-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--blue-gray);
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu:hover {
+  background: var(--light-gray);
+  color: var(--accent-blue);
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  box-shadow: 0 4px 20px rgba(15, 25, 38, 0.15);
+  z-index: 999;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav.active {
+  display: block;
+  transform: translateY(0);
+  background: rgba(242, 242, 242, 0.6);
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 20px;
+}
+
+.mobile-nav ul li {
+  margin-bottom: 15px;
+}
+
+.mobile-nav ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: var(--blue-gray);
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.mobile-nav ul li a:hover {
+  background: var(--light-gray);
+  color: var(--accent-blue);
+}
+
+.mobile-actions {
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+  }
+}
+
 /* Hero Section */
 .hero {
   height: 100vh;
@@ -492,6 +569,11 @@ nav a:hover {
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: rgba(255, 255, 255, 0.7);
+}
+#icon {
+  width: 30px;
+  height: auto;
+  margin: 15px;
 }
 
 /* Scroll animations */
