@@ -1,13 +1,13 @@
 // Création des particules
 function createParticles() {
   const particles = document.getElementById("particles");
-  const particleCount = 50;
+  const particleCount = 500;
 
   for (let i = 0; i < particleCount; i++) {
     const particle = document.createElement("div");
     particle.className = "particle";
     particle.style.left = Math.random() * 100 + "%";
-    particle.style.animationDelay = Math.random() * 20 + "s";
+    particle.style.animationDelay = -Math.random() * 20 + "s"; // Délai négatif pour commencer l'animation en cours
     particle.style.animationDuration = Math.random() * 10 + 10 + "s";
     particles.appendChild(particle);
   }
@@ -116,4 +116,105 @@ window.addEventListener("resize", () => {
     mobileMenuBtn.innerHTML = "☰";
     mobileMenuBtn.style.transform = "rotate(0deg)";
   }
+});
+
+// ==============================================
+// CORRECTION SCROLL FLUIDE SPÉCIFIQUE
+// Pour harmoniser le comportement entre le menu et le bouton CTA
+// ==============================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. D'abord, on applique le scroll fluide global
+  document.documentElement.style.scrollBehavior = "smooth";
+
+  // 2. Fonction de scroll fluide personnalisée
+  function smoothScrollTo(targetId, offset = 0) {
+    const targetElement = document.querySelector(targetId);
+    if (targetElement) {
+      const targetPosition = targetElement.offsetTop - offset;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    }
+  }
+
+  // 3. Gestion spécifique du bouton "Découvrir Mes Services"
+  const ctaButton = document.querySelector(".cta-button");
+  if (ctaButton) {
+    ctaButton.addEventListener("click", function (e) {
+      e.preventDefault(); // Empêche le comportement par défaut
+
+      const targetId = this.getAttribute("href"); // Récupère "#services"
+      smoothScrollTo(targetId, 80); // 80px d'offset pour ne pas coller au header
+
+      console.log("CTA Button: Scroll fluide vers", targetId);
+    });
+  }
+
+  // 4. Gestion du menu mobile (pour s'assurer qu'il fonctionne pareil)
+  const mobileNavLinks = document.querySelectorAll('#mobileNav a[href^="#"]');
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      smoothScrollTo(targetId, 80); // Même offset que le bouton CTA
+
+      // Fermer le menu mobile après clic
+      const mobileNav = document.getElementById("mobileNav");
+      if (mobileNav) {
+        mobileNav.classList.remove("active"); // Ou la classe que vous utilisez
+      }
+
+      console.log("Menu Mobile: Scroll fluide vers", targetId);
+    });
+  });
+
+  // 5. Gestion du menu desktop si vous en avez un
+  const desktopNavLinks = document.querySelectorAll(
+    'nav a[href^="#"]:not(#mobileNav a)'
+  );
+  desktopNavLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute("href");
+      smoothScrollTo(targetId, 80);
+
+      console.log("Menu Desktop: Scroll fluide vers", targetId);
+    });
+  });
+
+  // 6. Override de tout autre script qui pourrait interférer
+  // Cette fonction force le scroll fluide pour TOUS les liens internes
+  function forceUniformScrolling() {
+    const allInternalLinks = document.querySelectorAll('a[href^="#"]');
+
+    allInternalLinks.forEach((link) => {
+      // Supprimer les anciens event listeners
+      const newLink = link.cloneNode(true);
+      link.parentNode.replaceChild(newLink, link);
+
+      // Ajouter le nouveau comportement
+      newLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        e.stopImmediatePropagation(); // Empêche les autres scripts
+
+        const targetId = this.getAttribute("href");
+        smoothScrollTo(targetId, 80);
+
+        // Log pour debug
+        console.log(
+          "Lien interne:",
+          this.className,
+          "-> Scroll vers",
+          targetId
+        );
+      });
+    });
+  }
+
+  // 7. Application après un petit délai pour override les autres scripts
+  setTimeout(forceUniformScrolling, 100);
 });

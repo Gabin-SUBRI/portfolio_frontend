@@ -310,6 +310,7 @@ nav a:hover {
   animation: fadeInUp 1s ease 0.9s both, pulse 2s infinite;
   transition: all 0.3s ease;
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  cursor: pointer;
 }
 
 .cta-button:hover {
@@ -422,15 +423,15 @@ nav a:hover {
 }
 
 .service-features li {
-  padding: 5px 0;
   position: relative;
-  padding-left: 20px;
+  padding-left: 35px; /* Augmentez cette valeur pour plus d'espace */
 }
 
 .service-features li::before {
   content: "✨";
   position: absolute;
   left: 0;
+  top: 0; /* Ajoutez cette ligne pour aligner verticalement */
 }
 
 .price {
@@ -462,7 +463,14 @@ nav a:hover {
   border: 1px solid var(--glass-border);
   border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease; /* Changé pour correspondre aux service cards */
+  position: relative; /* Ajouté pour le pseudo-élément */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
 }
 
 .portfolio-item:hover {
@@ -470,10 +478,40 @@ nav a:hover {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
+/* Ajout de l'effet de brillance identique aux service cards */
+.portfolio-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.5s;
+  z-index: 1; /* Pour s'assurer que l'effet reste derrière le contenu */
+}
+
+.portfolio-item:hover::before {
+  left: 100%;
+}
+
+/* S'assurer que le contenu reste au-dessus de l'effet */
+.portfolio-item > * {
+  position: relative;
+  z-index: 2;
+}
+
 .portfolio-item img {
   width: 100%;
   height: auto;
   border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
 .portfolio-item h3 {
@@ -481,20 +519,16 @@ nav a:hover {
   margin: 1rem;
   text-align: center;
   color: var(--text-dark);
+  position: relative;
+  z-index: 2;
 }
 
 .portfolio-item p {
   text-align: center;
   padding: 0 20px 20px;
   color: var(--text-dark);
-}
-.portfolio-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between; /* Permet une meilleure répartition */
-  text-align: center;
-  padding: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .portfolio-button {
@@ -511,11 +545,59 @@ nav a:hover {
   border-radius: 25px;
   font-weight: bold;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .portfolio-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations fade-in et stagger */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation stagger pour créer un effet décalé */
+.stagger-animation {
+  transition-delay: calc(var(--i) * 0.2s);
+}
+
+/* Styles pour les sections */
+.fade-in.section-title {
+  transform: translateY(50px);
+}
+
+.fade-in.section-title.visible {
+  transform: translateY(0);
+}
+
+/* Animation spécifique pour les cards */
+.service-card.fade-in,
+.portfolio-item.fade-in {
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-card.fade-in.visible,
+.portfolio-item.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Effet hover pour les cards (déjà existant mais pour s'assurer) */
+.service-card:hover,
+.portfolio-item:hover {
+  transform: translateY(-10px) scale(1.02) !important;
 }
 
 /* Contact Section */
@@ -570,10 +652,67 @@ nav a:hover {
 .form-group textarea::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
-#icon {
+
+/* Container pour le bouton CTA */
+.cta-container {
+  margin-bottom: 30px;
+}
+
+/* Container pour les liens sociaux */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Styles pour les liens sociaux */
+.social-link {
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+.social-link::before,
+.social-link::after {
+  display: none !important;
+}
+
+/* Styles pour les icônes */
+.social-icon {
   width: 30px;
-  height: auto;
-  margin: 15px;
+  height: 30px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Suppression de tous les styles de liens par défaut */
+.social-links a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.social-links a:before,
+.social-links a:after,
+.social-links a:visited,
+.social-links a:link,
+.social-links a:active {
+  border: none !important;
+  text-decoration: none !important;
+  box-shadow: none !important;
+  background: none !important;
 }
 
 /* Scroll animations */
@@ -623,4 +762,8 @@ nav a:hover {
 /* Animation pour les éléments lors du scroll */
 .stagger-animation {
   animation-delay: calc(var(--i) * 0.1s);
+}
+
+html {
+  scroll-behavior: smooth !important;
 }

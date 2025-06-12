@@ -9,7 +9,6 @@
   <body>
     <!-- Particules animées -->
     <div class="particles" id="particles"></div>
-
     <!-- Navigation -->
     <nav>
       <ul>
@@ -21,6 +20,7 @@
       </ul>
       <button class="mobile-menu" id="mobileMenuBtn">☰</button>
     </nav>
+
     <div class="mobile-nav" id="mobileNav">
       <ul>
         <li><a href="#home">Accueil</a></li>
@@ -360,33 +360,65 @@
     </section>
 
     <!-- Contact Section -->
+    <!-- HTML corrigé -->
     <section class="contact" id="contact">
       <h2 class="section-title fade-in">💬 Contactez-moi</h2>
       <div class="contact-form fade-in">
-        <form>
-          <div>
-            <a href="https://calendly.com/gabinsubri/30min" target="_blank">
-              <button type="button" class="cta-button">
-                Prendre rendez-vous
-              </button>
-            </a>
-          </div>
-          <a href="https://www.instagram.com/gabin_subri/" target="_blank">
-            <img id="icon" src="/img/instagram.png" alt="icon_instagram" />
+        <!-- Bouton de rendez-vous en dehors du contexte de liens sociaux -->
+        <div class="cta-container">
+          <a href="https://calendly.com/gabinsubri/30min" target="_blank">
+            <button type="button" class="cta-button">
+              Prendre rendez-vous
+            </button>
           </a>
-          <a href="https://github.com/Gabin-SUBRI" target="_blank"
-            ><img id="icon" src="/img/github-sign.png" alt="icon_github"
-          /></a>
-          <a href="https://www.linkedin.com/in/gabin-subri/" target="_blank"
-            ><img id="icon" src="/img/linkedin-logo.png" alt="icon_likedin"
-          /></a>
-          <a href="mailto:gabin.subri@gmail.com" target="_blank"
-            ><img id="icon" src="/img/email-modified.png" alt="icon_mail"
-          /></a>
-          <a href="https://www.malt.fr/profile/gabinsubri" target="_blank">
-            <img id="icon" src="/img/malt.png" alt="icon_malt" />
+        </div>
+
+        <!-- Liens sociaux dans un conteneur séparé -->
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/gabin_subri/"
+            target="_blank"
+            class="social-link"
+          >
+            <img src="/img/instagram.png" alt="Instagram" class="social-icon" />
           </a>
-        </form>
+          <a
+            href="https://github.com/Gabin-SUBRI"
+            target="_blank"
+            class="social-link"
+          >
+            <img src="/img/github-sign.png" alt="GitHub" class="social-icon" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gabin-subri/"
+            target="_blank"
+            class="social-link"
+          >
+            <img
+              src="/img/linkedin-logo.png"
+              alt="LinkedIn"
+              class="social-icon"
+            />
+          </a>
+          <a
+            href="mailto:gabin.subri@gmail.com"
+            target="_blank"
+            class="social-link"
+          >
+            <img
+              src="/img/email-modified.png"
+              alt="Email"
+              class="social-icon"
+            />
+          </a>
+          <a
+            href="https://www.malt.fr/profile/gabinsubri"
+            target="_blank"
+            class="social-link"
+          >
+            <img src="/img/malt.png" alt="Malt" class="social-icon" />
+          </a>
+        </div>
       </div>
     </section>
 
