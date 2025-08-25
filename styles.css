@@ -263,8 +263,8 @@ nav a:hover {
   font-size: clamp(2.5rem, 8vw, 5rem);
   margin-bottom: 1rem;
   animation: fadeInUp 1s ease 0.5s both;
+  color: var(--text-light);
   background-clip: text;
-  color: var(--accent-color);
 }
 
 .hero .subtitle {
@@ -319,7 +319,11 @@ nav a:hover {
 }
 
 .cta-button.primary {
-  background: var(--background-dark);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   color: white;
   box-shadow: 0 8px 25px rgba(227, 145, 98, 0.3);
 }
@@ -357,7 +361,7 @@ section {
   font-size: clamp(2rem, 5vw, 3.5rem);
   text-align: center;
   margin-bottom: 3rem;
-  color: var(--accent-color);
+  color: var(--text-light);
   background-clip: text;
 }
 
