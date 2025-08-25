@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gabin Subri - Développeur Web & Designer</title>
+    <title>Gabin Subri - Développeur Web Full Stack & Designer</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -13,9 +13,10 @@
     <nav>
       <ul>
         <li><a href="#home">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#option">Options</a></li>
+        <li><a href="#about">À Propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="mobile-menu" id="mobileMenuBtn">☰</button>
@@ -24,9 +25,10 @@
     <div class="mobile-nav" id="mobileNav">
       <ul>
         <li><a href="#home">Accueil</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#option">Options</a></li>
+        <li><a href="#about">À Propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -38,14 +40,354 @@
           <img src="/img/pp_gabin.jpg" alt="photo de profil" />
         </div>
         <h1>Gabin Subri</h1>
-        <p class="subtitle">Développeur Web & Designer Créatif</p>
-        <a href="#services" class="cta-button">Découvrir Mes Services</a>
+        <p class="subtitle">Développeur Web Full Stack & Designer Créatif</p>
+        <p class="student-info">
+          Étudiant en développement • Recherche stage/alternance •
+          Micro-entrepreneur
+        </p>
+        <div class="cta-buttons">
+          <a href="#portfolio" class="cta-button primary">Voir mon Portfolio</a>
+          <a
+            href="/cv_gabin_subri.pdf"
+            target="_blank"
+            class="cta-button secondary"
+            >Télécharger mon CV</a
+          >
+        </div>
       </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- À Propos Section -->
+    <section class="about" id="about">
+      <h2 class="section-title fade-in">👨‍💻 À Propos</h2>
+      <div class="about-content fade-in">
+        <div class="about-text">
+          <h3>Passionné par le développement web et le design</h3>
+          <p>
+            Actuellement étudiant en développement web, je combine formation
+            académique et expérience entrepreneuriale à travers ma
+            micro-entreprise. Cette double approche me permet d'avoir une vision
+            complète du cycle de développement, de la conception à la livraison
+            client.
+          </p>
+          <div class="status-cards">
+            <div class="status-card">
+              <span class="status-icon">🎓</span>
+              <div>
+                <h4>Étudiant</h4>
+                <p>En formation développement web</p>
+              </div>
+            </div>
+            <div class="status-card">
+              <span class="status-icon">💼</span>
+              <div>
+                <h4>Micro-entrepreneur</h4>
+                <p>Projets clients réels</p>
+              </div>
+            </div>
+            <div class="status-card">
+              <span class="status-icon">🔍</span>
+              <div>
+                <h4>En recherche</h4>
+                <p>Stage/Alternance 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences Section -->
+    <section class="skills" id="skills">
+      <h2 class="section-title fade-in">⚡ Compétences Techniques</h2>
+      <div class="skills-grid">
+        <div class="skill-category fade-in stagger-animation" style="--i: 0">
+          <h3>Frontend</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <span class="skill-name">HTML5/CSS3</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">React.js</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Responsive Design</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 95%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in stagger-animation" style="--i: 1">
+          <h3>Backend & BDD</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <span class="skill-name">Node.js</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Express.js</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">MongoDB</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">MySQL</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category fade-in stagger-animation" style="--i: 2">
+          <h3>Outils & Design</h3>
+          <div class="skills-list">
+            <div class="skill-item">
+              <span class="skill-name">Git/GitHub</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Figma/Photoshop</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">SEO</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">E-commerce</span>
+              <div class="skill-bar">
+                <div class="skill-progress" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="section-title fade-in">🎨 Projets & Réalisations</h2>
+      <div class="portfolio-filter fade-in">
+        <button class="filter-btn active" data-filter="all">Tous</button>
+        <button class="filter-btn" data-filter="client">Projets Clients</button>
+        <button class="filter-btn" data-filter="school">Projets École</button>
+        <button class="filter-btn" data-filter="personal">
+          Projets Personnels
+        </button>
+      </div>
+      <div class="portfolio-grid">
+        <div
+          class="portfolio-item fade-in stagger-animation client"
+          style="--i: 1"
+        >
+          <div class="project-badge client-badge">Client</div>
+          <img src="/img/lesdulcesdaurore.png" alt="Les Dulces d'Aurore" />
+          <div class="portfolio-content">
+            <h3>Les Dulces d'Aurore</h3>
+            <p><strong>Site E-commerce Shopify</strong></p>
+            <p>
+              Boutique en ligne de bonbons avec gestion complète des stocks,
+              paiements sécurisés et optimisation SEO.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">Shopify</span>
+              <span class="tech">Liquid</span>
+              <span class="tech">SEO</span>
+            </div>
+            <div class="portfolio-links">
+              <a
+                href="https://lesdulcesdaurore.com"
+                target="_blank"
+                class="portfolio-button"
+                >Voir le site</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="portfolio-item fade-in stagger-animation client"
+          style="--i: 2"
+        >
+          <div class="project-badge client-badge">Client</div>
+          <img src="/img/sauvegarde69.PNG" alt="Sauvegarde 69" />
+          <div class="portfolio-content">
+            <h3>Sauvegarde 69</h3>
+            <p><strong>Site Vitrine Associatif</strong></p>
+            <p>
+              Plateforme web pour la présentation des services sociaux et
+              médico-sociaux avec design responsive.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">HTML/CSS</span>
+              <span class="tech">JavaScript</span>
+              <span class="tech">Responsive</span>
+            </div>
+            <div class="portfolio-links">
+              <a
+                href="https://www.sauvegarde69.fr"
+                target="_blank"
+                class="portfolio-button"
+                >Voir le site</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="portfolio-item fade-in stagger-animation school"
+          style="--i: 3"
+        >
+          <div class="project-badge school-badge">École</div>
+          <img src="/img/ed-moi.png" alt="ed-moi" />
+          <div class="portfolio-content">
+            <h3>Ed'moi</h3>
+            <p><strong>Plateforme E-learning</strong></p>
+            <p>
+              Projet de fin d'études sur 2 ans : plateforme d'apprentissage avec
+              gestion utilisateurs et contenus interactifs.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">React</span>
+              <span class="tech">Node.js</span>
+              <span class="tech">MongoDB</span>
+            </div>
+            <div class="portfolio-links">
+              <a
+                href="https://ed-moi-gabinsubris-projects.vercel.app"
+                target="_blank"
+                class="portfolio-button"
+                >Voir le projet</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="portfolio-item fade-in stagger-animation school"
+          style="--i: 4"
+        >
+          <div class="project-badge school-badge">École</div>
+          <img src="/img/mymoviz.png" alt="MyMoviz" />
+          <div class="portfolio-content">
+            <h3>MyMoviz</h3>
+            <p><strong>Application Cinéma React</strong></p>
+            <p>
+              App web cinéma avec intégration API temps réel, système de favoris
+              et interface utilisateur moderne.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">React</span>
+              <span class="tech">API REST</span>
+              <span class="tech">CSS3</span>
+            </div>
+            <div class="portfolio-links">
+              <a
+                href="https://frontend-mymoviz.vercel.app"
+                target="_blank"
+                class="portfolio-button"
+                >Voir le projet</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="portfolio-item fade-in stagger-animation personal"
+          style="--i: 5"
+        >
+          <div class="project-badge personal-badge">Personnel</div>
+          <img src="/img/TechForge.png" alt="TechForge" />
+          <div class="portfolio-content">
+            <h3>TechForge</h3>
+            <p><strong>Template Site Industriel</strong></p>
+            <p>
+              Modèle de site vitrine pour entreprises industrielles avec
+              animations avancées et design moderne.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">HTML/CSS</span>
+              <span class="tech">JavaScript</span>
+              <span class="tech">Animations</span>
+            </div>
+            <div class="portfolio-links">
+              <a
+                href="https://d-monstration-vitrine-industriel.vercel.app"
+                target="_blank"
+                class="portfolio-button"
+                >Voir le site</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="portfolio-item fade-in stagger-animation personal"
+          style="--i: 6"
+        >
+          <div class="project-badge personal-badge">Personnel</div>
+          <img src="/img/script-bat.png" alt="Script-bat" />
+          <div class="portfolio-content">
+            <h3>Scripts BAT Collection</h3>
+            <p><strong>Outils d'Automatisation</strong></p>
+            <p>
+              Collection de scripts Windows pour automatiser les tâches
+              répétitives et optimiser les workflows.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">Batch</span>
+              <span class="tech">PowerShell</span>
+              <span class="tech">Automation</span>
+            </div>
+            <div class="portfolio-links">
+              <a
+                href="https://scripts-bat-fehc.vercel.app"
+                target="_blank"
+                class="portfolio-button"
+                >Voir la collection</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section (Pour les clients) -->
     <section class="services" id="services">
-      <h2 class="section-title fade-in">🌟 Mes Services</h2>
+      <h2 class="section-title fade-in">🌟 Services Professionnels</h2>
+      <p class="services-intro fade-in">
+        En tant que micro-entrepreneur, je propose des services web complets
+        pour accompagner votre présence digitale.
+      </p>
       <div class="services-grid">
         <div class="service-card fade-in stagger-animation" style="--i: 0">
           <span class="service-icon">🌐</span>
@@ -91,256 +433,70 @@
           <div class="price">Sur devis</div>
         </div>
       </div>
-    </section>
-    <!-- Services Option -->
-    <section class="services" id="option">
-      <h2 class="section-title fade-in">🌟 Mes Options</h2>
-      <div class="services-grid">
-        <div class="service-card fade-in stagger-animation" style="--i: 1">
-          <span class="service-icon">📅</span>
-          <h3>Module de Réservation</h3>
-          <p>Ajoutez un système de réservation simple et intuitif.</p>
-          <ul class="service-features">
-            <li>Interface intuitive</li>
-            <li>Gestion des créneaux</li>
-            <li>Notifications automatiques</li>
-            <li>Synchronisation calendrier</li>
-          </ul>
-          <div class="price">200€</div>
-        </div>
 
-        <div class="service-card fade-in stagger-animation" style="--i: 2">
-          <span class="service-icon">🔍</span>
-          <h3>SEO avancé</h3>
-          <p>
-            Améliorez votre visibilité sur Google avec une optimisation poussée.
-          </p>
-          <ul class="service-features">
-            <li>Optimisation technique du site</li>
-            <li>Recherche et intégration de mots-clés</li>
-            <li>Création de contenu SEO-friendly</li>
-            <li>Netlinking et autorité</li>
-          </ul>
-
-          <div class="price">300€</div>
-        </div>
-
-        <div class="service-card fade-in stagger-animation" style="--i: 3">
-          <span class="service-icon">📱</span>
-          <h3>Gestion Réseaux Sociaux</h3>
-          <p>Publications et engagement avec votre audience.</p>
-          <ul class="service-features">
-            <li>Stratégie de contenu optimisée</li>
-            <li>Engagement et interaction</li>
-            <li>Analyse des performances</li>
-            <li>Publicité ciblée</li>
-          </ul>
-          <div class="price">150€ / mois</div>
-        </div>
-
-        <div class="service-card fade-in stagger-animation" style="--i: 4">
-          <span class="service-icon">🔧</span>
-          <h3>Maintenance du Site</h3>
-          <p>
-            Choisissez une maintenance annuelle ou mensuelle pour garder votre
-            site performant et sécurisé.
-          </p>
-          <ul class="service-features">
-            <li>Mises à jour régulières</li>
-            <li>Sécurité renforcée</li>
-            <li>Support technique réactif</li>
-            <li>Abonnement annuel : 2 mois offerts !</li>
-          </ul>
-          <div class="price">250€ / an | 25€ / mois</div>
-        </div>
-
-        <div class="service-card fade-in stagger-animation" style="--i: 5">
-          <span class="service-icon">🌐</span>
-          <h3>Gestion Hébergement & Nom de Domaine</h3>
-          <p>
-            Accompagnement complet pour votre hébergement et votre nom de
-            domaine.
-          </p>
-          <ul class="service-features">
-            <li>Ouverture de compte chez un hébergeur</li>
-            <li>Achat & configuration du nom de domaine</li>
-            <li>Paramétrage du site et des emails pro</li>
-            <li>Gestion et renouvellement annuel</li>
-          </ul>
-          <div class="price">Sur devis</div>
-        </div>
-
-        <div class="service-card fade-in stagger-animation" style="--i: 6">
-          <span class="service-icon">🎨</span>
-          <h3>Création Design & Animation</h3>
-          <p>
-            Une identité visuelle forte et des animations engageantes adaptées à
-            votre marque.
-          </p>
-          <ul class="service-features">
-            <li>
-              Conception graphique sur-mesure (logo, visuels, illustrations)
-            </li>
-            <li>
-              Animation et motion design pour votre communication digitale
-            </li>
-            <li>Montage vidéo et effets spéciaux pour un contenu captivant</li>
-            <li>Optimisation pour les réseaux sociaux et supports web</li>
-          </ul>
-          <div class="price">300€</div>
-        </div>
+      <div class="services-cta fade-in">
+        <p>Vous avez un projet ? Discutons-en !</p>
+        <a href="#contact" class="cta-button">Demander un devis gratuit</a>
       </div>
     </section>
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-      <h2 class="section-title fade-in">🎨 Mon Portfolio</h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-item fade-in stagger-animation" style="--i: 1">
-          <img src="/img/TechForge.png" alt="TechForge" />
-          <h3>TechForge</h3>
-          <p>
-            Un site d'exemple pour les industriels qui veulent un site vitrine
-          </p>
-          <a
-            href="https://d-monstration-vitrine-industriel.vercel.app"
-            target="_blank"
-            class="portfolio-button"
-            >Voir le site</a
-          >
-        </div>
-        <div class="portfolio-item fade-in stagger-animation" style="--i: 2">
-          <img src="/img/lesdulcesdaurore.png" alt="Les Dulces d'Aurore" />
-          <h3>Les Dulces d'Aurore</h3>
-          <p>
-            Site e-commerce de bonbons, basé sur Shopify pour une gestion
-            optimisée des produits et commandes.
-          </p>
-          <a
-            href="https://lesdulcesdaurore.com"
-            target="_blank"
-            class="portfolio-button"
-            >Voir le site</a
-          >
-        </div>
-
-        <div class="portfolio-item fade-in stagger-animation" style="--i: 3">
-          <img src="/img/sauvegarde69.PNG" alt="Sauvegarde 69" />
-          <h3>Sauvegarde 69</h3>
-          <p>
-            Plateforme web pour la présentation des services sociaux et
-            médico-sociaux.
-          </p>
-          <a
-            href="https://www.sauvegarde69.fr"
-            target="_blank"
-            class="portfolio-button"
-            >Voir le site</a
-          >
-        </div>
-
-        <div class="portfolio-item fade-in stagger-animation" style="--i: 4">
-          <img src="/img/ed-moi.png" alt="ed-moi" />
-          <h3>Ed'moi</h3>
-          <p>
-            Site pour apprendre différents domaines, projet de deux ans au sein
-            de l'école IPI.
-          </p>
-          <a
-            href="https://ed-moi-gabinsubris-projects.vercel.app"
-            target="_blank"
-            class="portfolio-button"
-            >Voir le site</a
-          >
-        </div>
-
-        <div class="portfolio-item fade-in stagger-animation" style="--i: 5">
-          <img src="/img/mymoviz.png" alt="MyMoviz" />
-          <h3>MyMoviz</h3>
-          <p>
-            Site dédié au cinéma, intégrant des requêtes API pour récupérer en
-            temps réel les infos sur les films.
-          </p>
-          <a
-            href="https://frontend-mymoviz.vercel.app"
-            target="_blank"
-            class="portfolio-button"
-            >Voir le site</a
-          >
-        </div>
-        <div class="portfolio-item fade-in stagger-animation" style="--i: 5">
-          <img src="/img/script-bat.png" alt="Script-bat" />
-          <h3>Script Bat</h3>
-          <p>
-            Scripts BAT faits maison pour automatiser et simplifier vos tâches
-            Windows.
-          </p>
-          <a
-            href="https://scripts-bat-fehc.vercel.app"
-            target="_blank"
-            class="portfolio-button"
-            >Voir le site</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!--Témoignages & Réseaux
-    <section id="avis-google" style="--i: 10">
-      <h2 class="section-title fade-in">Ce que disent mes clients</h2>
-
-      <div class="portfolio-item fade-in stagger-animation">
-        <blockquote>
-          ⭐⭐⭐⭐⭐<br />
-          "Gabin a créé un site parfait pour mon activité. Très pro, très
-          rapide."<br />
-          <cite>– Julie M.</cite>
-        </blockquote>
-
-        <blockquote>
-          ⭐⭐⭐⭐⭐<br />
-          "Service au top, très bonne communication et super design."<br />
-          <cite>– Karim B.</cite>
-        </blockquote>
-
-        <a
-          href="https://maps.app.goo.gl/EzL84Pfnfxiz7HXQ6"
-          target="_blank"
-          class="portfolio-button"
-        >
-          Voir tous les avis sur Google
-        </a>
-      </div>
-    </section>-->
 
     <!-- Contact Section -->
-    <!-- HTML corrigé -->
     <section class="contact" id="contact">
-      <h2 class="section-title fade-in">💬 Contactez-moi</h2>
-      <div class="contact-form fade-in">
-        <!-- Bouton de rendez-vous en dehors du contexte de liens sociaux -->
-        <div class="cta-container">
-          <a href="https://cal.com/gabin-subri" target="_blank">
-            <button type="button" class="cta-button">
-              Prendre rendez-vous
-            </button>
-          </a>
+      <h2 class="section-title fade-in">💬 Restons en Contact</h2>
+      <div class="contact-content fade-in">
+        <div class="contact-info">
+          <div class="contact-card">
+            <h3>Pour les Recruteurs</h3>
+            <p>
+              Recherche active d'un stage ou alternance en développement web
+            </p>
+            <div class="contact-buttons">
+              <a
+                href="/cv_gabin_subri.pdf"
+                target="_blank"
+                class="contact-button primary"
+              >
+                📄 Télécharger mon CV
+              </a>
+              <a
+                href="https://www.linkedin.com/in/gabin-subri/"
+                target="_blank"
+                class="contact-button secondary"
+              >
+                💼 LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <h3>Pour les Clients</h3>
+            <p>Besoin d'un site web ou d'un accompagnement digital ?</p>
+            <div class="contact-buttons">
+              <a
+                href="https://cal.com/gabin-subri"
+                target="_blank"
+                class="contact-button primary"
+              >
+                📅 Prendre RDV
+              </a>
+              <a
+                href="mailto:gabin.subri@gmail.com"
+                class="contact-button secondary"
+              >
+                ✉️ Email Pro
+              </a>
+            </div>
+          </div>
         </div>
 
-        <!-- Liens sociaux dans un conteneur séparé -->
         <div class="social-links">
-          <a
-            href="https://www.instagram.com/gabin_subri/"
-            target="_blank"
-            class="social-link"
-          >
-            <img src="/img/instagram.png" alt="Instagram" class="social-icon" />
-          </a>
           <a
             href="https://github.com/Gabin-SUBRI"
             target="_blank"
             class="social-link"
           >
             <img src="/img/github-sign.png" alt="GitHub" class="social-icon" />
+            <span>GitHub</span>
           </a>
           <a
             href="https://www.linkedin.com/in/gabin-subri/"
@@ -352,17 +508,15 @@
               alt="LinkedIn"
               class="social-icon"
             />
+            <span>LinkedIn</span>
           </a>
           <a
-            href="mailto:gabin.subri@gmail.com"
+            href="https://www.instagram.com/gabin_subri/"
             target="_blank"
             class="social-link"
           >
-            <img
-              src="/img/email-modified.png"
-              alt="Email"
-              class="social-icon"
-            />
+            <img src="/img/instagram.png" alt="Instagram" class="social-icon" />
+            <span>Instagram</span>
           </a>
           <a
             href="https://www.malt.fr/profile/gabinsubri"
@@ -370,6 +524,7 @@
             class="social-link"
           >
             <img src="/img/malt.png" alt="Malt" class="social-icon" />
+            <span>Malt</span>
           </a>
         </div>
       </div>

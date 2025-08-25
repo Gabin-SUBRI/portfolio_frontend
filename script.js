@@ -218,3 +218,57 @@ document.addEventListener("DOMContentLoaded", function () {
   // 7. Application après un petit délai pour override les autres scripts
   setTimeout(forceUniformScrolling, 100);
 });
+
+// Script pour le filtrage du portfolio
+document.addEventListener("DOMContentLoaded", function () {
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Retirer la classe active de tous les boutons
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      // Ajouter la classe active au bouton cliqué
+      btn.classList.add("active");
+
+      const filterValue = btn.getAttribute("data-filter");
+
+      portfolioItems.forEach((item) => {
+        if (filterValue === "all" || item.classList.contains(filterValue)) {
+          item.style.display = "block";
+          setTimeout(() => {
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+          }, 100);
+        } else {
+          item.style.opacity = "0";
+          item.style.transform = "translateY(30px)";
+          setTimeout(() => {
+            item.style.display = "none";
+          }, 300);
+        }
+      });
+    });
+  });
+
+  // Animation des barres de compétences
+  const observerOptions = {
+    threshold: 0.3,
+    rootMargin: "0px 0px -100px 0px",
+  };
+
+  const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const progressBars = entry.target.querySelectorAll(".skill-progress");
+        progressBars.forEach((bar) => {
+          bar.style.transform = "scaleX(1)";
+        });
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".skill-category").forEach((category) => {
+    skillsObserver.observe(category);
+  });
+});
