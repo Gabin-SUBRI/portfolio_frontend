@@ -614,6 +614,12 @@ section {
   color: white;
 }
 
+.stage-badge {
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+  color: white;
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
+}
+
 .portfolio-links {
   margin-top: 20px;
 }
