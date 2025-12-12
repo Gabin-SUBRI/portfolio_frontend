@@ -65,9 +65,8 @@
       <ul>
         <li><a href="#home">Accueil</a></li>
         <li><a href="#about">À Propos</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Mes Projets</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="mobile-menu" id="mobileMenuBtn">☰</button>
@@ -77,9 +76,8 @@
       <ul>
         <li><a href="#home">Accueil</a></li>
         <li><a href="#about">À Propos</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Mes Projets</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -93,19 +91,11 @@
         <h1>Gabin Subri</h1>
         <p class="subtitle">Développeur Web Full Stack & Designer Créatif</p>
         <p class="student-info">
-          Étudiant en développement • Recherche stage/alternance •
-          Micro-entrepreneur
+          Étudiant en développement • Micro-entrepreneur
         </p>
         <div class="cta-buttons">
           <a href="#portfolio" class="cta-button primary" id="portfolio-button"
             >Voir mon Portfolio</a
-          >
-          <a
-            href="/Gabin SUBRI CV Lyon.pdf"
-            target="_blank"
-            class="cta-button secondary"
-            id="telecharger-cv-button"
-            >Télécharger mon CV</a
           >
         </div>
       </div>
@@ -139,19 +129,12 @@
                 <p>Projets clients réels</p>
               </div>
             </div>
-            <div class="status-card">
-              <span class="status-icon">🔍</span>
-              <div>
-                <h4>En recherche</h4>
-                <p>Stage/Alternance 2025</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Compétences Section -->
+    <!-- Compétences Section 
     <section class="skills" id="skills">
       <h2 class="section-title fade-in">⚡ Compétences Techniques</h2>
       <div class="skills-grid">
@@ -245,6 +228,66 @@
           </div>
         </div>
       </div>
+    </section>-->
+
+    <!-- Services Section (Pour les clients) -->
+    <section class="services" id="services">
+      <h2 class="section-title fade-in">🌟 Services Professionnels</h2>
+      <p class="services-intro fade-in">
+        En tant que micro-entrepreneur, je propose des services web complets
+        pour accompagner votre présence digitale.
+      </p>
+      <div class="services-grid">
+        <div class="service-card fade-in stagger-animation" style="--i: 0">
+          <span class="service-icon">🌐</span>
+          <h3>Site Vitrine</h3>
+          <p>
+            Un site web professionnel pour présenter votre activité en ligne.
+          </p>
+          <ul class="service-features">
+            <li>Pages essentielles complètes</li>
+            <li>Design responsive</li>
+            <li>Optimisation SEO de base</li>
+            <li>Maquette gratuite incluse</li>
+          </ul>
+          <div class="price">À partir de 1000€</div>
+        </div>
+
+        <div class="service-card fade-in stagger-animation" style="--i: 1">
+          <span class="service-icon">🛒</span>
+          <h3>Site E-commerce</h3>
+          <p>Boutique en ligne avec gestion des stocks et paiement sécurisé.</p>
+          <ul class="service-features">
+            <li>Design personnalisé</li>
+            <li>Gestion des stocks</li>
+            <li>Paiement sécurisé</li>
+            <li>SEO avancé</li>
+          </ul>
+          <div class="price">Sur devis</div>
+        </div>
+
+        <div class="service-card fade-in stagger-animation" style="--i: 2">
+          <span class="service-icon">🔄</span>
+          <h3>Refonte de Site</h3>
+          <p>
+            Modernisez votre site existant avec une nouvelle structure
+            optimisée.
+          </p>
+          <ul class="service-features">
+            <li>Refonte complète</li>
+            <li>Design moderne</li>
+            <li>Optimisation performances</li>
+            <li>Migration sécurisée</li>
+          </ul>
+          <div class="price">Sur devis</div>
+        </div>
+      </div>
+      <div class="services-cta fade-in">
+        <p>Vous avez un projet ? Discutons-en !</p>
+        <button class="bouton-devis">
+          <a href="#contact" id="devis">Demander un devis gratuit</a>
+        </button>
+      </div>
     </section>
 
     <!-- Portfolio Section -->
@@ -254,7 +297,6 @@
         <button class="filter-btn active" data-filter="all">Tous</button>
         <button class="filter-btn" data-filter="client">Projets Clients</button>
         <button class="filter-btn" data-filter="school">Projets École</button>
-        <button class="filter-btn" data-filter="stage">Projets Stages</button>
         <button class="filter-btn" data-filter="personal">
           Projets Personnels
         </button>
@@ -293,7 +335,7 @@
           class="portfolio-item fade-in stagger-animation stage"
           style="--i: 2"
         >
-          <div class="project-badge stage-badge">Stage</div>
+          <div class="project-badge client-badge">Client</div>
           <img src="/img/sauvegarde69.PNG" alt="Sauvegarde 69" />
           <div class="portfolio-content">
             <h3>Sauvegarde 69</h3>
@@ -321,7 +363,7 @@
           class="portfolio-item fade-in stagger-animation stage"
           style="--i: 3"
         >
-          <div class="project-badge stage-badge">Stage</div>
+          <div class="project-badge client-badge">Client</div>
           <img src="/img/mda.png" alt="Maison des Adolescents 74" />
           <div class="portfolio-content">
             <h3>Maison des Adolescents 74</h3>
@@ -340,6 +382,62 @@
             <div class="portfolio-links">
               <a
                 href="https://maison-des-adolescents-74.com"
+                target="_blank"
+                class="portfolio-button"
+                >Voir le site</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item fade-in stagger-animation client"
+          style="--i: 9"
+        >
+          <div class="project-badge client-badge">Client</div>
+          <img src="/img/chez_theo.png" alt="Chez Théo" />
+          <div class="portfolio-content">
+            <h3>Chez Théo</h3>
+            <p><strong>Vitrine restaurant</strong></p>
+            <p>
+              Présentation du restaurant Chez Théo, avec un menu interactif et
+              des informations sur les plats.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">HTML/CSS</span>
+              <span class="tech">JavaScript</span>
+              <span class="tech">Responsive</span>
+            </div>
+            <div class="portfolio-links">
+              <a
+                href="https://chez-theo.vercel.app"
+                target="_blank"
+                class="portfolio-button"
+                >Voir le site</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="portfolio-item fade-in stagger-animation client"
+          style="--i: 8"
+        >
+          <div class="project-badge client-badge">Client</div>
+          <img src="/img/la-ferme-du-chat-noir.png" alt="Script-bat" />
+          <div class="portfolio-content">
+            <h3>La Ferme du chat noir</h3>
+            <p><strong>Commande en ligne</strong></p>
+            <p>
+              Plateforme de commande en ligne pour une ferme locale, avec
+              gestion des produits et des commandes.
+            </p>
+            <div class="tech-stack">
+              <span class="tech">HTML/CSS</span>
+              <span class="tech">JavaScript</span>
+              <span class="tech">BDD</span>
+            </div>
+            <div class="portfolio-links">
+              <a
+                href="https://la-ferme-du-chat-noir.vercel.app"
                 target="_blank"
                 class="portfolio-button"
                 >Voir le site</a
@@ -463,124 +561,6 @@
             </div>
           </div>
         </div>
-
-        <div
-          class="portfolio-item fade-in stagger-animation client"
-          style="--i: 8"
-        >
-          <div class="project-badge client-badge">Client</div>
-          <img src="/img/la-ferme-du-chat-noir.png" alt="Script-bat" />
-          <div class="portfolio-content">
-            <h3>La Ferme du chat noir</h3>
-            <p><strong>Commande en ligne</strong></p>
-            <p>
-              Plateforme de commande en ligne pour une ferme locale, avec
-              gestion des produits et des commandes.
-            </p>
-            <div class="tech-stack">
-              <span class="tech">HTML/CSS</span>
-              <span class="tech">JavaScript</span>
-              <span class="tech">BDD</span>
-            </div>
-            <div class="portfolio-links">
-              <a
-                href="https://la-ferme-du-chat-noir.vercel.app"
-                target="_blank"
-                class="portfolio-button"
-                >Voir le site</a
-              >
-            </div>
-          </div>
-        </div>
-        <div
-          class="portfolio-item fade-in stagger-animation client"
-          style="--i: 9"
-        >
-          <div class="project-badge client-badge">Client</div>
-          <img src="/img/chez_theo.png" alt="Chez Théo" />
-          <div class="portfolio-content">
-            <h3>Chez Théo</h3>
-            <p><strong>Vitrine restaurant</strong></p>
-            <p>
-              Présentation du restaurant Chez Théo, avec un menu interactif et
-              des informations sur les plats.
-            </p>
-            <div class="tech-stack">
-              <span class="tech">HTML/CSS</span>
-              <span class="tech">JavaScript</span>
-              <span class="tech">Responsive</span>
-            </div>
-            <div class="portfolio-links">
-              <a
-                href="https://chez-theo.vercel.app"
-                target="_blank"
-                class="portfolio-button"
-                >Voir le site</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section (Pour les clients) -->
-    <section class="services" id="services">
-      <h2 class="section-title fade-in">🌟 Services Professionnels</h2>
-      <p class="services-intro fade-in">
-        En tant que micro-entrepreneur, je propose des services web complets
-        pour accompagner votre présence digitale.
-      </p>
-      <div class="services-grid">
-        <div class="service-card fade-in stagger-animation" style="--i: 0">
-          <span class="service-icon">🌐</span>
-          <h3>Site Vitrine</h3>
-          <p>
-            Un site web professionnel pour présenter votre activité en ligne.
-          </p>
-          <ul class="service-features">
-            <li>Pages essentielles complètes</li>
-            <li>Design responsive</li>
-            <li>Optimisation SEO de base</li>
-            <li>Maquette gratuite incluse</li>
-          </ul>
-          <div class="price">À partir de 1000€</div>
-        </div>
-
-        <div class="service-card fade-in stagger-animation" style="--i: 1">
-          <span class="service-icon">🛒</span>
-          <h3>Site E-commerce</h3>
-          <p>Boutique en ligne avec gestion des stocks et paiement sécurisé.</p>
-          <ul class="service-features">
-            <li>Design personnalisé</li>
-            <li>Gestion des stocks</li>
-            <li>Paiement sécurisé</li>
-            <li>SEO avancé</li>
-          </ul>
-          <div class="price">Sur devis</div>
-        </div>
-
-        <div class="service-card fade-in stagger-animation" style="--i: 2">
-          <span class="service-icon">🔄</span>
-          <h3>Refonte de Site</h3>
-          <p>
-            Modernisez votre site existant avec une nouvelle structure
-            optimisée.
-          </p>
-          <ul class="service-features">
-            <li>Refonte complète</li>
-            <li>Design moderne</li>
-            <li>Optimisation performances</li>
-            <li>Migration sécurisée</li>
-          </ul>
-          <div class="price">Sur devis</div>
-        </div>
-      </div>
-
-      <div class="services-cta fade-in">
-        <p>Vous avez un projet ? Discutons-en !</p>
-        <button class="bouton-devis">
-          <a href="#contact" id="devis">Demander un devis gratuit</a>
-        </button>
       </div>
     </section>
 
@@ -590,30 +570,6 @@
       <div class="contact-content fade-in">
         <div class="contact-info">
           <div class="contact-card">
-            <h3>Pour les Recruteurs</h3>
-            <p>
-              Recherche active d'un stage ou alternance en développement web
-            </p>
-            <div class="contact-buttons">
-              <a
-                href="/Gabin SUBRI CV.pdf"
-                target="_blank"
-                class="contact-button primary"
-              >
-                📄 Télécharger mon CV
-              </a>
-              <a
-                href="https://www.linkedin.com/in/gabin-subri/"
-                target="_blank"
-                class="contact-button secondary"
-              >
-                💼 LinkedIn
-              </a>
-            </div>
-          </div>
-
-          <div class="contact-card">
-            <h3>Pour les Clients</h3>
             <p>Besoin d'un site web ou d'un accompagnement digital ?</p>
             <div class="contact-buttons">
               <a
